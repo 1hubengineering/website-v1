@@ -1,49 +1,110 @@
-# AndHub Engineering PLC — starter company website
+# AndHub Engineering PLC
 
-A one-page, responsive portfolio and company website for **AndHub Engineering PLC**, prepared for **https://1hubengineering.com/**.
-
-## Contents
-
-- Company positioning, mission, and vision
-- Four service areas
-- Six projects: Rental OS, Studio Proof, Say Bingo, KeyForge, Afaan Oromo Bible, and Linux Setup
-- Team qualifications (without inventing names or photos)
-- Contact call-to-action, mobile navigation, working project filters
-- Search metadata, social preview, sitemap, robots.txt, SVG favicon
+A complete React + TypeScript rebuild, powered by Vite+, Tailwind CSS 4, shadcn/ui (Radix primitives), and licensed Shadcnblocks components.
 
 ## Run locally
 
-There are **no packages, frameworks, or build steps**. Open `index.html` in a browser, or serve this directory locally:
+Requires Node.js 22.18+, 24.11+, or 26+. Dependencies are locked in `package-lock.json`.
 
 ```sh
-python -m http.server 8080
+npm ci
+npm run dev
 ```
 
-Then open `http://localhost:8080`.
+Open the Local URL printed by Vite+ (normally http://127.0.0.1:5173).
 
-## Deploy
+```sh
+npm run build       # TypeScript checks and production build
+npm run preview     # Serve the production build
+npm run typecheck   # TypeScript only
+npm test            # Build and run production browser/accessibility checks
+```
 
-Upload **the contents** of this folder (not the parent folder) to a static web host or to the domain's `public_html` directory if using cPanel. `index.html` must be at the website root. Point `1hubengineering.com` and `www.1hubengineering.com` DNS records to the chosen hosting provider, activate TLS/HTTPS, and enable a redirect from `www` to the canonical domain (or vice versa, updating the canonical links if reversed).
+For a fresh development machine, install the browser before running tests:
 
-This can also be deployed on Cloudflare Pages, Netlify, Vercel, or GitHub Pages as a plain static site with **no build command** and the site root as the publish directory. For nested GitHub Pages project paths, update absolute metadata URLs.
+```sh
+npx playwright install chromium
+```
 
-## Before going public — IMPORTANT
+## Brand and themes
 
-1. **Email:** `hello@1hubengineering.com` is a *proposed contact address*, **not a verified mailbox**. Create/verify it with your domain email provider, **or replace every occurrence** in `index.html` before publishing. Test incoming and outgoing mail, including SPF/DKIM/DMARC where applicable. No contact form/backend is configured, and no visitor data is stored by this website.
-2. **Brand:** This site includes an original temporary AH lettermark, **not** the previously selected final monogram art. Replace `assets/favicon.svg` and the two HTML `.brand-mark` elements with your approved logo when you have its exported assets.
-3. **People:** Add team member names, confirmed role titles, photographs (if desired), and consent before publication. Qualifications shown are based on information supplied by the company owner.
-4. **Project status:** Several projects are under active development and are labeled accordingly. Verify statuses and whether to make any private/client work public before publishing. No private GitHub repo URL is linked.
-5. **Product rights:** Ensure public descriptions and any future screenshots use content and assets you have permission to publish. In particular, Bible text and paid UI component source should not be redistributed without appropriate rights.
-6. **Company details:** Confirm final legal trading name, contact details, service coverage, and any required legal/business information for the jurisdiction. This starter does not invent a physical address or phone number.
-7. **Domain/SEO:** Replace `https://1hubengineering.com/` in canonical, Open Graph, structured data, sitemap and robots if the final hostname changes. Submit the sitemap to your preferred search console after deployment.
+The site follows the [current brand guideline](https://github.com/1hubengineering/branding-guideline), including the supplied compact logo and symbol exports, “Ideas. Engineered.” tagline, Inter typography, three-service architecture, and current company/contact data. Artwork in `public/brand/` is copied from the guideline repository without redrawing the paths or wordmark. That repository labels its artwork as reconstructed; this implementation does not change its approval status.
 
-## Updating the site
+| Token        | Dark      | Light     |
+| ------------ | --------- | --------- |
+| Background   | `#0b1f3b` | `#ffffff` |
+| Surface/card | `#102947` | `#ffffff` |
+| Text         | `#ffffff` | `#0b1f3b` |
+| Action       | `#2563eb` | `#2563eb` |
+| Highlight    | `#10b981` | `#047857` |
+| Border       | `#2c4664` | `#e5e7eb` |
 
-- Copy and content: `index.html`
-- Styles and illustrations: `assets/styles.css`
-- Mobile navigation, project filters, scroll behaviors: `assets/app.js`
-- Favicon: `assets/favicon.svg`
-- Social preview: `assets/og-image.png`
-- Search settings: HTML `<head>`, `robots.txt`, `sitemap.xml`
+Signal Blue actions use white labels; green text uses Deep Green on light surfaces and Hub Green on navy. Required form boundaries have a separate contrast-tested token. Dark is the initial theme. The toggle persists an explicit preference locally, and the inline startup script applies it before React renders. Inter is self-hosted through the existing font package, using the Latin variable font and its bundled license. Reduced-motion preferences disable animation. Compact flat logo exports switch with the actual surface; the large gradient symbol sits on a solid navy panel without added effects.
 
-The public GitHub repositories reviewed for the starter were `zdevzone/keyforge`, `zdevzone/afaan_oromo_bible`, `zdevzone/linux-setup`, and `zdevzone/studio-proof-releases`. The Rental OS and Say Bingo repositories are private and not linked. **This new website has not been published to GitHub or deployed to the domain.**
+## Website content and interactions
+
+- Responsive navigation, section links, and keyboard-accessible mobile menu.
+- Three services (Software development, Systems engineering, Consultancy), six existing projects with category filters and detail dialogs.
+- Public repository/release links and explicit development labels.
+- Current company positioning and leadership, four-step process, and grouped FAQ accordions.
+- Project inquiry builder with input validation, an editable draft, copy action, and a `mailto:` link. Unfinished input stays in memory when the dialog closes; nothing is written to browser storage. Copy failures include a manual fallback.
+- Accessible dialogs with focus management and Escape dismissal.
+- Metadata, favicon, social image, sitemap, and robots file.
+
+Project illustrations are **concept previews**, not actual product screenshots or operating metrics. Company details and leadership use the guideline's `assets/brand.json`. Company GitHub links point to `1hubengineering`; existing project repository links retain their specific destinations. No customer names, testimonials, or invented delivery statistics have been added.
+
+## Shadcnblocks Pro
+
+The following paid blocks were retrieved through the authenticated [Shadcnblocks registry](https://www.shadcnblocks.com/docs/shadcn-cli/overview) using the existing local API key, then adapted to AndHub's content and design:
+
+- `feature43`: services grid
+- `faq11`: categorized FAQ
+- `cta26`: contact panel and supporting cards
+
+These live in `src/components/blocks/`. Base shadcn/ui components live in `src/components/ui/`. `components.json` configures the authenticated registry for future additions. This project uses a selection from the collection; it does not bundle the entire catalog or templates.
+
+Keep `SHADCNBLOCKS_API_KEY` in `.env` as shown in `.env.example`. Never prefix it with `VITE_`: the key is for development-time registry access and must not enter the browser bundle. `.env` and local environment variants are ignored by Git. Follow the subscription's license when sharing source code; do not redistribute the paid blocks as a standalone UI library.
+
+## Files to edit
+
+- `src/App.tsx`: navigation, hero, company, team, process, footer
+- `src/components/projects.tsx`: project copy, links, statuses, concept illustrations
+- `src/components/blocks/`: services, FAQ, contact
+- `src/components/project-inquiry.tsx`: inquiry flow and shared dialog wrapper
+- `src/components/brand.tsx`: theme-aware supplied brand artwork
+- `src/index.css`: design tokens, themes, layouts, responsive styling
+- `public/`: favicon, social artwork, sitemap, robots
+- `index.html`: metadata, organization schema, initial theme
+
+Regenerate both social previews after changing the artwork or layout in the generator:
+
+```sh
+node scripts/generate-social-image.mjs
+```
+
+## Verification
+
+Playwright covers dark/light persistence; project filters and public links; opening, dismissing, and restoring focus from dialogs; FAQ expansion; inquiry draft creation and preservation on edit; and both themes at 320, 360, 390, 768, 1024, and 1440 pixels. Screenshots are generated in the ignored `test-results/` directory.
+
+The test suite builds the production site and serves it at port 4173 automatically. Automated axe checks cover the page, contact dialog, and project dialog in both themes on mobile and desktop. Additional checks cover mobile dialog transitions, keyboard focus, whitespace validation, unfinished inquiries, and clipboard failure. These automated checks supplement visual review; they do not establish full accessibility conformance.
+
+## GitHub Pages deployment
+
+The deployment repository is [1hubengineering/website-v1](https://github.com/1hubengineering/website-v1). The `Deploy website to GitHub Pages` workflow builds and publishes `dist/` on pushes to `main`, and can also be run from the Actions tab. In Settings → Pages, the publishing source must be **GitHub Actions**. Private repositories require a GitHub plan that supports Pages.
+
+The workflow reads the actual Pages URL and base path from GitHub. This supports the project URL `https://1hubengineering.github.io/website-v1/` and a future custom domain without hardcoding asset paths. No custom domain or DNS change is made by the deployment setup.
+
+Local builds retain `https://1hubengineering.com/` as their canonical URL. To reproduce the project Pages build and run its browser checks in PowerShell:
+
+```powershell
+$env:BASE_PATH = "/website-v1/"
+$env:SITE_URL = "https://1hubengineering.github.io/website-v1/"
+npm test
+Remove-Item Env:BASE_PATH, Env:SITE_URL
+```
+
+For a build without browser checks, use `npm run build` with the same variables. `BASE_PATH` controls bundled scripts, styles, logos, and the favicon; `SITE_URL` controls the canonical URL, social metadata, sitemap, and robots sitemap reference.
+
+The deployment does not require `.env` or `SHADCNBLOCKS_API_KEY`. The blocks are already included in the source; the key is only used to retrieve additional components during development. Keep `.env` private.
+
+The inquiry recipient is `info@1hubengineering.com`, supplied by the current brand data. The footer also includes the supplied Addis Ababa address and both phone numbers. The contact flow prepares a draft in the visitor's email client; it does not send, store, or claim to deliver messages. A server endpoint or email service is needed if direct form submission is desired.

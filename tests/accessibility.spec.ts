@@ -17,6 +17,11 @@ for (const width of [390, 1440]) {
       await page.keyboard.press("Escape");
       await page.getByRole("button", { name: "Explore KeyForge", exact: true }).click();
       expect((await audit()).violations).toEqual([]);
+      for (const name of ["Linux Setup", "Afaan Oromo Bible"]) {
+        await page.keyboard.press("Escape");
+        await page.getByRole("button", { name: `Explore ${name}`, exact: true }).click();
+        expect((await audit()).violations).toEqual([]);
+      }
     });
   }
 }

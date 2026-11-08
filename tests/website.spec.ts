@@ -7,7 +7,7 @@ test("theme persists and navigation, filters, details, FAQ, and inquiry work", a
   await expect
     .poll(() =>
       page
-        .locator("img")
+        .locator('img:not([loading="lazy"])')
         .evaluateAll((images) =>
           images.every(
             (image) =>
@@ -48,7 +48,7 @@ test("theme persists and navigation, filters, details, FAQ, and inquiry work", a
     .getByRole("group", { name: "Filter projects" })
     .getByRole("button", { name: "Open source" })
     .click();
-  await expect(page.locator(".project-card")).toHaveCount(3);
+  await expect(page.locator(".project-card")).toHaveCount(2);
   await expect(page.getByRole("button", { name: "Explore Rental OS", exact: true })).toHaveCount(0);
   await page.getByRole("button", { name: "Explore KeyForge", exact: true }).click();
   await expect(page.getByRole("dialog")).toBeVisible();

@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
-  BookOpen,
   Check,
   Command,
   Folder,
@@ -10,89 +9,35 @@ import {
   LayoutDashboard,
   Search,
   Settings,
-  Terminal,
   Users,
 } from "lucide-react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Button } from "@/components/ui/button";
 import { ModalContent } from "@/components/project-inquiry";
+import { projects, type Project, type ProjectPreview } from "@/lib/projects";
 
-export const projects = [
-  {
-    name: "Rental OS",
-    category: "Products",
-    type: "BUSINESS PLATFORM",
-    description: "One platform. A more connected rental business.",
-    detail:
-      "A rental marketplace and management platform in development, bringing vendors, inventory, bookings, and customer experiences into one connected workflow.",
-    tags: ["Web platform", "Business operations"],
-    art: "rental",
-    status: "In development",
-    url: "",
-  },
-  {
-    name: "Studio Proof",
-    category: "Products",
-    type: "PHOTOGRAPHY WORKFLOW",
-    description: "The simpler way to find the perfect shot.",
-    detail:
-      "A local-first photo proofing application in development that helps studios and clients review, select, and deliver photographs on their own network.",
-    tags: ["Desktop + web", "Local first"],
-    art: "studio",
-    status: "In development",
-    url: "https://github.com/zdevzone/studio-proof-releases",
-  },
-  {
-    name: "KeyForge",
-    category: "Open source",
-    type: "DEVELOPER INFRASTRUCTURE",
-    description: "Your software. Your licenses. Your rules.",
-    detail:
-      "A self-hosted, MIT-licensed software licensing system with activations, trials, and offline license tokens.",
-    tags: ["Open source", "Self hosted"],
-    art: "keyforge",
-    status: "Open source",
-    url: "https://github.com/zdevzone/keyforge",
-  },
-  {
-    name: "Say Bingo",
-    category: "Products",
-    type: "INTERACTIVE PRODUCT",
-    description: "A little connection. A lot of possibility.",
-    detail:
-      "A Telegram-based multiplayer bingo experience in development, with game rooms, player wallets, and operator workflows.",
-    tags: ["Telegram", "Multiplayer"],
-    art: "bingo",
-    status: "In development",
-    url: "",
-  },
-  {
-    name: "Afaan Oromo Bible",
-    category: "Open source",
-    type: "DESKTOP APPLICATION",
-    description: "Read, study, and reflect. Wherever you are.",
-    detail:
-      "An offline-first Bible reading and study application in development for Windows, macOS, and Linux. Built around language accessibility.",
-    tags: ["Desktop", "Offline first"],
-    art: "bible",
-    status: "In development · Open source",
-    url: "https://github.com/zdevzone/afaan_oromo_bible",
-  },
-  {
-    name: "Linux Setup",
-    category: "Open source",
-    type: "DEVELOPER EXPERIENCE",
-    description: "A better environment for your next idea.",
-    detail:
-      "A portable development terminal setup with thoughtful defaults, useful tools, backups, and selective uninstall.",
-    tags: ["Developer tools", "Open source"],
-    art: "linux",
-    status: "Open source",
-    url: "https://github.com/zdevzone/linux-setup",
-  },
-];
-type Project = (typeof projects)[number];
-export function ProjectArt({ art }: { art: string }) {
+export function ProjectArt({ art, preview }: { art: string; preview?: ProjectPreview }) {
+  const project = projects.find((project) => project.art === art);
+  const image = preview ?? project?.previews?.[0];
+  if (image) {
+    return (
+      <figure className={`project-art project-art-preview art-${art}`}>
+        <div className="preview-heading" aria-hidden="true">
+          <span>{project?.name}</span>
+          <span>{art === "linux" ? "TERMINAL PREVIEW" : "APP SCREENSHOT"}</span>
+        </div>
+        <img
+          src={image.src}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>{image.label}</figcaption>
+      </figure>
+    );
+  }
   return (
     <div className={`project-art art-${art}`} aria-hidden="true">
       <span className="art-label">
@@ -104,9 +49,7 @@ export function ProjectArt({ art }: { art: string }) {
               ? "KEYFORGE"
               : art === "bingo"
                 ? "SAY BINGO"
-                : art === "bible"
-                  ? "AFAAN OROMO BIBLE"
-                  : "LINUX / SETUP"}
+                : project?.name}
       </span>
       <span className="art-caption">CONCEPT PREVIEW</span>
       {art === "rental" && (
@@ -214,57 +157,14 @@ export function ProjectArt({ art }: { art: string }) {
           <small>GOOD TIMES. GREAT CONNECTIONS.</small>
         </div>
       )}
-      {art === "bible" && (
-        <div className="bible-visual">
-          <div className="book-cover">
-            <BookOpen size={37} strokeWidth={1} />
-            <strong>
-              KITAABA
-              <br />
-              QULQULLUU
-            </strong>
-            <span>AFAAN OROMOO</span>
-          </div>
-          <div className="book-shadow" />
-        </div>
-      )}
-      {art === "linux" && (
-        <div className="terminal-window">
-          <div className="terminal-top">
-            <span>
-              <i />
-              <i />
-              <i />
-            </span>
-            <span>~/ linux-setup</span>
-            <Terminal size={11} />
-          </div>
-          <div className="terminal-lines">
-            <p>
-              <span>❯</span> ./install.sh
-            </p>
-            <p className="terminal-muted">Setting up your next great idea...</p>
-            <p>
-              <Check size={12} /> Developer tools
-            </p>
-            <p>
-              <Check size={12} /> Terminal configuration
-            </p>
-            <p>
-              <Check size={12} /> Environment ready
-            </p>
-            <p>
-              <span>❯</span> <i className="terminal-cursor" />
-            </p>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
 export function Projects() {
   const [filter, setFilter] = useState("All work");
   const [selected, setSelected] = useState<Project | null>(null);
+  const [previewIndex, setPreviewIndex] = useState(0);
+  const selectedPreview = selected?.previews?.[previewIndex];
   const visible = projects.filter((p) => filter === "All work" || p.category === filter);
   return (
     <section className="section work-section" id="work" aria-labelledby="work-title">
@@ -292,7 +192,11 @@ export function Projects() {
             {["All work", "Products", "Open source"].map((f) => (
               <button key={f} aria-pressed={filter === f} onClick={() => setFilter(f)}>
                 {f}
-                <span>{f === "All work" ? "06" : "03"}</span>
+                <span>
+                  {String(
+                    projects.filter((p) => f === "All work" || p.category === f).length,
+                  ).padStart(2, "0")}
+                </span>
               </button>
             ))}
           </div>
@@ -310,7 +214,13 @@ export function Projects() {
                   <ArrowUpRight size={19} />
                 </div>
                 <h3>
-                  <button className="project-open" onClick={() => setSelected(project)}>
+                  <button
+                    className="project-open"
+                    onClick={() => {
+                      setPreviewIndex(0);
+                      setSelected(project);
+                    }}
+                  >
                     <span className="sr-only">Explore </span>
                     {project.name}
                   </button>
@@ -322,7 +232,7 @@ export function Projects() {
                   ))}
                   <span className="project-status">
                     <i />
-                    {project.status.includes("development") ? "In development" : "Open source"}
+                    {project.status}
                   </span>
                 </div>
               </div>
@@ -332,8 +242,7 @@ export function Projects() {
         <div className="portfolio-note">
           <span className="status-dot" />
           <p>
-            A mix of products in progress and open-source contributions. Preview visuals illustrate
-            each project’s purpose.
+            Products, public betas, and open-source tools. Explore each project for previews and details.
           </p>
         </div>
       </div>
@@ -346,8 +255,28 @@ export function Projects() {
         <ModalContent>
           {selected && (
             <>
-              <ProjectArt art={selected.art} />
+              <ProjectArt art={selected.art} preview={selectedPreview} />
               <div className="project-dialog-body">
+                {selected.previews && (
+                  <div className="project-preview-gallery">
+                    <div
+                      className="preview-picker"
+                      role="group"
+                      aria-label="Choose a project preview"
+                    >
+                      {selected.previews.map((preview, index) => (
+                        <button
+                          key={preview.src}
+                          type="button"
+                          aria-pressed={index === previewIndex}
+                          onClick={() => setPreviewIndex(index)}
+                        >
+                          {preview.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <span className="eyebrow">{selected.type}</span>
                 <Dialog.Title>{selected.name}</Dialog.Title>
                 <Dialog.Description>{selected.detail}</Dialog.Description>
@@ -358,9 +287,7 @@ export function Projects() {
                 {selected.url ? (
                   <Button asChild>
                     <a href={selected.url} target="_blank" rel="noopener noreferrer">
-                      {selected.name === "Studio Proof"
-                        ? "View public releases"
-                        : "View repository"}
+                      {selected.linkLabel ?? "View repository"}
                       <ArrowUpRight />
                     </a>
                   </Button>
@@ -371,6 +298,23 @@ export function Projects() {
                       <ArrowUpRight />
                     </a>
                   </Button>
+                )}
+                {selected.links && (
+                  <div className="project-resource-links">
+                    {selected.links.map((link) => (
+                      <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer">
+                        {link.label} <ArrowUpRight size={14} aria-hidden="true" />
+                      </a>
+                    ))}
+                  </div>
+                )}
+                {selectedPreview && (
+                  <div className="preview-context">
+                    <p>{selected.previewNote}</p>
+                    <a href={selectedPreview.src} target="_blank" rel="noopener noreferrer">
+                      Open full-size image <ArrowUpRight size={14} aria-hidden="true" />
+                    </a>
+                  </div>
                 )}
               </div>
             </>

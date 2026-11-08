@@ -51,7 +51,9 @@ Signal Blue actions use white labels; green text uses Deep Green on light surfac
 - Accessible dialogs with focus management and Escape dismissal.
 - Metadata, favicon, social image, sitemap, and robots file.
 
-Project illustrations are **concept previews**, not actual product screenshots or operating metrics. Company details and leadership use the guideline's `assets/brand.json`. Company GitHub links point to `1hubengineering`; existing project repository links retain their specific destinations. No customer names, testimonials, or invented delivery statistics have been added.
+Linux Setup uses the project's published terminal examples and menu captures. Afaan Oromo Bible uses authentic Windows beta.8 screenshots from its published demo profile, links to the live product site and beta downloads, and appears under Products because its application source is private. Both detail dialogs have five selectable previews and full-size image links. Other project illustrations remain **concept previews**, not actual product screenshots or operating metrics. Asset sources and upstream notices are recorded in `public/projects/README.md`.
+
+Company details and leadership use the guideline's `assets/brand.json`. Company GitHub links point to `1hubengineering`; project links use their current published destinations. No customer names, testimonials, or invented delivery statistics have been added.
 
 ## Shadcnblocks Pro
 
@@ -68,7 +70,8 @@ Keep `SHADCNBLOCKS_API_KEY` in `.env` as shown in `.env.example`. Never prefix i
 ## Files to edit
 
 - `src/App.tsx`: navigation, hero, company, team, process, footer
-- `src/components/projects.tsx`: project copy, links, statuses, concept illustrations
+- `src/lib/projects.ts`: project copy, links, statuses, preview metadata
+- `src/components/projects.tsx`: project cards, concept illustrations, and preview galleries
 - `src/components/blocks/`: services, FAQ, contact
 - `src/components/project-inquiry.tsx`: inquiry flow and shared dialog wrapper
 - `src/components/brand.tsx`: theme-aware supplied brand artwork
@@ -84,7 +87,7 @@ node scripts/generate-social-image.mjs
 
 ## Verification
 
-Playwright covers dark/light persistence; project filters and public links; opening, dismissing, and restoring focus from dialogs; FAQ expansion; inquiry draft creation and preservation on edit; and both themes at 320, 360, 390, 768, 1024, and 1440 pixels. Screenshots are generated in the ignored `test-results/` directory.
+Playwright covers dark/light persistence; project filters and public links; opening, dismissing, and restoring focus from dialogs; FAQ expansion; inquiry draft creation and preservation on edit; and both themes at 320, 360, 390, 768, 1024, and 1440 pixels. Project gallery checks also cover keyboard selection, all ten published images, full-size links, selection reset, and portrait/landscape layouts. Screenshots are generated in the ignored `test-results/` directory.
 
 The test suite builds the production site and serves it at port 4173 automatically. Automated axe checks cover the page, contact dialog, and project dialog in both themes on mobile and desktop. Additional checks cover mobile dialog transitions, keyboard focus, whitespace validation, unfinished inquiries, and clipboard failure. These automated checks supplement visual review; they do not establish full accessibility conformance.
 

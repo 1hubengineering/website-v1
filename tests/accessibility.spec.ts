@@ -2,19 +2,28 @@ import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
 for (const width of [390, 1440]) {
-  for (const theme of ["dark", "light"]) {
+  for (const theme of ["light", "dark"]) {
     test(`automated accessibility checks for ${theme} at ${width}px`, async ({ page }) => {
       await page.setViewportSize({ width, height: 900 });
       await page.goto("./");
-      if (theme === "light")
-        await page.getByRole("button", { name: "Switch to light theme" }).click();
+      if (theme === "dark")
+        await page.getByRole("button", { name: "Switch to dark theme" }).click();
       const audit = () =>
         new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
       expect((await audit()).violations).toEqual([]);
-      await page.getByRole("button", { name: "Build with us", exact: true }).click();
+      // Desktop opens the inquiry from the header; mobile from the navigation menu.
+      if (width < 801) {
+        await page.getByRole("button", { name: "Open navigation", exact: true }).click();
+        expect((await audit()).violations).toEqual([]);
+        await page.getByRole("dialog").getByRole("button", { name: "Start a project" }).click();
+      } else {
+        await page.getByRole("button", { name: "Let’s talk", exact: true }).click();
+      }
       await expect(page.getByRole("dialog").getByLabel("Your name", { exact: true })).toBeFocused();
       expect((await audit()).violations).toEqual([]);
       await page.keyboard.press("Escape");
+      await page.goto("./projects/");
+      expect((await audit()).violations).toEqual([]);
       await page.getByRole("button", { name: "Explore KeyForge", exact: true }).click();
       expect((await audit()).violations).toEqual([]);
       for (const name of ["Linux Setup", "Afaan Oromo Bible"]) {
@@ -38,7 +47,8 @@ test("mobile menu opens a focused inquiry and preserves unfinished work", async 
   await dialog.getByLabel("A little about your project").fill("Our next platform.");
   await page.keyboard.press("Escape");
   await expect(page.getByRole("button", { name: "Open navigation", exact: true })).toBeFocused();
-  await page.getByRole("button", { name: "Build with us", exact: true }).click();
+  await page.getByRole("button", { name: "Open navigation", exact: true }).click();
+  await page.getByRole("dialog").getByRole("button", { name: "Start a project" }).click();
   await expect(dialog.getByLabel("Your name", { exact: true })).toHaveValue("Alex");
   await expect(dialog.getByLabel("A little about your project")).toHaveValue("Our next platform.");
 });
@@ -47,7 +57,7 @@ test("inquiry validates meaningful input, handles clipboard failure, and keeps k
   page,
 }) => {
   await page.goto("./");
-  await page.getByRole("button", { name: "Build with us", exact: true }).click();
+  await page.getByRole("button", { name: "Let’s talk", exact: true }).click();
   const dialog = page.getByRole("dialog");
   await dialog.getByLabel("Your name", { exact: true }).fill("   ");
   await dialog.getByLabel("Email address").fill("alex@example.com");

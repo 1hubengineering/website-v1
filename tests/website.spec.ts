@@ -29,21 +29,34 @@ test("theme persists and navigation, filters, details, FAQ, and inquiry work", a
     expect(await response.text()).toContain(siteUrl);
   }
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Ideas.Engineered.");
-  for (const service of ["Software development", "Systems engineering", "Consultancy"]) {
+  for (const service of [
+    "Software Development",
+    "Systems Engineering",
+    "Process Automation & AI-Driven Operations",
+  ]) {
     await expect(page.getByRole("heading", { name: service, exact: true })).toBeVisible();
   }
+  await expect(page.locator(".sector-card")).toHaveCount(8);
+  await expect(page.getByText(/consultanc/i)).toHaveCount(0);
   const brand = page
     .getByRole("link", { name: "AndHub Engineering PLC home", exact: true })
     .first();
-  await expect(brand.locator(".brand-art-dark")).toBeVisible();
-  await expect(brand.locator(".brand-art-light")).toBeHidden();
-  await expect(page.locator("html")).toHaveClass("dark");
-  await page.getByRole("button", { name: "Switch to light theme" }).click();
-  await expect(page.locator("html")).not.toHaveClass("dark");
+  // Light is the default theme; a dark choice persists across pages and reloads.
   await expect(brand.locator(".brand-art-light")).toBeVisible();
   await expect(brand.locator(".brand-art-dark")).toBeHidden();
+  await expect(page.locator("html")).not.toHaveClass("dark");
+  await page.getByRole("button", { name: "Switch to dark theme" }).click();
+  await expect(page.locator("html")).toHaveClass("dark");
+  await expect(brand.locator(".brand-art-dark")).toBeVisible();
+  await expect(brand.locator(".brand-art-light")).toBeHidden();
+  await page
+    .getByRole("navigation", { name: "Main navigation" })
+    .getByRole("link", { name: "Projects" })
+    .click();
+  await expect(page).toHaveURL(/\/projects\/$/);
+  await expect(page).toHaveTitle(/Software Projects/);
   await page.reload();
-  await expect(page.getByRole("button", { name: "Switch to dark theme" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Switch to light theme" })).toBeVisible();
   await page
     .getByRole("group", { name: "Filter projects" })
     .getByRole("button", { name: "Open source" })
@@ -58,14 +71,7 @@ test("theme persists and navigation, filters, details, FAQ, and inquiry work", a
   await page.keyboard.press("Escape");
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(page.getByRole("button", { name: "Explore KeyForge", exact: true })).toBeFocused();
-  await page.getByRole("button", { name: "What kind of projects do you take on?" }).click();
-  await expect(
-    page.getByText(
-      "We build company websites, web platforms, business software, desktop applications, and integrations.",
-      { exact: false },
-    ),
-  ).toBeVisible();
-  await page.getByRole("button", { name: "Build with us", exact: true }).click();
+  await page.getByRole("button", { name: "Let’s talk", exact: true }).click();
   const dialog = page.getByRole("dialog");
   await dialog.getByLabel("Your name", { exact: true }).fill("Website Tester");
   await dialog.getByLabel("Email address").fill("tester@example.com");
@@ -92,7 +98,7 @@ test("theme persists and navigation, filters, details, FAQ, and inquiry work", a
 
 test("direct section links land below the sticky header after rendering", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 900 });
-  for (const id of ["services", "work", "about", "process", "faq", "contact"]) {
+  for (const id of ["services", "sectors", "why", "process", "work", "contact"]) {
     await page.goto("./#" + id);
     await page.evaluate(() => document.fonts.ready);
     await expect
@@ -110,9 +116,9 @@ for (const width of [320, 360, 390, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("./");
     await page.evaluate(() => document.fonts.ready);
-    for (const theme of ["dark", "light"]) {
-      if (theme === "light")
-        await page.getByRole("button", { name: "Switch to light theme" }).click();
+    for (const theme of ["light", "dark"]) {
+      if (theme === "dark")
+        await page.getByRole("button", { name: "Switch to dark theme" }).click();
       expect(
         await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
       ).toBe(true);
@@ -121,20 +127,18 @@ for (const width of [320, 360, 390, 768, 1024, 1440]) {
           .locator(".header-inner")
           .evaluate((element) => element.scrollWidth <= element.clientWidth),
       ).toBe(true);
-      await expect(page.locator(".project-card")).toHaveCount(6);
-      await expect(
-        page.getByRole("heading", { name: "Complex challenges. Elegant solutions." }),
-      ).toBeVisible();
+      await expect(page.locator(".sector-card")).toHaveCount(8);
       await page.screenshot({ path: `test-results/andhub-${theme}-${width}.png`, fullPage: true });
     }
     if (width < 801) {
       await page.getByRole("button", { name: "Open navigation", exact: true }).click();
       await page
         .getByRole("navigation", { name: "Mobile navigation" })
-        .getByRole("link", { name: "Our work" })
+        .getByRole("link", { name: "Projects" })
         .click();
       await expect(page.getByRole("dialog")).toHaveCount(0);
-      await expect(page).toHaveURL(/#work$/);
+      await expect(page).toHaveURL(/\/projects\/$/);
+      await expect(page.locator(".project-card")).toHaveCount(6);
     }
   });
 }

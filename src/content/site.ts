@@ -69,11 +69,11 @@ export const howWeWork = [
 ] as const;
 
 export const mainNav = [
-  { label: "Solutions", to: "/solutions" },
-  { label: "Sectors", to: "/sectors" },
-  { label: "Projects", to: "/projects" },
-  { label: "About", to: "/about" },
-  { label: "Contact", to: "/contact" },
+  { label: "Solutions", to: "/solutions/" },
+  { label: "Sectors", to: "/sectors/" },
+  { label: "Projects", to: "/projects/" },
+  { label: "About", to: "/about/" },
+  { label: "Contact", to: "/contact/" },
 ] as const;
 
-export const primaryCta = { label: "Book a free discovery visit", to: "/contact" } as const;
+export const primaryCta = { label: "Book a free discovery visit", to: "/contact/" } as const;

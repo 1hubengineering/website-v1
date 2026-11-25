@@ -13,6 +13,12 @@ export const pages: PageMeta[] = [
     description:
       "Software development, systems engineering, and process automation and AI-driven operations for companies in Addis Ababa, Ethiopia.",
   },
+  {
+    path: "/projects",
+    title: "Software Projects by AndHub Engineering, Ethiopia",
+    description:
+      "Business platforms, developer tools and digital publishing projects built by AndHub Engineering in Addis Ababa, Ethiopia.",
+  },
 ];
 
 export const notFoundMeta: PageMeta = {

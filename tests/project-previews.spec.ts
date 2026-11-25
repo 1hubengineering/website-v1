@@ -26,7 +26,7 @@ for (const viewport of [
 ]) {
   test(`published graphics and project links work at ${viewport.width}×${viewport.height}`, async ({ page }) => {
     await page.setViewportSize(viewport);
-    await page.goto("./#work");
+    await page.goto("./projects/");
     const filters = page.getByRole("group", { name: "Filter projects" });
     await expect(filters.getByRole("button", { name: "Products" })).toContainText("04");
     await expect(filters.getByRole("button", { name: "Open source" })).toContainText("02");
@@ -35,9 +35,9 @@ for (const viewport of [
     await expect(page.getByRole("button", { name: "Explore Afaan Oromo Bible", exact: true })).toBeVisible();
     await filters.getByRole("button", { name: "All work" }).click();
 
-    for (const theme of ["dark", "light"]) {
-      if (theme === "light") {
-        await page.getByRole("button", { name: "Switch to light theme" }).click();
+    for (const theme of ["light", "dark"]) {
+      if (theme === "dark") {
+        await page.getByRole("button", { name: "Switch to dark theme" }).click();
       }
       for (const project of featuredProjects) {
         const trigger = page.getByRole("button", { name: `Explore ${project.name}`, exact: true });

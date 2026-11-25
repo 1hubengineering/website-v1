@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Outlet, useLocation } from "react-router";
+import { Link, NavLink, Outlet, useLocation } from "react-router";
 import { ArrowUpRight, Moon, Sun } from "lucide-react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Brand } from "@/components/brand";
@@ -7,23 +7,13 @@ import { Button } from "@/components/ui/button";
 import { ModalContent, ProjectInquiry } from "@/components/project-inquiry";
 import { InquiryContext } from "@/components/inquiry-context";
 import { findPageMeta } from "@/content/pages";
-
-const base = import.meta.env.BASE_URL;
-
-// Home-page anchors for now; replaced by page routes in the next steps.
-const nav = [
-  { label: "Expertise", id: "services" },
-  { label: "Our work", id: "work" },
-  { label: "About us", id: "about" },
-  { label: "Our process", id: "process" },
-];
+import { company, mainNav, primaryCta, services } from "@/content/site";
 
 export function Layout() {
-  // The server renders the default theme; the real one is read after hydration.
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  // The server renders the default (light) theme; a saved choice is applied after hydration.
+  const [theme, setTheme] = useState<"dark" | "light">("light");
   const [menuOpen, setMenuOpen] = useState(false);
   const [inquiryOpen, setInquiryOpen] = useState(false);
-  const [active, setActive] = useState("");
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const { pathname, hash } = useLocation();
 
@@ -54,22 +44,6 @@ export function Layout() {
     };
   }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      },
-      { rootMargin: "-20% 0px -65% 0px" },
-    );
-    nav.forEach((item) => {
-      const element = document.getElementById(item.id);
-      if (element) observer.observe(element);
-    });
-    return () => observer.disconnect();
-  }, [pathname]);
-
   function toggleTheme() {
     const next = theme === "dark" ? "light" : "dark";
     setTheme(next);
@@ -94,15 +68,10 @@ export function Layout() {
         <div className="container header-inner">
           <Brand />
           <nav className="desktop-nav" aria-label="Main navigation">
-            {nav.map((item) => (
-              <a
-                key={item.id}
-                className={active === item.id ? "active" : ""}
-                href={`${base}#${item.id}`}
-                aria-current={active === item.id ? "location" : undefined}
-              >
+            {mainNav.map((item) => (
+              <NavLink key={item.to} to={item.to}>
                 {item.label}
-              </a>
+              </NavLink>
             ))}
           </nav>
           <div className="header-actions">
@@ -132,18 +101,14 @@ export function Layout() {
               <ModalContent className="mobile-menu">
                 <Dialog.Title>Explore AndHub</Dialog.Title>
                 <Dialog.Description className="sr-only">
-                  Navigate to a section of the website.
+                  Go to a page of the website.
                 </Dialog.Description>
                 <nav aria-label="Mobile navigation">
-                  {nav.map((item) => (
-                    <a
-                      key={item.id}
-                      href={`${base}#${item.id}`}
-                      onClick={() => setMenuOpen(false)}
-                    >
+                  {mainNav.map((item) => (
+                    <NavLink key={item.to} to={item.to} onClick={() => setMenuOpen(false)}>
                       {item.label}
                       <ArrowUpRight size={21} />
-                    </a>
+                    </NavLink>
                   ))}
                   <Button
                     onClick={() => {
@@ -163,49 +128,52 @@ export function Layout() {
       <main id="main">
         <Outlet />
       </main>
-      <footer className="site-footer">
+      <footer className="site-footer on-navy">
         <div className="container">
           <div className="footer-top">
             <div>
               <Brand footer />
               <p>
-                Ideas. Engineered.
+                {company.tagline}
                 <br />
-                Lebu, Addis Ababa, Ethiopia.
+                {company.location}.
               </p>
             </div>
             <div className="footer-links">
               <div>
-                <span>EXPLORE</span>
-                {nav.map((item) => (
-                  <a href={`${base}#${item.id}`} key={item.id}>
-                    {item.label}
-                  </a>
+                <span>SERVICES</span>
+                {services.map((service) => (
+                  <Link to="/solutions/" key={service}>
+                    {service}
+                  </Link>
                 ))}
               </div>
               <div>
-                <span>LET’S CONNECT</span>
-                <button onClick={() => setInquiryOpen(true)}>
-                  Start a project
-                  <ArrowUpRight size={13} />
-                </button>
-                <a
-                  href="https://github.com/1hubengineering"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <span>EXPLORE</span>
+                {mainNav.map((item) => (
+                  <Link to={item.to} key={item.to}>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+              <div>
+                <span>CONTACT</span>
+                <Link to={primaryCta.to}>{primaryCta.label}</Link>
+                <a href={`mailto:${company.email}`}>{company.email}</a>
+                {company.phones.map((phone) => (
+                  <a key={phone.href} href={phone.href}>
+                    {phone.label}
+                  </a>
+                ))}
+                <a href={company.github} target="_blank" rel="noopener noreferrer">
                   GitHub
                   <ArrowUpRight size={13} />
                 </a>
-                <a href={`${base}#faq`}>Questions & answers</a>
-                <a href="mailto:info@1hubengineering.com">info@1hubengineering.com</a>
-                <a href="tel:+251913231123">+251 913 231 123</a>
-                <a href="tel:+251922964576">+251 922 964 576</a>
               </div>
             </div>
           </div>
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} AndHub Engineering PLC.</span>
+            <span>© {new Date().getFullYear()} {company.name}.</span>
             <span className="footer-signoff">
               <span className="status-dot" /> IDEAS. ENGINEERED.
             </span>

@@ -1,271 +1,251 @@
 import {
-  ArrowDown,
   ArrowRight,
   ArrowUpRight,
-  Braces,
+  ChartColumn,
+  Clock,
   Code2,
   Cpu,
-  Globe2,
+  FlaskConical,
+  Languages,
   Layers3,
-  ScanLine,
-  ShieldCheck,
-  Sparkles,
+  MapPin,
+  Search,
+  TrendingUp,
   Workflow,
-  Zap,
 } from "lucide-react";
+import { Link } from "react-router";
 import { BrandMark } from "@/components/brand";
 import { Button } from "@/components/ui/button";
-import { Feature43 } from "@/components/blocks/feature43";
-import { Faq11 } from "@/components/blocks/faq11";
-import { Cta26 } from "@/components/blocks/cta26";
-import { Projects } from "@/components/projects";
-import { useOpenInquiry } from "@/components/inquiry-context";
+import { sectorIcons } from "@/components/sector-icons";
+import { company, howWeWork, primaryCta, services, whyAndhub } from "@/content/site";
+import { sectors } from "@/content/sectors";
+import { projects } from "@/lib/projects";
+
+const serviceDetails = [
+  {
+    icon: Code2,
+    text: "Web, mobile and business software built around how your people work every day.",
+  },
+  {
+    icon: Workflow,
+    text: "We study how your people, machines and data work together before we build.",
+  },
+  {
+    icon: Cpu,
+    text: "Live dashboards, alerts and forecasts that keep your operations running.",
+  },
+];
+
+const whyIcons = [Search, Layers3, Clock, Languages];
+const stepIcons = [MapPin, FlaskConical, ChartColumn, TrendingUp];
 
 export function HomePage() {
-  const openInquiry = useOpenInquiry();
   return (
     <>
-      <section className="hero" aria-labelledby="hero-title">
+      <section className="home-hero on-navy" aria-labelledby="hero-title">
         <div className="hero-grid" />
-        <div className="hero-ambient" />
-        <div className="container hero-layout">
+        <div className="container home-hero-layout">
           <div className="hero-copy">
-            <div className="hero-badge">
-              <span className="status-dot" /> ANDHUB ENGINEERING PLC
-            </div>
+            <p className="hero-kicker">
+              <span className="status-dot" /> {company.name} · Addis Ababa
+            </p>
             <h1 id="hero-title">
               Ideas.
               <br />
               <span className="hero-emphasis">Engineered.</span>
             </h1>
-            <p>
-              We turn ideas into solutions that make a difference. Software development, systems
-              engineering and consultancy built around your needs.
-            </p>
+            <p className="hero-lead">{company.whatWeDo}</p>
+            <ul className="hero-services" aria-label="Our services">
+              {services.map((service) => (
+                <li key={service}>{service}</li>
+              ))}
+            </ul>
             <div className="hero-actions">
-              <Button size="lg" onClick={openInquiry}>
-                Build with us
-                <ArrowUpRight />
+              <Button size="lg" asChild>
+                <Link to={primaryCta.to}>
+                  {primaryCta.label}
+                  <ArrowUpRight />
+                </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="#work">
-                  Explore our work
+                <Link to="/solutions/">
+                  See our solutions
                   <ArrowRight />
-                </a>
+                </Link>
               </Button>
             </div>
-            <div className="hero-proof">
-              <div className="proof-icons">
-                <span>
-                  <Code2 size={16} />
-                </span>
-                <span>
-                  <Workflow size={16} />
-                </span>
-                <span>
-                  <Cpu size={16} />
-                </span>
-              </div>
-              <p>
-                Engineering minds. <strong>Real-world impact.</strong>
-                <br />
-                <span>Software expertise meets systems thinking.</span>
-              </p>
-            </div>
           </div>
-          <div className="brand-showcase" aria-hidden="true">
-            <span className="showcase-label">CONNECTED BY DESIGN</span>
+          <div className="home-hero-mark" aria-hidden="true">
             <BrandMark surface="dark" />
-            <div className="showcase-caption">
-              <span>
-                Different challenges.
-                <br />
-                Infinite possibilities.
-              </span>
-              <strong>One Hub.</strong>
-            </div>
-          </div>
-        </div>
-        <div className="container hero-bottom">
-          <span>INDEPENDENT THINKING. CONNECTED SOLUTIONS.</span>
-          <a href="#services">
-            Discover the AndHub approach
-            <ArrowDown size={13} />
-          </a>
-        </div>
-      </section>
-      <div className="capabilities-strip">
-        <div className="container">
-          {[
-            { icon: Code2, text: "SOFTWARE DEVELOPMENT" },
-            { icon: Workflow, text: "SYSTEMS ENGINEERING" },
-            { icon: Globe2, text: "CONSULTANCY" },
-          ].map(({ icon: Icon, text }) => (
-            <span key={text}>
-              <Icon size={20} aria-hidden="true" />
-              {text}
-            </span>
-          ))}
-        </div>
-      </div>
-      <Feature43 />
-      <Projects />
-      <section className="section about-section" id="about" aria-labelledby="about-title">
-        <div className="container">
-          <div className="about-layout">
-            <div className="about-visual">
-              <div className="about-orbit" />
-              <div className="about-orbit second" />
-              <div className="about-center">
-                <Cpu size={38} strokeWidth={1} />
-                <span>
-                  CONNECTED
-                  <br />
-                  <strong>BY DESIGN.</strong>
-                </span>
-              </div>
-              <div className="about-node node-code">
-                <Code2 size={21} />
-                <span>SOFTWARE</span>
-              </div>
-              <div className="about-node node-system">
-                <Workflow size={21} />
-                <span>SYSTEMS</span>
-              </div>
-              <div className="about-node node-people">
-                <Globe2 size={21} />
-                <span>PEOPLE</span>
-              </div>
-              <span className="about-visual-caption">THE WHOLE IS GREATER THAN THE PARTS.</span>
-              <span className="about-corner">FIG. 02 / OUR DNA</span>
-            </div>
-            <div className="about-copy">
-              <span className="eyebrow">THE THINKING BEHIND THE BUILD</span>
-              <h2 id="about-title">
-                Different disciplines.
-                <br />
-                <span className="muted-heading">One shared vision.</span>
-              </h2>
-              <p>
-                AndHub is a software development, systems engineering, and consultancy company
-                helping businesses of all sizes design, build, and improve the technology and
-                systems they depend on.
-              </p>
-              <p>
-                We bring software developers and systems engineers together to solve challenges,
-                simplify operations, and create lasting value.
-              </p>
-              <div className="about-values">
-                <span>
-                  <ShieldCheck size={17} />
-                  Purpose before complexity
-                </span>
-                <span>
-                  <Sparkles size={17} />
-                  Care in every detail
-                </span>
-              </div>
-              <a href="#team" className="text-link">
-                Meet the expertise
-                <ArrowDown size={15} />
-              </a>
-            </div>
-          </div>
-          <div className="team-grid" id="team">
-            <div className="team-card">
-              <div className="team-icon">
-                <Code2 size={25} />
-              </div>
-              <div>
-                <span className="eyebrow">FOUNDER AND CEO</span>
-                <h3>Mr. Abraham Bekele</h3>
-                <p>
-                  <a href="mailto:abraham@1hubengineering.com">abraham@1hubengineering.com</a>
-                </p>
-              </div>
-            </div>
-            <div className="team-card">
-              <div className="team-icon">
-                <Workflow size={25} />
-              </div>
-              <div>
-                <span className="eyebrow">FOUNDER AND CTO</span>
-                <h3>Dr. Rehoboth Bekele</h3>
-                <p>
-                  <a href="mailto:rehoboth@1hubengineering.com">rehoboth@1hubengineering.com</a>
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
+
+      <section className="section" id="services" aria-labelledby="services-title">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">WHAT WE DO</span>
+              <h2 id="services-title">Three services. One team.</h2>
+            </div>
+            <p>We start with a small pilot and prove the value before you scale.</p>
+          </div>
+          <div className="home-services">
+            {services.map((service, index) => {
+              const { icon: Icon, text } = serviceDetails[index];
+              return (
+                <article className="home-card" key={service}>
+                  <span className="home-card-icon">
+                    <Icon size={22} aria-hidden="true" />
+                  </span>
+                  <h3>{service}</h3>
+                  <p>{text}</p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-surface" id="sectors" aria-labelledby="sectors-title">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">WHO WE WORK WITH</span>
+              <h2 id="sectors-title">Eight sectors. One engineering partner.</h2>
+            </div>
+            <Link to="/sectors/" className="text-link">
+              All sectors
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+          <ul className="sector-grid">
+            {sectors.map((sector) => {
+              const Icon = sectorIcons[sector.slug];
+              return (
+                <li key={sector.slug}>
+                  <Link
+                    className="sector-card"
+                    to={`/sectors/${sector.slug}/`}
+                    data-family={sector.family ?? "none"}
+                  >
+                    <Icon size={22} aria-hidden="true" />
+                    <h3>{sector.name}</h3>
+                    <p>{sector.headline}</p>
+                    <span className="sector-card-more">
+                      Read more
+                      <ArrowRight size={15} aria-hidden="true" />
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section" id="why" aria-labelledby="why-title">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">WHY ANDHUB</span>
+              <h2 id="why-title">Why companies choose us.</h2>
+            </div>
+          </div>
+          <ul className="why-grid">
+            {whyAndhub.map((item, index) => {
+              const Icon = whyIcons[index];
+              return (
+                <li key={item.title}>
+                  <Icon size={22} aria-hidden="true" />
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
       <section className="section process-section" id="process" aria-labelledby="process-title">
         <div className="container">
           <div className="section-heading">
             <div>
-              <span className="eyebrow">A CLEAR PATH FORWARD</span>
-              <h2 id="process-title">
-                From your first “what if”
-                <br />
-                <span className="muted-heading">to your next big step.</span>
-              </h2>
+              <span className="eyebrow">HOW WE WORK</span>
+              <h2 id="process-title">Start small. Measure. Then scale.</h2>
             </div>
-            <p>
-              Close collaboration. Clear milestones.
-              <br />A thoughtful process that keeps you in the loop.
-            </p>
           </div>
-          <div className="process-grid">
-            {[
-              {
-                n: "01",
-                icon: ScanLine,
-                title: "Discover",
-                text: "We listen, ask better questions, and get to the heart of what you need.",
-              },
-              {
-                n: "02",
-                icon: Layers3,
-                title: "Shape",
-                text: "We turn the challenge into a clear plan and an experience that makes sense.",
-              },
-              {
-                n: "03",
-                icon: Braces,
-                title: "Engineer",
-                text: "We build with care, test the details, and keep you part of the process.",
-              },
-              {
-                n: "04",
-                icon: Zap,
-                title: "Evolve",
-                text: "We learn from real use and refine the solution as your needs grow.",
-              },
-            ].map(({ n, icon: Icon, title, text }) => (
-              <div className="process-step" key={n}>
-                <div className="process-step-top">
-                  <span>{n}</span>
-                  <Icon size={18} />
-                </div>
-                <div className="process-line">
-                  <i />
-                </div>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </div>
+          <ol className="process-grid">
+            {howWeWork.map((step, index) => {
+              const Icon = stepIcons[index];
+              return (
+                <li className="process-step" key={step.title}>
+                  <div className="process-step-top">
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <Icon size={18} aria-hidden="true" />
+                  </div>
+                  <div className="process-line">
+                    <i />
+                  </div>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      </section>
+
+      <section className="section" id="work" aria-labelledby="work-title">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">OUR PROJECTS</span>
+              <h2 id="work-title">What we build.</h2>
+            </div>
+            <Link to="/projects/" className="text-link">
+              All projects
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+          <ul className="project-strip">
+            {projects.slice(0, 4).map((project) => (
+              <li key={project.name}>
+                <Link to="/projects/" className="home-card project-strip-card">
+                  <span className="project-strip-type">{project.type}</span>
+                  <h3>{project.name}</h3>
+                  <p>{project.description}</p>
+                  <span className="project-strip-status">{project.status}</span>
+                </Link>
+              </li>
             ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="home-cta on-navy" id="contact" aria-labelledby="cta-title">
+        <div className="container home-cta-inner">
+          <div>
+            <span className="eyebrow">FIRST STEP</span>
+            <h2 id="cta-title">Start with a free discovery visit.</h2>
+            <p>We learn how you work today, then propose a one-month pilot.</p>
           </div>
-          <div className="process-promise">
-            <ShieldCheck size={17} />
-            <span>
-              Strong foundations. Thoughtful execution.{" "}
-              <strong>Built to keep moving forward.</strong>
-            </span>
+          <div className="home-cta-actions">
+            <Button size="lg" asChild>
+              <Link to={primaryCta.to}>
+                {primaryCta.label}
+                <ArrowUpRight />
+              </Link>
+            </Button>
+            <a href={`mailto:${company.email}`}>{company.email}</a>
+            {company.phones.map((phone) => (
+              <a key={phone.href} href={phone.href}>
+                {phone.label}
+              </a>
+            ))}
           </div>
         </div>
       </section>
-      <Faq11 />
-      <Cta26 onInquiry={openInquiry} />
     </>
   );
 }

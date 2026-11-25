@@ -10,8 +10,6 @@ export type SectorSolution = {
   provides: string;
   // Links the row to one of the seven solutions when it maps to one.
   solutionId?: SolutionId;
-  // Named product from our projects (shown as a small label).
-  product?: "ModelNesh" | "BikiltuTrack";
 };
 
 export type SectorImage = {
@@ -411,13 +409,11 @@ export const sectors: Sector[] = [
     solutions: [
       {
         name: "Reliability and maintenance tracking",
-        product: "ModelNesh",
         provides:
           "Component and fleet reliability data in one place, with trends and alerts",
       },
       {
         name: "Engineering readiness dashboard",
-        product: "ModelNesh",
         provides: "Clear, measurable progress for each design or maintenance review",
       },
       {
@@ -505,7 +501,6 @@ export const sectors: Sector[] = [
     solutions: [
       {
         name: "Loan-to-business tracking",
-        product: "BikiltuTrack",
         provides:
           "Each loan followed from application to closure, alongside the borrower’s business results",
       },
@@ -539,9 +534,8 @@ export const sectors: Sector[] = [
       "More active digital customers",
     ],
     cta: {
-      action: "Book a demo", label: "Book a demo of BikiltuTrack with your loan team",
-      toConfirm: true,
-      note: "BikiltuTrack is in development — confirm a demo is ready.",
+      action: "Book a free visit",
+      label: "Book a free visit to see every loan and the business it funds",
     },
     // Addis Ababa today: skyline, Friendship Park, the city at night; then office and market.
     images: [

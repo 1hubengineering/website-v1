@@ -54,4 +54,6 @@ test("client-facing content avoids banned words and jargon", () => {
   expect(text).not.toMatch(/\b(MBSE|SysML|API|ERP)\b/);
   // Partner organisations stay off the public site until confirmed.
   expect(text).not.toMatch(/Ethiopian Airlines|EAII|Shager/i);
+  // Named in-house tools stay off the sector and solution pages for now.
+  expect(JSON.stringify({ sectors, families })).not.toMatch(/BikiltuTrack|Bikiltu|ModelNesh|LoanTrack/i);
 });

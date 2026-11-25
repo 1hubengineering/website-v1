@@ -83,7 +83,6 @@ export function SectorPage() {
                     ) : (
                       row.name
                     )}
-                    {row.product && <span className="product-tag">{row.product}</span>}
                   </th>
                   <td>{row.provides}</td>
                 </tr>

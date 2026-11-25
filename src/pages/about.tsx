@@ -1,6 +1,6 @@
 import { PageHero } from "@/components/page-hero";
 import { ApproachFlow, CtaBand, SectionHeading, ToConfirm, WhyGrid } from "@/components/sections";
-import { company, team } from "@/content/site";
+import { team } from "@/content/site";
 
 const base = import.meta.env.BASE_URL;
 
@@ -17,9 +17,10 @@ function initials(name: string) {
 export function AboutPage() {
   return (
     <>
-      <PageHero title="Engineers who study your work before we build">
-        {company.whatWeDo}
-      </PageHero>
+      <PageHero
+        statement
+        title="Learning is the only path forward for growth, and comfort is the enemy. We help you ask the right questions to grow"
+      />
 
       <section className="section" id="why" aria-labelledby="why-title">
         <div className="container">

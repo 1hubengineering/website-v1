@@ -99,7 +99,7 @@ test("theme persists and navigation, filters, details, FAQ, and inquiry work", a
 
 test("direct section links land below the sticky header after rendering", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 900 });
-  for (const id of ["services", "sectors", "why", "approach", "contact"]) {
+  for (const id of ["services", "sectors", "why", "contact"]) {
     await page.goto("./#" + id);
     await page.evaluate(() => document.fonts.ready);
     await expect

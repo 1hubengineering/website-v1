@@ -41,7 +41,7 @@ test("main navigation reaches every section page", async ({ page }) => {
       "Running a business shouldn’t be a headache. In this digital age, the right digital solution lets owners track every part of it from anywhere",
     ],
     ["Projects", "Our projects"],
-    ["About", "Engineers who study your work before we build"],
+    ["About", "Learning is the only path forward for growth, and comfort is the enemy. We help you ask the right questions to grow"],
     ["Contact", "Book a free discovery visit"],
   ]) {
     await nav.getByRole("link", { name: label }).click();
@@ -191,16 +191,16 @@ test("Sectors in the header is a dropdown of every sector", async ({ page }) => 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Sector digital solutions");
 });
 
-test("Our approach shows the brochure steps on home and About", async ({ page }) => {
-  for (const path of ["./", "./about/"]) {
-    await page.goto(path);
-    await expect(page.locator(".approach-step h3")).toHaveText([
-      "Understand your needs",
-      "Define requirements and scope",
-      "Design and develop",
-      "Validate and support",
-    ]);
-  }
+test("Our approach shows the brochure steps on About only", async ({ page }) => {
+  await page.goto("./about/");
+  await expect(page.locator(".approach-step h3")).toHaveText([
+    "Understand your needs",
+    "Define requirements and scope",
+    "Design and develop",
+    "Validate and support",
+  ]);
+  await page.goto("./");
+  await expect(page.locator(".approach-flow")).toHaveCount(0);
 });
 
 test("sector hero slideshow: every slide with motion, first photo only without", async ({

@@ -4,7 +4,6 @@ import { HubOrbit } from "@/components/hub-orbit";
 import { ServiceArt } from "@/components/service-art";
 import { Button } from "@/components/ui/button";
 import {
-  ApproachFlow,
   CtaBand,
   LeaderQuote,
   SectionHeading,
@@ -101,13 +100,6 @@ export function HomePage() {
         <div className="container">
           <SectionHeading id="why-title" title="Why AndHub" />
           <WhyGrid />
-        </div>
-      </section>
-
-      <section className="section process-section" id="approach" aria-labelledby="approach-title">
-        <div className="container">
-          <SectionHeading id="approach-title" title="Our approach" />
-          <ApproachFlow />
         </div>
       </section>
 

@@ -73,7 +73,12 @@ for (const sector of sectors) {
     expect(headings.at(-1)?.trim()).toBe(sector.cta.label);
     await expect(page.locator(".challenge-list li")).toHaveCount(3);
     await expect(page.locator(".solution-table tbody tr")).toHaveCount(sector.solutions.length);
-    await expect(page.locator(".sector-photo img")).toHaveAttribute("alt", sector.image.alt);
+    const photo = page.locator(".sector-photo img");
+    await expect(photo).toHaveAttribute("alt", sector.image.alt);
+    await photo.scrollIntoViewIfNeeded();
+    await expect
+      .poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth))
+      .toBe(1200);
     await expect(page.locator(".to-confirm")).toHaveCount(sector.cta.toConfirm ? 1 : 0);
 
     await page.getByRole("link", { name: sector.cta.action }).click();

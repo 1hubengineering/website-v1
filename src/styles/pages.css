@@ -155,13 +155,6 @@
   height: 100%;
   object-fit: cover;
 }
-.sector-photo-icon {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: #ffffff;
-}
 .solution-table {
   width: 100%;
   border-collapse: collapse;

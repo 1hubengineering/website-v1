@@ -25,8 +25,9 @@ export type Sector = {
   pilot: string;
   gains: [string, string, string];
   cta: Confirmable & { label: string; action: string };
-  // TODO: replace photo — placeholder until licensed photos are supplied.
-  image: { alt: string };
+  // Photo under the Unsplash License (free commercial use; credit kept here and in
+  // public/sectors/CREDITS.md, not shown on the page).
+  image: { src: string; alt: string; credit: { photographer: string; url: string } };
   seo: { title: string; description: string };
   story?: { steps: string[]; line: string };
 };
@@ -84,7 +85,11 @@ export const sectors: Sector[] = [
       "Orders delivered on time",
     ],
     cta: { action: "Book a free visit", label: "Book a free visit to see your stock and quality on one screen." },
-    image: { alt: "Workers at a food production line, Addis Ababa" },
+    image: {
+      src: "sectors/food-and-beverage.webp",
+      alt: "Workers in hairnets along a fruit processing line in a factory",
+      credit: { photographer: "Arno Senoner", url: "https://unsplash.com/photos/bCgsKqFzUcg" },
+    },
     seo: {
       title: "Food and Beverage Software Ethiopia | AndHub",
       description:
@@ -141,7 +146,11 @@ export const sectors: Sector[] = [
     pilot: "One buyer order or one production line, one-month pilot.",
     gains: ["Orders shipped on time", "Fewer rejected shipments", "Trust from international buyers"],
     cta: { action: "Book a free visit", label: "Book a free visit and track your next order with us." },
-    image: { alt: "Garment workers at sewing machines in a factory, Addis Ababa" },
+    image: {
+      src: "sectors/leather-and-garments.webp",
+      alt: "Woman sewing at an industrial sewing machine in a garment workshop",
+      credit: { photographer: "EqualStock", url: "https://unsplash.com/photos/RXcYC-z6NY4" },
+    },
     seo: {
       title: "Leather and Garment Factory Software | AndHub",
       description:
@@ -201,7 +210,11 @@ export const sectors: Sector[] = [
       "Material used where it should be",
     ],
     cta: { action: "Book a free visit", label: "Book a free visit and see every job on one board." },
-    image: { alt: "Welder working on a steel frame in a fabrication workshop" },
+    image: {
+      src: "sectors/metal-and-engineering.webp",
+      alt: "Welder in protective gear welding steel, with sparks flying",
+      credit: { photographer: "Frankie Lopez", url: "https://unsplash.com/photos/Jd_7HTsjhLw" },
+    },
     seo: {
       title: "Metal and Engineering Workshop Software | AndHub",
       description:
@@ -259,7 +272,11 @@ export const sectors: Sector[] = [
       "Owners who see progress without asking",
     ],
     cta: { action: "Book a free visit", label: "Book a free visit and put your next site on one screen." },
-    image: { alt: "Construction site with workers and a crane, Addis Ababa" },
+    image: {
+      src: "sectors/construction.webp",
+      alt: "Two construction workers in hard hats on a tiled roof",
+      credit: { photographer: "David Geneugelijk", url: "https://unsplash.com/photos/d4j5hns6sj8" },
+    },
     seo: {
       title: "Construction Management Software Ethiopia | AndHub",
       description:
@@ -316,7 +333,11 @@ export const sectors: Sector[] = [
       "Knowledge that stays in the organisation",
     ],
     cta: { action: "Book a technical session", label: "Book a technical session with our systems-engineering team." },
-    image: { alt: "Aircraft maintenance engineers in a hangar" },
+    image: {
+      src: "sectors/aerospace-and-aviation.webp",
+      alt: "Aircraft landing gear under maintenance in a hangar",
+      credit: { photographer: "Z Zhang", url: "https://unsplash.com/photos/0EP0cTzLJPQ" },
+    },
     seo: {
       title: "Aerospace and Aviation Systems Engineering | AndHub",
       description:
@@ -379,7 +400,11 @@ export const sectors: Sector[] = [
       toConfirm: true,
       note: "BikiltuTrack is in development — confirm a demo is ready.",
     },
-    image: { alt: "Loan officer meeting a small business owner at a shop counter" },
+    image: {
+      src: "sectors/banking-and-finance.webp",
+      alt: "Shop owner at the counter of her small grocery shop",
+      credit: { photographer: "Ali Mkumbwa", url: "https://unsplash.com/photos/EOkN2pRjFsg" },
+    },
     seo: {
       title: "Loan Tracking System for Banks and MFIs | AndHub",
       description:
@@ -440,7 +465,11 @@ export const sectors: Sector[] = [
       toConfirm: true,
       note: "Needs a real sample QR code and the page it opens.",
     },
-    image: { alt: "Packed coffee bags with QR code labels ready for export" },
+    image: {
+      src: "sectors/brands-and-exporters.webp",
+      alt: "Roasted Ethiopian coffee beans in an open bag",
+      credit: { photographer: "Yoseph Hailu", url: "https://unsplash.com/photos/XiOdESRTMy4" },
+    },
     seo: {
       title: "QR Product Traceability for Brands | AndHub",
       description:
@@ -498,7 +527,11 @@ export const sectors: Sector[] = [
       "Parents who are informed and involved",
     ],
     cta: { action: "Start with one class", label: "Start with one class and see the difference in one term." },
-    image: { alt: "Students using phones and laptops in a classroom, Addis Ababa" },
+    image: {
+      src: "sectors/schools-and-colleges.webp",
+      alt: "Students at wooden desks in a classroom with a blackboard",
+      credit: { photographer: "Zach Wear", url: "https://unsplash.com/photos/wjCYyd_KppE" },
+    },
     seo: {
       title: "Learning Management System Ethiopia | AndHub",
       description:

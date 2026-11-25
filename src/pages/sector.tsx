@@ -3,7 +3,6 @@ import { Fragment } from "react";
 import { Link, useParams } from "react-router";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand, SectionHeading, ToConfirm } from "@/components/sections";
-import { sectorIcons } from "@/components/sector-icons";
 import { findSector } from "@/content/sectors";
 import { NotFoundPage } from "@/pages/not-found";
 
@@ -15,7 +14,6 @@ export function SectorPage() {
   const { slug = "" } = useParams();
   const sector = findSector(slug);
   if (!sector) return <NotFoundPage />;
-  const Icon = sectorIcons[sector.slug];
 
   return (
     <>
@@ -37,17 +35,14 @@ export function SectorPage() {
             </ul>
           </div>
           <figure className="sector-photo">
-            {/* TODO: replace photo — licensed image to be supplied (see sectors.ts image.alt). */}
             <img
-              src={`${base}placeholders/sector-photo.svg`}
+              src={`${base}${sector.image.src}`}
               alt={sector.image.alt}
-              width="800"
-              height="600"
+              width="1200"
+              height="900"
               loading="lazy"
+              decoding="async"
             />
-            <span className="sector-photo-icon" aria-hidden="true">
-              <Icon size={40} />
-            </span>
           </figure>
         </div>
       </section>

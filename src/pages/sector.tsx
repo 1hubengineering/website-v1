@@ -15,7 +15,7 @@ export function SectorPage() {
 
   return (
     <>
-      <PageHero title={sector.headline} image={sector.image} />
+      <PageHero title={sector.headline} images={sector.images} />
 
       <section className="section" aria-labelledby="challenges-title">
         <div className="container sector-intro-layout">

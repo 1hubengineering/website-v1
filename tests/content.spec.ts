@@ -38,7 +38,8 @@ test("eight sectors, each complete for the sector page template", () => {
     }
     expect(sector.pilot.length, sector.name).toBeGreaterThan(0);
     expect(sector.cta.label.length, sector.name).toBeGreaterThan(0);
-    expect(sector.image.alt.length, sector.name).toBeGreaterThan(10);
+    expect(sector.images.length, sector.name).toBeGreaterThan(0);
+    for (const image of sector.images) expect(image.alt.length, image.src).toBeGreaterThan(10);
     expect(sector.seo.title.length, sector.seo.title).toBeLessThan(60);
     expect(sector.seo.description.length, sector.seo.description).toBeLessThan(155);
   }

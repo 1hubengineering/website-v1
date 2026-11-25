@@ -1,16 +1,34 @@
-# Sector page photos
+# Sector hero photos
 
-All photos are from Unsplash under the Unsplash License (free for commercial use; attribution not required but recorded here). Used as sector page hero backgrounds: cropped to 16:9 and converted to WebP at 1920×1080.
+Each sector page hero cross-fades through these photos (1920×1080 WebP, cropped to 16:9). All are free for commercial use; attribution is not required by Unsplash or Pexels but is recorded here. NASA images follow NASA's media guidelines (no endorsement implied, no NASA insignia).
 
-| File | Photographer | Source |
-| --- | --- | --- |
-| food-and-beverage.webp | Arno Senoner | https://unsplash.com/photos/bCgsKqFzUcg |
-| leather-and-garments.webp | EqualStock | https://unsplash.com/photos/dh1EDCiQ6lg |
-| metal-and-engineering.webp | MGR P. | https://unsplash.com/photos/HNLlzPGbTBM |
-| construction.webp | David Geneugelijk | https://unsplash.com/photos/d4j5hns6sj8 |
-| aerospace-and-aviation.webp | Z Zhang | https://unsplash.com/photos/0EP0cTzLJPQ |
-| banking-and-finance.webp | Christina @ wocintechchat.com | https://unsplash.com/photos/faEfWCdOKIg |
-| brands-and-exporters.webp | Yoseph Hailu | https://unsplash.com/photos/XiOdESRTMy4 |
-| schools-and-colleges.webp | Zach Wear | https://unsplash.com/photos/wjCYyd_KppE |
+The list is generated from `images` in `src/content/sectors.ts`; to replace a photo, keep the file name and update its alt text and credit there.
 
-Replace any of these with AndHub's own licensed photos when available; keep the same file name and update the alt text in `src/content/sectors.ts`.
+| File | Credit | Licence | Source |
+| --- | --- | --- | --- |
+| food-and-beverage.webp | Arno Senoner | Unsplash License | https://unsplash.com/photos/bCgsKqFzUcg |
+| food-and-beverage-2.webp | Arno Senoner | Unsplash License | https://unsplash.com/photos/oLS6IxceVNs |
+| leather-and-garments.webp | EqualStock | Unsplash License | https://unsplash.com/photos/dh1EDCiQ6lg |
+| leather-and-garments-2.webp | EqualStock IN | Pexels License | https://www.pexels.com/photo/31112182/ |
+| metal-and-engineering.webp | Hoang NC | Pexels License | https://www.pexels.com/photo/15947586/ |
+| metal-and-engineering-2.webp | Cemrecan Yurtman | Pexels License | https://www.pexels.com/photo/29224559/ |
+| metal-and-engineering-3.webp | Ant Rozetsky | Unsplash License | https://unsplash.com/photos/io7dX_1EFCg |
+| metal-and-engineering-4.webp | Melih Erşahin | Pexels License | https://www.pexels.com/photo/37574797/ |
+| metal-and-engineering-5.webp | Sergei Starostin | Pexels License | https://www.pexels.com/photo/29274538/ |
+| construction.webp | Wolfgang Weiser | Pexels License | https://www.pexels.com/photo/18283441/ |
+| construction-2.webp | Davide Locatelli | Pexels License | https://www.pexels.com/photo/2383649/ |
+| construction-3.webp | Tayssir Kadamany | Pexels License | https://www.pexels.com/photo/37687676/ |
+| construction-4.webp | Taiwo Samson | Pexels License | https://www.pexels.com/photo/38511754/ |
+| aerospace-and-aviation.webp | Rebecca Niver | Unsplash License | https://unsplash.com/photos/1tQJKh_1vNo |
+| aerospace-and-aviation-2.webp | Dominic Bieri | Unsplash License | https://unsplash.com/photos/AIOE29iDmOM |
+| aerospace-and-aviation-3.webp | Johny Goerend | Unsplash License | https://unsplash.com/photos/KB9r_hTzyeQ |
+| aerospace-and-aviation-4.webp | NASA | NASA media (public domain; no endorsement implied) | https://images.nasa.gov/details/iss071e579940 |
+| aerospace-and-aviation-5.webp | NASA/Roscosmos | NASA media (public domain; no endorsement implied) | https://images.nasa.gov/details/iss056e201248 |
+| banking-and-finance.webp | Abdullah Aljaberti | Pexels License | https://www.pexels.com/photo/14391906/ |
+| banking-and-finance-2.webp | Christina @ wocintechchat.com | Unsplash License | https://unsplash.com/photos/faEfWCdOKIg |
+| banking-and-finance-3.webp | Mad Knoxx Deluxe | Pexels License | https://www.pexels.com/photo/36096119/ |
+| brands-and-exporters.webp | Yoseph Hailu | Unsplash License | https://unsplash.com/photos/XiOdESRTMy4 |
+| brands-and-exporters-2.webp | Imanishimwe Regis | Pexels License | https://www.pexels.com/photo/17366133/ |
+| brands-and-exporters-3.webp | Mwesigwa Joel | Pexels License | https://www.pexels.com/photo/38715718/ |
+| schools-and-colleges.webp | Zach Wear | Unsplash License | https://unsplash.com/photos/wjCYyd_KppE |
+| schools-and-colleges-2.webp | Gabriel Joe Amuzu | Pexels License | https://www.pexels.com/photo/37456293/ |

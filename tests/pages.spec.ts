@@ -73,8 +73,8 @@ for (const sector of sectors) {
     await expect(page.locator(".challenge-list li")).toHaveCount(3);
     await expect(page.locator(".solution-table tbody tr")).toHaveCount(sector.solutions.length);
     // The sector photo is the hero background; the hero holds only the bold sentence.
-    const photo = page.locator(".page-hero-photo .page-hero-image");
-    await expect(photo).toHaveAttribute("alt", sector.image.alt);
+    const photo = page.locator(".page-hero-photo .hero-slide").first();
+    await expect(photo).toHaveAttribute("alt", sector.images[0].alt);
     await expect
       .poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0))
       .toBe(true);
@@ -184,4 +184,29 @@ test("How we work shows the brochure approach on home and About", async ({ page 
       "Validate and support",
     ]);
   }
+});
+
+test("sector hero slideshow: every slide with motion, first photo only without", async ({
+  browser,
+}) => {
+  const aviation = sectors.find((sector) => sector.slug === "aerospace-and-aviation")!;
+  expect(aviation.images.length).toBe(5);
+
+  const moving = await browser.newPage({ reducedMotion: "no-preference" });
+  await moving.goto("./sectors/aerospace-and-aviation/");
+  await expect(moving.locator(".hero-slide")).toHaveCount(aviation.images.length);
+  const toggle = moving.getByRole("button", { name: "Pause photo slideshow" });
+  await toggle.click();
+  await expect(moving.getByRole("button", { name: "Play photo slideshow" })).toBeVisible();
+  for (const image of aviation.images) {
+    const response = await moving.request.get("./" + image.src);
+    expect(response.ok(), image.src).toBe(true);
+  }
+  await moving.close();
+
+  const still = await browser.newPage({ reducedMotion: "reduce" });
+  await still.goto("./sectors/aerospace-and-aviation/");
+  await expect(still.locator(".hero-slide")).toHaveCount(1);
+  await expect(still.locator(".hero-slides-toggle")).toHaveCount(0);
+  await still.close();
 });

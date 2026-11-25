@@ -14,6 +14,12 @@ export type SectorSolution = {
   product?: "ModelNesh" | "BikiltuTrack";
 };
 
+export type SectorImage = {
+  src: string;
+  alt: string;
+  credit: { photographer: string; url: string };
+};
+
 export type Sector = {
   slug: string;
   name: string;
@@ -25,9 +31,10 @@ export type Sector = {
   pilot: string;
   gains: [string, string, string];
   cta: Confirmable & { label: string; action: string };
-  // Hero background photo (1920×1080 WebP) under the Unsplash License: free commercial
-  // use; credit kept here and in public/sectors/CREDITS.md, not shown on the page.
-  image: { src: string; alt: string; credit: { photographer: string; url: string } };
+  // Hero photos (1920×1080 WebP) under the Unsplash License, Pexels License or NASA media
+  // guidelines: free commercial use; credits kept here and in public/sectors/CREDITS.md.
+  // First photo is the poster (pre-rendered); the rest cross-fade in the hero.
+  images: SectorImage[];
   seo: { title: string; description: string };
   story?: { steps: string[]; line: string };
 };
@@ -85,11 +92,18 @@ export const sectors: Sector[] = [
       "Orders delivered on time",
     ],
     cta: { action: "Book a free visit", label: "Book a free visit to see your stock and quality on one screen" },
-    image: {
-      src: "sectors/food-and-beverage.webp",
-      alt: "Workers in hairnets along a fruit processing line in a factory",
-      credit: { photographer: "Arno Senoner", url: "https://unsplash.com/photos/bCgsKqFzUcg" },
-    },
+    images: [
+      {
+        src: "sectors/food-and-beverage.webp",
+        alt: "Workers in hairnets along a fruit processing line in a factory",
+        credit: { photographer: "Arno Senoner", url: "https://unsplash.com/photos/bCgsKqFzUcg" },
+      },
+      {
+        src: "sectors/food-and-beverage-2.webp",
+        alt: "Packing lines with many workers inside a food processing plant",
+        credit: { photographer: "Arno Senoner", url: "https://unsplash.com/photos/oLS6IxceVNs" },
+      },
+    ],
     seo: {
       title: "Food and Beverage Software Ethiopia | AndHub",
       description:
@@ -146,11 +160,18 @@ export const sectors: Sector[] = [
     pilot: "One buyer order or one production line, one-month pilot",
     gains: ["Orders shipped on time", "Fewer rejected shipments", "Trust from international buyers"],
     cta: { action: "Book a free visit", label: "Book a free visit and track your next order with us" },
-    image: {
-      src: "sectors/leather-and-garments.webp",
-      alt: "Workers at rows of sewing tables on a large garment factory floor",
-      credit: { photographer: "EqualStock", url: "https://unsplash.com/photos/dh1EDCiQ6lg" },
-    },
+    images: [
+      {
+        src: "sectors/leather-and-garments.webp",
+        alt: "Workers at rows of sewing tables on a large garment factory floor",
+        credit: { photographer: "EqualStock", url: "https://unsplash.com/photos/dh1EDCiQ6lg" },
+      },
+      {
+        src: "sectors/leather-and-garments-2.webp",
+        alt: "Workers organising textiles in a large garment factory hall",
+        credit: { photographer: "EqualStock IN", url: "https://www.pexels.com/photo/31112182/" },
+      },
+    ],
     seo: {
       title: "Leather and Garment Factory Software | AndHub",
       description:
@@ -210,11 +231,34 @@ export const sectors: Sector[] = [
       "Material used where it should be",
     ],
     cta: { action: "Book a free visit", label: "Book a free visit and see every job on one board" },
-    image: {
-      src: "sectors/metal-and-engineering.webp",
-      alt: "Factory floor of a metal parts manufacturer with rows of production machines",
-      credit: { photographer: "MGR P.", url: "https://unsplash.com/photos/HNLlzPGbTBM" },
-    },
+    // Metal fabrication and the different parts of the industry: fabrication hall, machining, steel mill, foundry, steel structures.
+    images: [
+      {
+        src: "sectors/metal-and-engineering.webp",
+        alt: "Large metal fabrication hall with crews working on steel parts",
+        credit: { photographer: "Hoang NC", url: "https://www.pexels.com/photo/15947586/" },
+      },
+      {
+        src: "sectors/metal-and-engineering-2.webp",
+        alt: "Workers operating heavy machinery on a manufacturing floor",
+        credit: { photographer: "Cemrecan Yurtman", url: "https://www.pexels.com/photo/29224559/" },
+      },
+      {
+        src: "sectors/metal-and-engineering-3.webp",
+        alt: "Crane lifting a ladle of molten metal in a steel mill",
+        credit: { photographer: "Ant Rozetsky", url: "https://unsplash.com/photos/io7dX_1EFCg" },
+      },
+      {
+        src: "sectors/metal-and-engineering-4.webp",
+        alt: "Foundry workers in silhouette against sparks and molten metal",
+        credit: { photographer: "Melih Erşahin", url: "https://www.pexels.com/photo/37574797/" },
+      },
+      {
+        src: "sectors/metal-and-engineering-5.webp",
+        alt: "Workers assembling a steel frame structure with cranes",
+        credit: { photographer: "Sergei Starostin", url: "https://www.pexels.com/photo/29274538/" },
+      },
+    ],
     seo: {
       title: "Metal and Engineering Workshop Software | AndHub",
       description:
@@ -272,11 +316,29 @@ export const sectors: Sector[] = [
       "Owners who see progress without asking",
     ],
     cta: { action: "Book a free visit", label: "Book a free visit and put your next site on one screen" },
-    image: {
-      src: "sectors/construction.webp",
-      alt: "Two construction workers in hard hats on a tiled roof",
-      credit: { photographer: "David Geneugelijk", url: "https://unsplash.com/photos/d4j5hns6sj8" },
-    },
+    // Active building sites: crews, cranes, rebar, formwork and a high-rise.
+    images: [
+      {
+        src: "sectors/construction.webp",
+        alt: "Busy construction site with rebar, a concrete pump, a tower crane and workers",
+        credit: { photographer: "Wolfgang Weiser", url: "https://www.pexels.com/photo/18283441/" },
+      },
+      {
+        src: "sectors/construction-2.webp",
+        alt: "Construction site from above with formwork, rebar columns and workers",
+        credit: { photographer: "Davide Locatelli", url: "https://www.pexels.com/photo/2383649/" },
+      },
+      {
+        src: "sectors/construction-3.webp",
+        alt: "Building site with scaffolded concrete columns and cranes",
+        credit: { photographer: "Tayssir Kadamany", url: "https://www.pexels.com/photo/37687676/" },
+      },
+      {
+        src: "sectors/construction-4.webp",
+        alt: "High-rise building under construction with a tower crane in Lagos",
+        credit: { photographer: "Taiwo Samson", url: "https://www.pexels.com/photo/38511754/" },
+      },
+    ],
     seo: {
       title: "Construction Management Software Ethiopia | AndHub",
       description:
@@ -333,11 +395,34 @@ export const sectors: Sector[] = [
       "Knowledge that stays in the organisation",
     ],
     cta: { action: "Book a technical session", label: "Book a technical session with our systems-engineering team" },
-    image: {
-      src: "sectors/aerospace-and-aviation.webp",
-      alt: "Aircraft landing gear under maintenance in a hangar",
-      credit: { photographer: "Z Zhang", url: "https://unsplash.com/photos/0EP0cTzLJPQ" },
-    },
+    // From the ground to orbit: drone, aircraft, above the clouds, small satellite, space station.
+    images: [
+      {
+        src: "sectors/aerospace-and-aviation.webp",
+        alt: "Drone flying low over a green field",
+        credit: { photographer: "Rebecca Niver", url: "https://unsplash.com/photos/1tQJKh_1vNo" },
+      },
+      {
+        src: "sectors/aerospace-and-aviation-2.webp",
+        alt: "Turboprop aircraft flying over mountains",
+        credit: { photographer: "Dominic Bieri", url: "https://unsplash.com/photos/AIOE29iDmOM" },
+      },
+      {
+        src: "sectors/aerospace-and-aviation-3.webp",
+        alt: "Airliner wing high above a sea of clouds",
+        credit: { photographer: "Johny Goerend", url: "https://unsplash.com/photos/KB9r_hTzyeQ" },
+      },
+      {
+        src: "sectors/aerospace-and-aviation-4.webp",
+        alt: "Small CubeSat satellites released into orbit above the ocean",
+        credit: { photographer: "NASA", url: "https://images.nasa.gov/details/iss071e579940" },
+      },
+      {
+        src: "sectors/aerospace-and-aviation-5.webp",
+        alt: "International Space Station in orbit above the Earth",
+        credit: { photographer: "NASA/Roscosmos", url: "https://images.nasa.gov/details/iss056e201248" },
+      },
+    ],
     seo: {
       title: "Aerospace and Aviation Systems Engineering | AndHub",
       description:
@@ -400,11 +485,23 @@ export const sectors: Sector[] = [
       toConfirm: true,
       note: "BikiltuTrack is in development — confirm a demo is ready.",
     },
-    image: {
-      src: "sectors/banking-and-finance.webp",
-      alt: "Team of professionals meeting around a table in a bright office",
-      credit: { photographer: "Christina @ wocintechchat.com", url: "https://unsplash.com/photos/faEfWCdOKIg" },
-    },
+    images: [
+      {
+        src: "sectors/banking-and-finance.webp",
+        alt: "Business district skyline and traffic in Addis Ababa",
+        credit: { photographer: "Abdullah Aljaberti", url: "https://www.pexels.com/photo/14391906/" },
+      },
+      {
+        src: "sectors/banking-and-finance-2.webp",
+        alt: "Team of professionals meeting around a table in a bright office",
+        credit: { photographer: "Christina @ wocintechchat.com", url: "https://unsplash.com/photos/faEfWCdOKIg" },
+      },
+      {
+        src: "sectors/banking-and-finance-3.webp",
+        alt: "Busy outdoor market with many small traders",
+        credit: { photographer: "Mad Knoxx Deluxe", url: "https://www.pexels.com/photo/36096119/" },
+      },
+    ],
     seo: {
       title: "Loan Tracking System for Banks and MFIs | AndHub",
       description:
@@ -465,11 +562,23 @@ export const sectors: Sector[] = [
       toConfirm: true,
       note: "Needs a real sample QR code and the page it opens.",
     },
-    image: {
-      src: "sectors/brands-and-exporters.webp",
-      alt: "Roasted Ethiopian coffee beans in an open bag",
-      credit: { photographer: "Yoseph Hailu", url: "https://unsplash.com/photos/XiOdESRTMy4" },
-    },
+    images: [
+      {
+        src: "sectors/brands-and-exporters.webp",
+        alt: "Roasted Ethiopian coffee beans in an open bag",
+        credit: { photographer: "Yoseph Hailu", url: "https://unsplash.com/photos/XiOdESRTMy4" },
+      },
+      {
+        src: "sectors/brands-and-exporters-2.webp",
+        alt: "Coffee beans drying on raised beds at a farm",
+        credit: { photographer: "Imanishimwe Regis", url: "https://www.pexels.com/photo/17366133/" },
+      },
+      {
+        src: "sectors/brands-and-exporters-3.webp",
+        alt: "Workers carrying sacks in a dark export warehouse",
+        credit: { photographer: "Mwesigwa Joel", url: "https://www.pexels.com/photo/38715718/" },
+      },
+    ],
     seo: {
       title: "QR Product Traceability for Brands | AndHub",
       description:
@@ -527,11 +636,18 @@ export const sectors: Sector[] = [
       "Parents who are informed and involved",
     ],
     cta: { action: "Start with one class", label: "Start with one class and see the difference in one term" },
-    image: {
-      src: "sectors/schools-and-colleges.webp",
-      alt: "Students at wooden desks in a classroom with a blackboard",
-      credit: { photographer: "Zach Wear", url: "https://unsplash.com/photos/wjCYyd_KppE" },
-    },
+    images: [
+      {
+        src: "sectors/schools-and-colleges.webp",
+        alt: "Students at wooden desks in a classroom with a blackboard",
+        credit: { photographer: "Zach Wear", url: "https://unsplash.com/photos/wjCYyd_KppE" },
+      },
+      {
+        src: "sectors/schools-and-colleges-2.webp",
+        alt: "Students in uniform taking an exam in a classroom",
+        credit: { photographer: "Gabriel Joe Amuzu", url: "https://www.pexels.com/photo/37456293/" },
+      },
+    ],
     seo: {
       title: "Learning Management System Ethiopia | AndHub",
       description:

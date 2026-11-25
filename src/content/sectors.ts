@@ -621,9 +621,8 @@ export const sectors: Sector[] = [
       "Trust from export buyers",
     ],
     cta: {
-      action: "Book a demo", label: "Scan our sample code and book a demo for your product",
-      toConfirm: true,
-      note: "Needs a real sample QR code and the page it opens.",
+      action: "Book a free visit",
+      label: "Book a free visit to see QR product identity on your own products",
     },
     images: [
       {

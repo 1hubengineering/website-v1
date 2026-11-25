@@ -239,12 +239,6 @@ export function Projects() {
             </article>
           ))}
         </div>
-        <div className="portfolio-note">
-          <span className="status-dot" />
-          <p>
-            Products, public betas, and open-source tools. Explore each project for previews and details.
-          </p>
-        </div>
       </div>
       <Dialog.Root
         open={!!selected}

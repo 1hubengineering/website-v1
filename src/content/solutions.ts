@@ -22,9 +22,9 @@ export type Solution = {
 
 export type Family = {
   id: FamilyId;
-  name: string;
   tagline: string;
-  // Brand colour role: Make = Signal Blue, Sell = Hub Green, Learn and Build = Anchor Navy.
+  // Card accent colour: factory floor = Signal Blue, factory to buyer = Hub Green,
+  // schools and building sites = Anchor Navy. Group names are not shown on the site.
   color: "blue" | "green" | "navy";
   solutions: Solution[];
 };
@@ -32,7 +32,6 @@ export type Family = {
 export const families: Family[] = [
   {
     id: "make",
-    name: "Make",
     tagline: "Solutions for the factory floor",
     color: "blue",
     solutions: [
@@ -60,7 +59,6 @@ export const families: Family[] = [
   },
   {
     id: "sell",
-    name: "Sell",
     tagline: "Solutions from factory to buyer",
     color: "green",
     solutions: [
@@ -86,7 +84,6 @@ export const families: Family[] = [
   },
   {
     id: "learn-build",
-    name: "Learn and Build",
     tagline: "Solutions for schools and building sites",
     color: "navy",
     solutions: [

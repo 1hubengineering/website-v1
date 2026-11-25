@@ -36,7 +36,7 @@ test("main navigation reaches every section page", async ({ page }) => {
   await page.goto("./");
   const nav = page.getByRole("navigation", { name: "Main navigation" });
   for (const [label, heading] of [
-    ["Solutions", "Seven solutions in three families."],
+    ["Solutions", "Seven ready-made solutions."],
     ["Sectors", "Eight sectors. One engineering partner."],
     ["Projects", "What we build."],
     ["About", "Engineers who study your work before we build."],
@@ -82,11 +82,20 @@ for (const sector of sectors) {
   });
 }
 
-test("solutions page shows three families, seven solutions and the AI band", async ({ page }) => {
+test("solutions page shows three groups, seven solutions and the AI band", async ({ page }) => {
   await page.goto("./solutions/");
-  for (const family of ["Make", "Sell", "Learn and Build"]) {
-    await expect(page.getByRole("heading", { level: 2, name: family })).toBeVisible();
+  for (const heading of [
+    "Solutions for the factory floor",
+    "Solutions from factory to buyer",
+    "Solutions for schools and building sites",
+  ]) {
+    await expect(page.getByRole("heading", { level: 2, name: heading })).toBeVisible();
   }
+  // Group names and their dot icons are not shown.
+  for (const name of ["Make", "Sell", "Learn and Build"]) {
+    await expect(page.getByRole("heading", { name, exact: true })).toHaveCount(0);
+  }
+  await expect(page.locator(".family-dot")).toHaveCount(0);
   await expect(page.locator(".solution-card")).toHaveCount(7);
   await expect(page.locator(".ai-grid li")).toHaveCount(4);
   await expect(page.locator(".ai-grid .to-confirm")).toHaveCount(4);

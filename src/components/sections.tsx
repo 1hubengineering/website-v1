@@ -104,7 +104,7 @@ export function SectionHeading({
   title,
   aside,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   id: string;
   title: ReactNode;
   aside?: ReactNode;
@@ -112,7 +112,7 @@ export function SectionHeading({
   return (
     <div className="section-heading">
       <div>
-        <span className="eyebrow">{eyebrow}</span>
+        {eyebrow && <span className="eyebrow">{eyebrow}</span>}
         <h2 id={id}>{title}</h2>
       </div>
       {aside}

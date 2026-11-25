@@ -3,11 +3,11 @@ import { sectors } from "../src/content/sectors";
 import { families, aiOperations, solutionCount } from "../src/content/solutions";
 import { founders, services } from "../src/content/site";
 
-test("solutions match the brief: three families, seven solutions; four services", () => {
-  expect(families.map((family) => [family.name, family.color])).toEqual([
-    ["Make", "blue"],
-    ["Sell", "green"],
-    ["Learn and Build", "navy"],
+test("solutions: three groups, seven solutions; four services", () => {
+  expect(families.map((family) => [family.tagline, family.color])).toEqual([
+    ["Solutions for the factory floor", "blue"],
+    ["Solutions from factory to buyer", "green"],
+    ["Solutions for schools and building sites", "navy"],
   ]);
   expect(solutionCount).toBe(7);
   const ids = families.flatMap((family) => family.solutions.map((solution) => solution.id));

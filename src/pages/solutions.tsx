@@ -7,7 +7,7 @@ import { services } from "@/content/site";
 export function SolutionsPage() {
   return (
     <>
-      <PageHero eyebrow="SOLUTIONS" title="Seven solutions in three families.">
+      <PageHero eyebrow="SOLUTIONS" title="Seven ready-made solutions.">
         Ready-made digital solutions for factories, companies, schools and building sites. Each
         one starts as a small pilot on one line, site, class or branch.
       </PageHero>
@@ -20,16 +20,7 @@ export function SolutionsPage() {
           aria-labelledby={`${family.id}-title`}
         >
           <div className="container">
-            <SectionHeading
-              eyebrow={family.tagline.toUpperCase()}
-              id={`${family.id}-title`}
-              title={
-                <>
-                  <span className="family-dot" data-family={family.id} aria-hidden="true" />
-                  {family.name}
-                </>
-              }
-            />
+            <SectionHeading id={`${family.id}-title`} title={family.tagline} />
             <ul className="solution-grid">
               {family.solutions.map((solution) => (
                 <li key={solution.id} id={solution.id} className="solution-card" data-family={family.id}>

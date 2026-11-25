@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { cn } from "@/lib/utils";
 
 // Supplied artwork from 1hubengineering/branding-guideline; keep paths and proportions intact.
@@ -27,9 +28,9 @@ export function BrandMark({ className, surface }: { className?: string; surface?
 
 export function Brand({ footer = false }: { footer?: boolean }) {
   return (
-    <a
+    <Link
       className={cn("brand", footer && "footer-brand")}
-      href="#top"
+      to="/"
       aria-label="AndHub Engineering PLC home"
     >
       <img
@@ -46,6 +47,6 @@ export function Brand({ footer = false }: { footer?: boolean }) {
         height="240"
         alt=""
       />
-    </a>
+    </Link>
   );
 }

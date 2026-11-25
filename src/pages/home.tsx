@@ -75,12 +75,7 @@ export function HomePage() {
 
       <section className="section" id="services" aria-labelledby="services-title">
         <div className="container">
-          <SectionHeading
-            eyebrow="WHAT WE DO"
-            id="services-title"
-            title="Four services. One team."
-            aside={<p>We start with a small pilot and prove the value before you scale.</p>}
-          />
+          <SectionHeading id="services-title" title="Core services" />
           <div className="home-services">
             {services.map((service, index) => {
               const { icon: Icon, text } = serviceDetails[index];

@@ -62,6 +62,16 @@ export const team: TeamMember[] = [
   },
 ];
 
+// Why digital transformation matters now: verbatim, from the ENA report of the
+// Prime Minister's keynote at the 24th COMESA Summit (dateline 9 October 2025).
+export const leaderQuote = {
+  text: "Technology is moving faster than ever, reshaping how nations grow, how societies connect, and how prosperity is shared",
+  name: "Abiy Ahmed",
+  role: "Prime Minister of Ethiopia",
+  occasion: "24th COMESA Summit, October 2025",
+  source: "https://www.ena.et/web/eng/w/eng_7487272",
+} as const;
+
 // What makes AndHub different (home and About).
 export const whyAndhub = [
   {

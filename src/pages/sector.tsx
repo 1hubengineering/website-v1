@@ -105,10 +105,7 @@ export function SectorPage() {
                       <ArrowRight size={20} />
                     </li>
                   )}
-                  <li className="story-step">
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    {step}
-                  </li>
+                  <li className="story-step">{step}</li>
                 </Fragment>
               ))}
             </ol>

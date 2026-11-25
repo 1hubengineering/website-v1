@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import { sectorIcons } from "@/components/sector-icons";
 import { sectors } from "@/content/sectors";
-import { approach, company, primaryCta, whyAndhub } from "@/content/site";
+import { approach, company, leaderQuote, primaryCta, whyAndhub } from "@/content/site";
 
 // Visible marker for content the owner still has to approve (see the brief).
 export function ToConfirm({ note }: { note?: string }) {
@@ -175,6 +175,27 @@ export function CtaBand({
           ))}
         </div>
       </div>
+    </section>
+  );
+}
+
+// A national leader on why digital transformation matters now (verbatim, sourced).
+export function LeaderQuote() {
+  return (
+    <section className="leader-quote on-navy" aria-label="Why digital transformation matters">
+      <figure className="container leader-quote-inner">
+        <blockquote cite={leaderQuote.source}>
+          <p>
+            <q className="hook-quote">{leaderQuote.text}</q>
+          </p>
+        </blockquote>
+        <figcaption>
+          <strong>{leaderQuote.name}</strong>, {leaderQuote.role} · {leaderQuote.occasion} ·{" "}
+          <a href={leaderQuote.source} target="_blank" rel="noopener noreferrer">
+            Source
+          </a>
+        </figcaption>
+      </figure>
     </section>
   );
 }

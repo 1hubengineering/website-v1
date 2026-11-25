@@ -237,3 +237,27 @@ test("About shows four team cards, each with a photo or a placeholder", async ({
   }
   await expect(page.locator(".team-photo")).toHaveCount(4);
 });
+
+test("home quotes the Prime Minister with a source; aviation story steps have no numbers", async ({
+  page,
+}) => {
+  await page.goto("./");
+  const quote = page.locator(".leader-quote");
+  await expect(quote.locator("q")).toHaveText(
+    "Technology is moving faster than ever, reshaping how nations grow, how societies connect, and how prosperity is shared",
+  );
+  await expect(quote.getByText("Abiy Ahmed", { exact: true })).toBeVisible();
+  await expect(quote.getByRole("link", { name: "Source" })).toHaveAttribute(
+    "href",
+    "https://www.ena.et/web/eng/w/eng_7487272",
+  );
+
+  await page.goto("./sectors/aerospace-and-aviation/");
+  await expect(page.locator(".story-step")).toHaveText([
+    "Traceable engineering practice",
+    "Unified digital engineering hub",
+    "Multidisciplinary collaboration and communication",
+    "Knowledge maturity",
+    "Validated research to industry",
+  ]);
+});

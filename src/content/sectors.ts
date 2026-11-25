@@ -481,7 +481,13 @@ export const sectors: Sector[] = [
         "Reliability tracking, engineering readiness dashboards and training for airlines, maintenance centres and space institutes.",
     },
     story: {
-      steps: ["Aircraft", "Hub", "Small satellite", "Systems engineering"],
+      steps: [
+        "Traceable engineering practice",
+        "Unified digital engineering hub",
+        "Multidisciplinary collaboration and communication",
+        "Knowledge maturity",
+        "Validated research to industry",
+      ],
       line: "From the hangar to orbit, engineering readiness you can measure",
     },
   },

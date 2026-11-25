@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import {
   ApproachFlow,
   CtaBand,
+  LeaderQuote,
   SectionHeading,
   SectorGrid,
   WhyGrid,
@@ -77,6 +78,8 @@ export function HomePage() {
           </div>
         </div>
       </section>
+
+      <LeaderQuote />
 
       <section className="section section-surface" id="sectors" aria-labelledby="sectors-title">
         <div className="container">

@@ -232,10 +232,11 @@ test("About shows four team cards, each with a photo or a placeholder", async ({
   await page.goto("./about/");
   const cards = page.locator(".team-member");
   await expect(cards).toHaveCount(4);
-  for (const name of ["Rehobot Bekele, PhD", "Abraham Bekele", "Lydia", "Emmanuel"]) {
+  for (const name of ["Rehobot Bekele, PhD", "Abraham Bekele", "Lydia B", "Ammanuel T"]) {
     await expect(cards.filter({ hasText: name })).toHaveCount(1);
   }
   await expect(page.locator(".team-photo")).toHaveCount(4);
+  await expect(page.locator("#team .to-confirm")).toHaveCount(0);
 });
 
 test("home quotes the Prime Minister with a source; aviation story steps have no numbers", async ({

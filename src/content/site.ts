@@ -49,16 +49,12 @@ export const team: TeamMember[] = [
     email: "abraham@1hubengineering.com",
   },
   {
-    name: "Lydia",
-    role: "Team member",
-    toConfirm: true,
-    note: "Full name, role and email to confirm.",
+    name: "Lydia B",
+    role: "Graphic Designer",
   },
   {
-    name: "Emmanuel",
-    role: "Team member",
-    toConfirm: true,
-    note: "Full name, role and email to confirm.",
+    name: "Ammanuel T",
+    role: "Marketing and Strategy",
   },
 ];
 

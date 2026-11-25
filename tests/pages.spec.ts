@@ -246,9 +246,10 @@ test("home quotes the Prime Minister with a source; aviation story steps have no
   await expect(quote.locator("q")).toHaveText(
     "Technology is moving faster than ever, reshaping how nations grow, how societies connect, and how prosperity is shared",
   );
-  await expect(quote.getByText("Abiy Ahmed", { exact: true })).toBeVisible();
-  await expect(quote.getByRole("link", { name: "Source" })).toHaveAttribute(
-    "href",
+  await expect(quote.locator("figcaption")).toHaveText("Abiy Ahmed, PM");
+  // The source stays recorded on the quote itself.
+  await expect(quote.locator("blockquote")).toHaveAttribute(
+    "cite",
     "https://www.ena.et/web/eng/w/eng_7487272",
   );
 

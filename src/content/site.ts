@@ -67,7 +67,7 @@ export const team: TeamMember[] = [
 export const leaderQuote = {
   text: "Technology is moving faster than ever, reshaping how nations grow, how societies connect, and how prosperity is shared",
   name: "Abiy Ahmed",
-  role: "Prime Minister of Ethiopia",
+  role: "PM",
   occasion: "24th COMESA Summit, October 2025",
   source: "https://www.ena.et/web/eng/w/eng_7487272",
 } as const;

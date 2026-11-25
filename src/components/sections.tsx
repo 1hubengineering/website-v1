@@ -190,10 +190,7 @@ export function LeaderQuote() {
           </p>
         </blockquote>
         <figcaption>
-          <strong>{leaderQuote.name}</strong>, {leaderQuote.role} · {leaderQuote.occasion} ·{" "}
-          <a href={leaderQuote.source} target="_blank" rel="noopener noreferrer">
-            Source
-          </a>
+          <strong>{leaderQuote.name}</strong>, {leaderQuote.role}
         </figcaption>
       </figure>
     </section>

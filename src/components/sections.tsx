@@ -99,12 +99,10 @@ export function StepsGrid() {
 }
 
 export function SectionHeading({
-  eyebrow,
   id,
   title,
   aside,
 }: {
-  eyebrow?: string;
   id: string;
   title: ReactNode;
   aside?: ReactNode;
@@ -112,7 +110,6 @@ export function SectionHeading({
   return (
     <div className="section-heading">
       <div>
-        {eyebrow && <span className="eyebrow">{eyebrow}</span>}
         <h2 id={id}>{title}</h2>
       </div>
       {aside}
@@ -123,7 +120,6 @@ export function SectionHeading({
 // Closing navy band. Every sector page ends with one.
 export function CtaBand({
   id = "contact",
-  eyebrow = "FIRST STEP",
   title = "Start with a free discovery visit.",
   text = "We learn how you work today, then propose a one-month pilot.",
   action = primaryCta.label,
@@ -131,7 +127,6 @@ export function CtaBand({
   marker,
 }: {
   id?: string;
-  eyebrow?: string;
   title?: string;
   text?: string;
   action?: string;
@@ -142,7 +137,6 @@ export function CtaBand({
     <section className="home-cta on-navy" id={id} aria-labelledby={`${id}-title`}>
       <div className="container home-cta-inner">
         <div>
-          <span className="eyebrow">{eyebrow}</span>
           <h2 id={`${id}-title`}>{title}</h2>
           <p>{text}</p>
         </div>

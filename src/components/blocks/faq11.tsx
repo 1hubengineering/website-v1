@@ -47,13 +47,7 @@ export function Faq11() {
     <section className="section faq-section" id="faq" aria-labelledby="faq-title">
       <div className="container faq-layout">
         <div className="faq-intro">
-          <span className="eyebrow">A FEW THINGS TO KNOW</span>
-          <h2 id="faq-title">
-            Good questions.
-            <br />
-            <span className="muted-heading">Clear answers.</span>
-          </h2>
-          <p>Every great collaboration starts with a conversation. Here’s a head start.</p>
+          <h2 id="faq-title">Questions and answers</h2>
           <a className="text-link" href="#contact-form">
             Let’s talk <span aria-hidden="true">↗</span>
           </a>

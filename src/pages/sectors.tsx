@@ -4,7 +4,7 @@ import { CtaBand, SectorGrid } from "@/components/sections";
 export function SectorsPage() {
   return (
     <>
-      <PageHero eyebrow="SECTORS" title="Eight sectors. One engineering partner.">
+      <PageHero title="Sector digital solutions">
         Each sector has its own everyday problems. Choose yours to see the challenges we solve,
         the solutions you can pick from and how a pilot starts.
       </PageHero>

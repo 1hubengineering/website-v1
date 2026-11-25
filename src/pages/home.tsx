@@ -38,9 +38,6 @@ export function HomePage() {
         <div className="hero-grid" />
         <div className="container home-hero-layout">
           <div className="hero-copy">
-            <p className="hero-kicker">
-              <span className="status-dot" /> {company.name} · Addis Ababa
-            </p>
             <h1 id="hero-title">
               Ideas.
               <br />
@@ -96,9 +93,8 @@ export function HomePage() {
       <section className="section section-surface" id="sectors" aria-labelledby="sectors-title">
         <div className="container">
           <SectionHeading
-            eyebrow="WHO WE WORK WITH"
             id="sectors-title"
-            title="Eight sectors. One engineering partner."
+            title="Sector digital solutions"
             aside={
               <Link to="/sectors/" className="text-link">
                 All sectors
@@ -112,7 +108,7 @@ export function HomePage() {
 
       <section className="section" id="why" aria-labelledby="why-title">
         <div className="container">
-          <SectionHeading eyebrow="WHY ANDHUB" id="why-title" title="Why companies choose us." />
+          <SectionHeading id="why-title" title="Why AndHub" />
           <WhyGrid />
         </div>
       </section>
@@ -120,9 +116,8 @@ export function HomePage() {
       <section className="section process-section" id="process" aria-labelledby="process-title">
         <div className="container">
           <SectionHeading
-            eyebrow="HOW WE WORK"
             id="process-title"
-            title="Start small. Measure. Then scale."
+            title="How we work"
           />
           <StepsGrid />
         </div>
@@ -131,9 +126,8 @@ export function HomePage() {
       <section className="section" id="work" aria-labelledby="work-title">
         <div className="container">
           <SectionHeading
-            eyebrow="OUR PROJECTS"
             id="work-title"
-            title="What we build."
+            title="Our projects"
             aside={
               <Link to="/projects/" className="text-link">
                 All projects
@@ -145,7 +139,6 @@ export function HomePage() {
             {projects.slice(0, 4).map((project) => (
               <li key={project.name}>
                 <Link to="/projects/" className="home-card project-strip-card">
-                  <span className="project-strip-type">{project.type}</span>
                   <h3>{project.name}</h3>
                   <p>{project.description}</p>
                   <span className="project-strip-status">{project.status}</span>

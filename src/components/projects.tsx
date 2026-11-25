@@ -171,12 +171,7 @@ export function Projects() {
       <div className="container">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">IDEAS. ENGINEERED.</span>
-            <h2 id="work-title">
-              The work speaks.
-              <br />
-              <span className="muted-heading">Take a closer look.</span>
-            </h2>
+            <h2 id="work-title">All projects</h2>
           </div>
           <a
             href="https://github.com/1hubengineering"
@@ -271,7 +266,6 @@ export function Projects() {
                     </div>
                   </div>
                 )}
-                <span className="eyebrow">{selected.type}</span>
                 <Dialog.Title>{selected.name}</Dialog.Title>
                 <Dialog.Description>{selected.detail}</Dialog.Description>
                 <p className="detail-status">

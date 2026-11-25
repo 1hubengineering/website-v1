@@ -1,32 +1,27 @@
 import { Code2, Workflow } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand, SectionHeading, StepsGrid, ToConfirm, WhyGrid } from "@/components/sections";
-import { company, founders, services } from "@/content/site";
+import { company, founders } from "@/content/site";
 
 const founderIcons = [Workflow, Code2];
 
 export function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="ABOUT ANDHUB" title="Engineers who study your work before we build.">
+      <PageHero title="Engineers who study your work before we build.">
         {company.whatWeDo}
       </PageHero>
 
       <section className="section" id="why" aria-labelledby="why-title">
         <div className="container">
-          <SectionHeading
-            eyebrow="WHY ANDHUB"
-            id="why-title"
-            title="What makes us different."
-            aside={<p>{services.join(" · ")}</p>}
-          />
+          <SectionHeading id="why-title" title="Why AndHub" />
           <WhyGrid />
         </div>
       </section>
 
       <section className="section section-surface" id="team" aria-labelledby="team-title">
         <div className="container">
-          <SectionHeading eyebrow="OUR TEAM" id="team-title" title="The co-founders." />
+          <SectionHeading id="team-title" title="Our team" />
           <ul className="founder-grid">
             {founders.map((founder, index) => {
               const Icon = founderIcons[index] ?? Code2;
@@ -51,11 +46,7 @@ export function AboutPage() {
 
       <section className="section" id="process" aria-labelledby="process-title">
         <div className="container">
-          <SectionHeading
-            eyebrow="HOW WE WORK"
-            id="process-title"
-            title="Start small. Measure. Then scale."
-          />
+          <SectionHeading id="process-title" title="How we work" />
           <StepsGrid />
         </div>
       </section>

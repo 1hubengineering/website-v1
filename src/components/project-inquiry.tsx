@@ -121,7 +121,6 @@ export function ProjectInquiry({
       }}
     >
       <ModalContent className="inquiry-dialog" returnFocusFallback={returnFocusFallback}>
-        <span className="eyebrow">LET’S BUILD SOMETHING USEFUL</span>
         <Dialog.Title ref={titleRef} tabIndex={-1}>
           {draft ? "Your inquiry is ready." : "Tell us about your idea."}
         </Dialog.Title>

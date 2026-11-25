@@ -7,7 +7,7 @@ import { services } from "@/content/site";
 export function SolutionsPage() {
   return (
     <>
-      <PageHero eyebrow="SOLUTIONS" title="Seven ready-made solutions.">
+      <PageHero title="Seven ready-made solutions.">
         Ready-made digital solutions for factories, companies, schools and building sites. Each
         one starts as a small pilot on one line, site, class or branch.
       </PageHero>
@@ -45,10 +45,8 @@ export function SolutionsPage() {
       <section className="section section-surface ai-band" id="ai" aria-labelledby="ai-title">
         <div className="container">
           <SectionHeading
-            eyebrow={services[3].toUpperCase()}
             id="ai-title"
-            title={aiOperations.title}
-            aside={<p>AI features work inside the solutions above, on your own data.</p>}
+            title={services[3]}
           />
           <ul className="ai-grid">
             {aiOperations.features.map((feature) => (

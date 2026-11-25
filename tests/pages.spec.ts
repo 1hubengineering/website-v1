@@ -37,8 +37,8 @@ test("main navigation reaches every section page", async ({ page }) => {
   const nav = page.getByRole("navigation", { name: "Main navigation" });
   for (const [label, heading] of [
     ["Solutions", "Seven ready-made solutions."],
-    ["Sectors", "Eight sectors. One engineering partner."],
-    ["Projects", "What we build."],
+    ["Sectors", "Sector digital solutions"],
+    ["Projects", "Our projects"],
     ["About", "Engineers who study your work before we build."],
     ["Contact", "Book a free discovery visit."],
   ]) {
@@ -57,9 +57,9 @@ for (const sector of sectors) {
     const headings = await page.locator("main h1, main h2").allInnerTexts();
     const order = [
       sector.headline,
-      "What slows you down today.",
-      "Pick what you need. Start with one.",
-      sector.pilot,
+      "Your challenges",
+      "Solutions you can choose from",
+      "Start small",
       "What you gain",
       sector.cta.label,
     ];

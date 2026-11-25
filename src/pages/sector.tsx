@@ -19,14 +19,14 @@ export function SectorPage() {
 
   return (
     <>
-      <PageHero eyebrow={sector.name.toUpperCase()} title={sector.headline}>
+      <PageHero title={sector.headline}>
         {sector.intro}
       </PageHero>
 
       <section className="section" aria-labelledby="challenges-title">
         <div className="container sector-intro-layout">
           <div>
-            <SectionHeading eyebrow="YOUR CHALLENGES" id="challenges-title" title="What slows you down today." />
+            <SectionHeading id="challenges-title" title="Your challenges" />
             <ul className="challenge-list">
               {sector.challenges.map((challenge) => (
                 <li key={challenge}>
@@ -55,9 +55,8 @@ export function SectorPage() {
       <section className="section section-surface" aria-labelledby="solutions-title">
         <div className="container">
           <SectionHeading
-            eyebrow="SOLUTIONS YOU CAN CHOOSE FROM"
             id="solutions-title"
-            title="Pick what you need. Start with one."
+            title="Solutions you can choose from"
           />
           <table className="solution-table">
             <thead>
@@ -88,7 +87,7 @@ export function SectorPage() {
       {sector.story && (
         <section className="section" aria-labelledby="story-title">
           <div className="container">
-            <SectionHeading eyebrow="FROM THE HANGAR TO ORBIT" id="story-title" title={sector.story.line} />
+            <SectionHeading id="story-title" title={sector.story.line} />
             <ol className="story-steps">
               {sector.story.steps.map((step, index) => (
                 <Fragment key={step}>
@@ -112,13 +111,11 @@ export function SectorPage() {
         <div className="container pilot-gains">
           <div className="pilot-card">
             <FlaskConical size={26} aria-hidden="true" />
-            <span className="eyebrow">START SMALL</span>
-            <h2 id="pilot-title">{sector.pilot}</h2>
-            <p>We measure before and after together, then scale only what works.</p>
+            <h2 id="pilot-title">Start small</h2>
+            <p className="pilot-text">{sector.pilot}</p>
           </div>
           <div>
-            <span className="eyebrow">WHAT YOU GAIN</span>
-            <h2 className="sr-only">What you gain</h2>
+            <h2 className="gains-title">What you gain</h2>
             <ul className="gain-list gain-list-large">
               {sector.gains.map((gain) => (
                 <li key={gain}>
@@ -133,7 +130,6 @@ export function SectorPage() {
 
       <CtaBand
         id="sector-cta"
-        eyebrow="NEXT STEP"
         title={sector.cta.label}
         text="We visit, learn how you work today and agree on a small pilot."
         action={sector.cta.action}

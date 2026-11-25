@@ -270,10 +270,16 @@
   font-size: clamp(24px, 2.4vw, 32px);
   letter-spacing: -0.8px;
 }
-.pilot-card p {
+.pilot-card .pilot-text {
   margin-top: 12px;
-  color: var(--muted);
-  line-height: 1.7;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--foreground);
+}
+.gains-title {
+  font-size: clamp(24px, 2.4vw, 32px);
+  letter-spacing: -0.8px;
+  margin-bottom: 8px;
 }
 
 /* About */

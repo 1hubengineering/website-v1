@@ -45,7 +45,7 @@ Signal Blue actions use white labels; green text uses Deep Green on light surfac
 
 - Pages: Home, Solutions (three families, seven solutions), Sectors (overview and eight sector pages from one template), Projects, About and Contact. Each route is pre-rendered to static HTML with its own title and description (`scripts/prerender.mjs`); content lives in `src/content/`.
 - Responsive navigation and keyboard-accessible mobile menu.
-- Three services (Software Development, Systems Engineering, Process Automation & AI-Driven Operations), six existing projects with category filters and detail dialogs.
+- Four services (Software Development, Systems Engineering, Process Automation, AI-Driven Operations), six existing projects with category filters and detail dialogs.
 - Items awaiting owner approval render a visible `[to confirm]` marker (`toConfirm` in `src/content/`).
 - Public repository/release links and explicit development labels.
 - Current company positioning and leadership, four-step process, and grouped FAQ accordions.

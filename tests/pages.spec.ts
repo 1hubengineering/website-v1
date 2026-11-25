@@ -19,7 +19,8 @@ test("every page: one h1, contact details in the footer, no banned words, fits a
     for (const service of [
       "Software Development",
       "Systems Engineering",
-      "Process Automation & AI-Driven Operations",
+      "Process Automation",
+      "AI-Driven Operations",
     ]) {
       await expect(footer.getByText(service, { exact: true })).toBeVisible();
     }

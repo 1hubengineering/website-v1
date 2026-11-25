@@ -54,7 +54,7 @@ export function SolutionsPage() {
       <section className="section section-surface ai-band" id="ai" aria-labelledby="ai-title">
         <div className="container">
           <SectionHeading
-            eyebrow={services[2].toUpperCase()}
+            eyebrow={services[3].toUpperCase()}
             id="ai-title"
             title={aiOperations.title}
             aside={<p>AI features work inside the solutions above, on your own data.</p>}

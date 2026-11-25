@@ -13,7 +13,7 @@ export const pages: PageMeta[] = [
     path: "/",
     title: "AndHub",
     description:
-      "Software development, systems engineering, and process automation and AI-driven operations for companies in Addis Ababa, Ethiopia.",
+      "Software development, systems engineering, process automation and AI-driven operations for companies in Addis Ababa, Ethiopia.",
   },
   {
     path: "/solutions",

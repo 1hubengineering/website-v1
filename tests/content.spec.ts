@@ -3,7 +3,7 @@ import { sectors } from "../src/content/sectors";
 import { families, aiOperations, solutionCount } from "../src/content/solutions";
 import { founders, services } from "../src/content/site";
 
-test("solutions match the brief: three families, seven solutions", () => {
+test("solutions match the brief: three families, seven solutions; four services", () => {
   expect(families.map((family) => [family.name, family.color])).toEqual([
     ["Make", "blue"],
     ["Sell", "green"],
@@ -15,7 +15,8 @@ test("solutions match the brief: three families, seven solutions", () => {
   expect(services).toEqual([
     "Software Development",
     "Systems Engineering",
-    "Process Automation & AI-Driven Operations",
+    "Process Automation",
+    "AI-Driven Operations",
   ]);
 });
 

@@ -32,7 +32,8 @@ test("theme persists and navigation, filters, details, FAQ, and inquiry work", a
   for (const service of [
     "Software Development",
     "Systems Engineering",
-    "Process Automation & AI-Driven Operations",
+    "Process Automation",
+    "AI-Driven Operations",
   ]) {
     await expect(page.getByRole("heading", { name: service, exact: true })).toBeVisible();
   }

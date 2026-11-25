@@ -20,11 +20,12 @@ export const company = {
     "We turn everyday problems in factories, companies, schools and building sites into ready-made digital solutions, start with a small pilot, and prove the value with measurable results.",
 } as const;
 
-// Use exactly these words in the hero and footer.
+// Four services. Use exactly these words in the hero and footer.
 export const services = [
   "Software Development",
   "Systems Engineering",
-  "Process Automation & AI-Driven Operations",
+  "Process Automation",
+  "AI-Driven Operations",
 ] as const;
 
 export type Founder = Confirmable & {

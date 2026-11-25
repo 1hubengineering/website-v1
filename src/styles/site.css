@@ -99,7 +99,7 @@ li {
 /* Cards shared by services, projects strip */
 .home-services {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
 }
 .home-card {
@@ -322,6 +322,7 @@ ol.process-grid {
 }
 
 @media (max-width: 1100px) {
+  .home-services,
   .sector-grid,
   .why-grid,
   .project-strip {

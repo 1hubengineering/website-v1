@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Code2, Cpu, Workflow } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BrainCircuit, Code2, Network, Workflow } from "lucide-react";
 import { Link } from "react-router";
 import { BrandMark } from "@/components/brand";
 import { Button } from "@/components/ui/button";
@@ -18,12 +18,16 @@ const serviceDetails = [
     text: "Web, mobile and business software built around how your people work every day.",
   },
   {
-    icon: Workflow,
+    icon: Network,
     text: "We study how your people, machines and data work together before we build.",
   },
   {
-    icon: Cpu,
-    text: "Live dashboards, alerts and forecasts that keep your operations running.",
+    icon: Workflow,
+    text: "Manual steps turned into automatic workflows, with live dashboards of output and stock.",
+  },
+  {
+    icon: BrainCircuit,
+    text: "Alerts and forecasts from your own data, for maintenance, quality, stock and demand.",
   },
 ];
 
@@ -74,7 +78,7 @@ export function HomePage() {
           <SectionHeading
             eyebrow="WHAT WE DO"
             id="services-title"
-            title="Three services. One team."
+            title="Four services. One team."
             aside={<p>We start with a small pilot and prove the value before you scale.</p>}
           />
           <div className="home-services">

@@ -1,14 +1,13 @@
 import {
   ArrowRight,
   ArrowUpRight,
-  ChartColumn,
+  ClipboardList,
   Clock,
-  FlaskConical,
+  Code2,
   Languages,
   Layers3,
-  MapPin,
   Search,
-  TrendingUp,
+  ShieldCheck,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { Link } from "react-router";
@@ -73,7 +72,7 @@ export function WhyGrid() {
   );
 }
 
-const stepIcons = [MapPin, FlaskConical, ChartColumn, TrendingUp];
+const stepIcons = [Search, ClipboardList, Code2, ShieldCheck];
 
 export function StepsGrid() {
   return (
@@ -81,7 +80,7 @@ export function StepsGrid() {
       {howWeWork.map((step, index) => {
         const Icon = stepIcons[index];
         return (
-          <li className="process-step" key={step.title}>
+          <li className="process-step" key={step}>
             <div className="process-step-top">
               <span>{String(index + 1).padStart(2, "0")}</span>
               <Icon size={18} aria-hidden="true" />
@@ -89,8 +88,7 @@ export function StepsGrid() {
             <div className="process-line">
               <i />
             </div>
-            <h3>{step.title}</h3>
-            <p>{step.text}</p>
+            <h3>{step}</h3>
           </li>
         );
       })}

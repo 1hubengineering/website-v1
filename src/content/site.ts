@@ -62,11 +62,12 @@ export const whyAndhub = [
   },
 ] as const;
 
+// "Our approach" from the AndHub brochure (Asset/), shown as titles only.
 export const howWeWork = [
-  { title: "Free discovery visit", text: "We learn how you work today" },
-  { title: "One-month pilot", text: "On one line, site, class or branch" },
-  { title: "Measure together", text: "We compare before and after" },
-  { title: "Scale", text: "Roll out across your company, with training and support" },
+  "Understand your needs",
+  "Define requirements and scope",
+  "Design and develop",
+  "Validate and support",
 ] as const;
 
 export const mainNav = [

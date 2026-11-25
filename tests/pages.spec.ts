@@ -173,3 +173,15 @@ test("Sectors in the header is a dropdown of every sector", async ({ page }) => 
   await menu.getByRole("link", { name: "All sectors" }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Sector digital solutions");
 });
+
+test("How we work shows the brochure approach on home and About", async ({ page }) => {
+  for (const path of ["./", "./about/"]) {
+    await page.goto(path);
+    await expect(page.locator(".process-step h3")).toHaveText([
+      "Understand your needs",
+      "Define requirements and scope",
+      "Design and develop",
+      "Validate and support",
+    ]);
+  }
+});

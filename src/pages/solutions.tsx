@@ -7,10 +7,11 @@ import { services } from "@/content/site";
 export function SolutionsPage() {
   return (
     <>
-      <PageHero title="Seven ready-made solutions">
-        Ready-made digital solutions for factories, companies, schools and building sites. Each
-        one starts as a small pilot on one line, site, class or branch.
-      </PageHero>
+      {/* One message to business owners, one size: the bridge we offer. */}
+      <PageHero
+        statement
+        title="Your business shouldn’t be a headache. In this digital age, our digital solutions let you track your business from anywhere"
+      />
 
       {families.map((family, index) => (
         <section

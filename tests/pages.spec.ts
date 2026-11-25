@@ -36,7 +36,10 @@ test("main navigation reaches every section page", async ({ page }) => {
   await page.goto("./");
   const nav = page.getByRole("navigation", { name: "Main navigation" });
   for (const [label, heading] of [
-    ["Solutions", "Seven ready-made solutions"],
+    [
+      "Solutions",
+      "Your business shouldn’t be a headache. In this digital age, our digital solutions let you track your business from anywhere",
+    ],
     ["Projects", "Our projects"],
     ["About", "Engineers who study your work before we build"],
     ["Contact", "Book a free discovery visit"],

@@ -38,7 +38,7 @@ test("main navigation reaches every section page", async ({ page }) => {
   for (const [label, heading] of [
     [
       "Solutions",
-      "Your business shouldn’t be a headache. In this digital age, our digital solutions let you track your business from anywhere",
+      "“Running a business shouldn’t be a headache. In this digital age, the right digital solution lets owners track every part of it from anywhere”",
     ],
     ["Projects", "Our projects"],
     ["About", "Engineers who study your work before we build"],
@@ -100,15 +100,21 @@ for (const sector of sectors) {
   });
 }
 
-test("solutions page shows three groups, seven solutions and the AI band", async ({ page }) => {
+test("solutions page groups seven solutions by what owners track, plus the AI band", async ({
+  page,
+}) => {
   await page.goto("./solutions/");
   for (const heading of [
-    "Solutions for the factory floor",
-    "Solutions from factory to buyer",
-    "Solutions for schools and building sites",
+    "Track stock and deliveries",
+    "Track production and quality",
+    "Track sales and products",
+    "Track projects and sites",
+    "Track training and learning",
   ]) {
     await expect(page.getByRole("heading", { level: 2, name: heading })).toBeVisible();
   }
+  await expect(page.getByText("You get", { exact: true })).toHaveCount(0);
+  await expect(page.locator(".solution-card h4").first()).toHaveText("Benefits");
   // Group names and their dot icons are not shown.
   for (const name of ["Make", "Sell", "Learn and Build"]) {
     await expect(page.getByRole("heading", { name, exact: true })).toHaveCount(0);

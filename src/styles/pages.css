@@ -801,3 +801,35 @@
     padding-block: 64px 56px;
   }
 }
+
+/* Solutions grouped by what owners track: title left, cards right, compact rows */
+.track-group {
+  padding-block: 56px;
+  border-bottom: 1px solid var(--border);
+}
+.track-group-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 2.4fr;
+  gap: 40px;
+  align-items: start;
+}
+.track-group-layout h2 {
+  font-size: clamp(24px, 2.4vw, 32px);
+  letter-spacing: -0.8px;
+  padding-top: 8px;
+}
+.track-group-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .track-group {
+    padding-block: 40px;
+  }
+  .track-group-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .track-group-cards {
+    grid-template-columns: 1fr;
+  }
+}

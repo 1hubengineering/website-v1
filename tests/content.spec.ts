@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { sectors } from "../src/content/sectors";
-import { families, aiOperations, solutionCount } from "../src/content/solutions";
+import { families, aiOperations, solutionCount, trackGroups } from "../src/content/solutions";
 import { team, services } from "../src/content/site";
 
 test("solutions: three groups, seven solutions; four services", () => {
@@ -12,6 +12,9 @@ test("solutions: three groups, seven solutions; four services", () => {
   expect(solutionCount).toBe(7);
   const ids = families.flatMap((family) => family.solutions.map((solution) => solution.id));
   expect(new Set(ids).size).toBe(ids.length);
+  // Each solution sits in exactly one "what owners track" group.
+  const grouped = trackGroups.flatMap((group) => group.solutions);
+  expect([...grouped].sort()).toEqual([...ids].sort());
   expect(services).toEqual([
     "Software Development",
     "Systems Engineering",

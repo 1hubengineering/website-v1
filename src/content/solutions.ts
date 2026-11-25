@@ -38,7 +38,7 @@ export const families: Family[] = [
       {
         id: "inventory-logistics",
         name: "Inventory and logistics",
-        description: "Shows what stock you have, where it is and when deliveries arrive",
+        description: "Shows stock on hand, where it is and when deliveries arrive",
         gains: ["No stock-outs or over-stock", "Fewer losses", "Delivery status for every order"],
       },
       {
@@ -124,3 +124,33 @@ export const aiOperations = {
 };
 
 export const solutionCount = families.reduce((total, family) => total + family.solutions.length, 0);
+
+// The Solutions page groups the seven solutions by what a business owner wants to track.
+// Every solution appears in exactly one group (checked by tests/content.spec.ts).
+export const trackGroups: { id: string; title: string; solutions: SolutionId[] }[] = [
+  { id: "track-stock", title: "Track stock and deliveries", solutions: ["inventory-logistics"] },
+  {
+    id: "track-production",
+    title: "Track production and quality",
+    solutions: ["process-management", "quality-control"],
+  },
+  {
+    id: "track-sales",
+    title: "Track sales and products",
+    solutions: ["e-commerce", "brand-traceability"],
+  },
+  {
+    id: "track-projects",
+    title: "Track projects and sites",
+    solutions: ["construction-management"],
+  },
+  { id: "track-learning", title: "Track training and learning", solutions: ["e-learning"] },
+];
+
+export function findSolution(id: SolutionId) {
+  for (const family of families) {
+    const solution = family.solutions.find((item) => item.id === id);
+    if (solution) return { solution, family };
+  }
+  throw new Error(`Unknown solution: ${id}`);
+}

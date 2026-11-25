@@ -860,3 +860,41 @@ q.hook-quote::after {
 .on-navy q.hook-quote::after {
   color: #34d399;
 }
+
+/* Why AndHub: four cards that show what makes AndHub different */
+.why-grid .why-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px;
+  border-top: 0;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.why-card-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--lms-tint);
+  color: var(--lms-teal);
+}
+.dark .why-card-icon {
+  color: #d1fae5;
+}
+.why-grid .why-card svg {
+  color: inherit;
+}
+.why-grid .why-card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+}
+.why-grid .why-card p {
+  font-size: 16px;
+  line-height: 1.6;
+}

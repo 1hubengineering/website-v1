@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Check, Clock, Languages, Layers3, Search } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Globe2, Layers3, Network, Search } from "lucide-react";
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
@@ -43,7 +43,7 @@ export function SectorGrid({ headingLevel = 3 }: { headingLevel?: 2 | 3 }) {
   );
 }
 
-const whyIcons = [Search, Layers3, Clock, Languages];
+const whyIcons = [Search, Layers3, Network, Globe2];
 
 export function WhyGrid() {
   return (
@@ -51,8 +51,10 @@ export function WhyGrid() {
       {whyAndhub.map((item, index) => {
         const Icon = whyIcons[index];
         return (
-          <li key={item.title}>
-            <Icon size={22} aria-hidden="true" />
+          <li key={item.title} className="why-card">
+            <span className="why-card-icon">
+              <Icon size={24} aria-hidden="true" />
+            </span>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
           </li>

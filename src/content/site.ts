@@ -62,16 +62,23 @@ export const team: TeamMember[] = [
   },
 ];
 
+// What makes AndHub different (home and About).
 export const whyAndhub = [
-  { title: "Research first", text: "We study your business before we build" },
+  {
+    title: "Research and experience",
+    text: "Experience identifying problems from many industrial perspectives, studied before anything is built",
+  },
   {
     title: "Multidisciplinary engineering",
-    text: "Systems, software, electrical and aerospace engineering in one team",
+    text: "Software, systems, aerospace and industrial engineering: several areas of expertise working together",
   },
-  { title: "7+ years", text: "of team industry experience" },
   {
-    title: "Clear, practical interfaces",
-    text: "Screens designed around everyday users, in Amharic, Afaan Oromo and English",
+    title: "7+ years of system design",
+    text: "Systems designed to international standards, from multi-tenant platforms to complex engineering systems",
+  },
+  {
+    title: "International and local relationships",
+    text: "Partners in France and across Ethiopia, with local companies in many sectors and a multilingual team",
   },
 ] as const;
 

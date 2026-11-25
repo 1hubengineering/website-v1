@@ -17,10 +17,18 @@ function initials(name: string) {
 export function AboutPage() {
   return (
     <>
+      {/* The team’s own words, quoted. */}
       <PageHero
         statement
-        title="Learning is the only path forward for growth, and comfort is the enemy. We help you ask the right questions to grow"
-      />
+        title={
+          <q className="hook-quote">
+            Learning is the only path forward for growth, and comfort is the enemy. We help you ask
+            the right questions to grow
+          </q>
+        }
+      >
+        The AndHub team
+      </PageHero>
 
       <section className="section" id="why" aria-labelledby="why-title">
         <div className="container">

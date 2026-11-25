@@ -17,7 +17,7 @@ const serviceDetails = [
     text: "Web, mobile and business software built around how your people work every day",
   },
   {
-    text: "We study how your people, machines and data work together before we build",
+    text: "We provide methods and tools for multidisciplinary experts to work together and measure progress",
   },
   {
     text: "Manual steps turned into automatic workflows, with live dashboards of output and stock",

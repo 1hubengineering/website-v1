@@ -969,3 +969,11 @@ q.hook-quote::after {
 .story-arrow {
   align-self: center;
 }
+
+/* Attribution under a statement quote (About) */
+.page-hero-statement .page-hero-lead {
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--muted);
+}

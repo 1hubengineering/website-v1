@@ -244,13 +244,13 @@ test("home quotes the Prime Minister with a source; aviation story steps have no
   await page.goto("./");
   const quote = page.locator(".leader-quote");
   await expect(quote.locator("q")).toHaveText(
-    "Technology is moving faster than ever, reshaping how nations grow, how societies connect, and how prosperity is shared",
+    "By learning from the past and relentlessly building the present, digital transformation is becoming our living daily culture streamlining commerce, enhancing accessibility, and modernizing public services",
   );
   await expect(quote.locator("figcaption")).toHaveText("Abiy Ahmed, PM");
   // The source stays recorded on the quote itself.
   await expect(quote.locator("blockquote")).toHaveAttribute(
     "cite",
-    "https://www.ena.et/web/eng/w/eng_7487272",
+    "https://www.ena.et/web/eng/w/eng_9536435",
   );
 
   await page.goto("./sectors/aerospace-and-aviation/");

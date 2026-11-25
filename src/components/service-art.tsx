@@ -113,41 +113,59 @@ function AutomationArt() {
   );
 }
 
-// AI that analyses data and supports decisions: a chart with a forecast and a network.
+// AI supporting a company's operations: the factory and office send live data to an
+// AI unit, which feeds the operations centre screen with forecasts, alerts and actions.
 function AiArt() {
   return (
-    <svg {...svgProps} aria-label="A dashboard chart with a forecast line next to a neural network">
-      <rect x="30" y="28" width="178" height="136" rx="12" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
-      <path d="M48 146h144M48 146V48" stroke="var(--art-muted)" strokeWidth="2.5" strokeLinecap="round" />
-      <g fill="var(--art-blue)" opacity="0.25">
-        <rect x="58" y="118" width="14" height="28" rx="3" />
-        <rect x="80" y="104" width="14" height="42" rx="3" />
-        <rect x="102" y="110" width="14" height="36" rx="3" />
-        <rect x="124" y="92" width="14" height="54" rx="3" />
+    <svg {...svgProps} aria-label="A factory and office sending live data to an AI unit that supports an operations centre screen with charts and alerts">
+      {/* Company: factory with sawtooth roof, and an office block */}
+      <path d="M22 104l20-14v14l20-14v14l20-14v62H22Z" fill="var(--art-navy)" />
+      <rect x="70" y="62" width="10" height="28" rx="2" fill="var(--art-navy)" />
+      <g fill="var(--art-card)">
+        <rect x="32" y="120" width="12" height="10" rx="2" />
+        <rect x="52" y="120" width="12" height="10" rx="2" />
+        <rect x="32" y="138" width="12" height="10" rx="2" />
+        <rect x="52" y="138" width="12" height="10" rx="2" />
       </g>
-      <path d="M58 124l22-16 22 8 22-24 20-8" fill="none" stroke="var(--art-blue)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M144 84l18-14 20-10" fill="none" stroke="var(--art-green)" strokeWidth="4" strokeLinecap="round" strokeDasharray="6 7" />
-      <circle cx="182" cy="60" r="6" fill="var(--art-green)" />
-      {/* Neural network */}
-      <g stroke="var(--art-navy)" strokeWidth="2" opacity="0.45">
-        <path d="M232 52l26 22M232 52l26 52M232 96l26-22M232 96l26 8M232 96l26 52M232 140l26-36M232 140l26 8M258 74l30 22M258 104l30-8M258 104l30 30M258 148l30-14M258 74l30 60" />
+      <rect x="88" y="112" width="30" height="54" rx="4" fill="var(--art-blue)" />
+      <g fill="var(--art-card)" opacity="0.85">
+        <rect x="94" y="120" width="7" height="7" rx="1.5" />
+        <rect x="105" y="120" width="7" height="7" rx="1.5" />
+        <rect x="94" y="133" width="7" height="7" rx="1.5" />
+        <rect x="105" y="133" width="7" height="7" rx="1.5" />
+        <rect x="94" y="146" width="7" height="7" rx="1.5" />
+        <rect x="105" y="146" width="7" height="7" rx="1.5" />
       </g>
-      <g fill="var(--art-blue)">
-        <circle cx="232" cy="52" r="8" />
-        <circle cx="232" cy="96" r="8" />
-        <circle cx="232" cy="140" r="8" />
+      <rect x="16" y="166" width="108" height="4" rx="2" fill="var(--art-muted)" />
+
+      {/* Live data flowing up to the AI and on to the operations centre */}
+      <path d="M70 60C80 36 112 30 136 36" fill="none" stroke="var(--art-green)" strokeWidth="3" strokeLinecap="round" strokeDasharray="2 8" />
+      <path d="M182 46c20 2 34 12 40 28" fill="none" stroke="var(--art-green)" strokeWidth="3" strokeLinecap="round" strokeDasharray="2 8" />
+      <path d="M216 68l6 8 6-9" fill="none" stroke="var(--art-green)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+
+      {/* AI unit: a chip with a spark */}
+      <rect x="138" y="22" width="44" height="44" rx="10" fill="var(--art-navy)" />
+      <g stroke="var(--art-navy)" strokeWidth="3" strokeLinecap="round">
+        <path d="M150 16v6M160 16v6M170 16v6M150 66v6M160 66v6M170 66v6M132 34h6M132 44h6M132 54h6M182 34h6M182 44h6M182 54h6" />
       </g>
-      <g fill="var(--art-navy)">
-        <circle cx="258" cy="74" r="8" />
-        <circle cx="258" cy="104" r="8" />
-        <circle cx="258" cy="148" r="8" />
-      </g>
-      <g fill="var(--art-green)">
-        <circle cx="288" cy="96" r="9" />
-        <circle cx="288" cy="134" r="9" />
-      </g>
-      {/* Spark: the insight */}
-      <path d="M288 30l4 10 10 4-10 4-4 10-4-10-10-4 10-4Z" fill="var(--art-green)" />
+      <path d="M160 31l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5Z" fill="var(--art-green)" />
+
+      {/* Operations centre: a wall screen with a forecast, a gauge and alerts */}
+      <rect x="140" y="80" width="164" height="90" rx="10" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
+      <path d="M152 128l14-10 14 6 14-14" fill="none" stroke="var(--art-blue)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M194 110l12-8 12-4" fill="none" stroke="var(--art-green)" strokeWidth="3.5" strokeLinecap="round" strokeDasharray="4 5" />
+      <path d="M152 140h66" stroke="var(--art-muted)" strokeWidth="2" strokeLinecap="round" />
+      {/* Gauge */}
+      <path d="M232 128a20 20 0 0 1 40 0" fill="none" stroke="var(--art-muted)" strokeWidth="6" strokeLinecap="round" />
+      <path d="M232 128a20 20 0 0 1 32-16" fill="none" stroke="var(--art-green)" strokeWidth="6" strokeLinecap="round" />
+      {/* Alert rows: one handled, one being watched */}
+      <rect x="152" y="148" width="68" height="14" rx="7" fill="var(--art-green)" opacity="0.2" />
+      <circle cx="160" cy="155" r="4" fill="var(--art-green)" />
+      <rect x="168" y="153" width="44" height="4" rx="2" fill="var(--art-green)" />
+      <rect x="228" y="148" width="64" height="14" rx="7" fill="var(--art-blue)" opacity="0.2" />
+      <circle cx="236" cy="155" r="4" fill="var(--art-blue)" />
+      <rect x="244" y="153" width="40" height="4" rx="2" fill="var(--art-blue)" />
+      <rect x="208" y="170" width="28" height="6" rx="3" fill="var(--art-muted)" />
     </svg>
   );
 }

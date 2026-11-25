@@ -62,14 +62,15 @@ export const team: TeamMember[] = [
   },
 ];
 
-// Why digital transformation matters now: verbatim, from the ENA report of the
-// Prime Minister's keynote at the 24th COMESA Summit (dateline 9 October 2025).
+// Why digital transformation matters now: verbatim from the Prime Minister's message on
+// his official X page, 10 September 2026 (Pagume 5, the Day of the Future), as reported
+// by ENA. Only the final full stop is dropped, in line with the site style.
 export const leaderQuote = {
-  text: "Technology is moving faster than ever, reshaping how nations grow, how societies connect, and how prosperity is shared",
+  text: "By learning from the past and relentlessly building the present, digital transformation is becoming our living daily culture streamlining commerce, enhancing accessibility, and modernizing public services",
   name: "Abiy Ahmed",
   role: "PM",
-  occasion: "24th COMESA Summit, October 2025",
-  source: "https://www.ena.et/web/eng/w/eng_7487272",
+  occasion: "Message on the Day of the Future, 10 September 2026",
+  source: "https://www.ena.et/web/eng/w/eng_9536435",
 } as const;
 
 // What makes AndHub different (home and About).

@@ -833,3 +833,30 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Quotes: curled "hook" marks in a serif face, in the brochure green. Used for the
+   Solutions quote and every sector question. */
+q.hook-quote {
+  quotes: "\201C" "\201D";
+}
+q.hook-quote::before,
+q.hook-quote::after {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.3em;
+  color: var(--lms-green);
+}
+q.hook-quote::before {
+  content: open-quote;
+  margin-right: 0.06em;
+}
+q.hook-quote::after {
+  content: close-quote;
+  margin-left: 0.04em;
+}
+.on-navy q.hook-quote::before,
+.on-navy q.hook-quote::after {
+  color: #34d399;
+}

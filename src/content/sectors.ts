@@ -53,17 +53,18 @@ export const sectors: Sector[] = [
     family: "make",
     headline: "Stock, quality and production software for food and beverage factories",
     intro:
-      "Flour mills, bakeries, dairies, juice and water bottlers live on fresh stock, tight margins and food safety. AndHub gives them one system to see what they hold, what they make and where every batch goes",
+      "Flour mills, bakeries, dairies, breweries, juice and water bottlers live on fresh stock, tight margins and food safety. AndHub gives them one system to see what they hold, what they make and where every batch goes",
     challengesTitle: "Core challenges in food and beverage production",
     challenges: [
       "Raw material and expiry control",
+      "Quality control",
       "Food safety and hygiene compliance",
       "Batch traceability",
       "Production line downtime",
       "Order and delivery management",
     ],
     question:
-      "Are you running mills, bakeries, dairies or bottling lines where raw materials expire, a bad batch can reach the market, and nobody can say where it came from or why the line stopped?",
+      "Are you running mills, bakeries, dairies, breweries or bottling lines where raw materials expire, a bad batch can reach the market, and nobody can say where it came from or why the line stopped?",
     answer: "Integrated production, quality and traceability management is here to help you",
     offering: "Food production, quality and traceability management system",
     solutions: [

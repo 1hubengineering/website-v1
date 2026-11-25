@@ -38,7 +38,7 @@ test("main navigation reaches every section page", async ({ page }) => {
   for (const [label, heading] of [
     [
       "Solutions",
-      "“Running a business shouldn’t be a headache. In this digital age, the right digital solution lets owners track every part of it from anywhere”",
+      "Running a business shouldn’t be a headache. In this digital age, the right digital solution lets owners track every part of it from anywhere",
     ],
     ["Projects", "Our projects"],
     ["About", "Engineers who study your work before we build"],

@@ -30,7 +30,9 @@ export function SectorPage() {
           </div>
           {sector.question && (
             <div className="sector-question">
-              <p className="sector-question-text">{sector.question}</p>
+              <p className="sector-question-text">
+                <q className="hook-quote">{sector.question}</q>
+              </p>
               {sector.answer && <p className="sector-answer">{sector.answer}</p>}
             </div>
           )}

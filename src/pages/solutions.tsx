@@ -10,7 +10,12 @@ export function SolutionsPage() {
       {/* One quote to business owners, one size: the bridge we offer. */}
       <PageHero
         statement
-        title="“Running a business shouldn’t be a headache. In this digital age, the right digital solution lets owners track every part of it from anywhere”"
+        title={
+          <q className="hook-quote">
+            Running a business shouldn’t be a headache. In this digital age, the right digital
+            solution lets owners track every part of it from anywhere
+          </q>
+        }
       />
 
       {trackGroups.map((group, index) => (

@@ -1,24 +1,15 @@
-import {
-  ArrowRight,
-  ArrowUpRight,
-  ChartColumn,
-  Clock,
-  Code2,
-  Cpu,
-  FlaskConical,
-  Languages,
-  Layers3,
-  MapPin,
-  Search,
-  TrendingUp,
-  Workflow,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, Code2, Cpu, Workflow } from "lucide-react";
 import { Link } from "react-router";
 import { BrandMark } from "@/components/brand";
 import { Button } from "@/components/ui/button";
-import { sectorIcons } from "@/components/sector-icons";
-import { company, howWeWork, primaryCta, services, whyAndhub } from "@/content/site";
-import { sectors } from "@/content/sectors";
+import {
+  CtaBand,
+  SectionHeading,
+  SectorGrid,
+  StepsGrid,
+  WhyGrid,
+} from "@/components/sections";
+import { company, primaryCta, services } from "@/content/site";
 import { projects } from "@/lib/projects";
 
 const serviceDetails = [
@@ -35,9 +26,6 @@ const serviceDetails = [
     text: "Live dashboards, alerts and forecasts that keep your operations running.",
   },
 ];
-
-const whyIcons = [Search, Layers3, Clock, Languages];
-const stepIcons = [MapPin, FlaskConical, ChartColumn, TrendingUp];
 
 export function HomePage() {
   return (
@@ -83,13 +71,12 @@ export function HomePage() {
 
       <section className="section" id="services" aria-labelledby="services-title">
         <div className="container">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">WHAT WE DO</span>
-              <h2 id="services-title">Three services. One team.</h2>
-            </div>
-            <p>We start with a small pilot and prove the value before you scale.</p>
-          </div>
+          <SectionHeading
+            eyebrow="WHAT WE DO"
+            id="services-title"
+            title="Three services. One team."
+            aside={<p>We start with a small pilot and prove the value before you scale.</p>}
+          />
           <div className="home-services">
             {services.map((service, index) => {
               const { icon: Icon, text } = serviceDetails[index];
@@ -109,105 +96,52 @@ export function HomePage() {
 
       <section className="section section-surface" id="sectors" aria-labelledby="sectors-title">
         <div className="container">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">WHO WE WORK WITH</span>
-              <h2 id="sectors-title">Eight sectors. One engineering partner.</h2>
-            </div>
-            <Link to="/sectors/" className="text-link">
-              All sectors
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-          <ul className="sector-grid">
-            {sectors.map((sector) => {
-              const Icon = sectorIcons[sector.slug];
-              return (
-                <li key={sector.slug}>
-                  <Link
-                    className="sector-card"
-                    to={`/sectors/${sector.slug}/`}
-                    data-family={sector.family ?? "none"}
-                  >
-                    <Icon size={22} aria-hidden="true" />
-                    <h3>{sector.name}</h3>
-                    <p>{sector.headline}</p>
-                    <span className="sector-card-more">
-                      Read more
-                      <ArrowRight size={15} aria-hidden="true" />
-                    </span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          <SectionHeading
+            eyebrow="WHO WE WORK WITH"
+            id="sectors-title"
+            title="Eight sectors. One engineering partner."
+            aside={
+              <Link to="/sectors/" className="text-link">
+                All sectors
+                <ArrowRight size={16} />
+              </Link>
+            }
+          />
+          <SectorGrid />
         </div>
       </section>
 
       <section className="section" id="why" aria-labelledby="why-title">
         <div className="container">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">WHY ANDHUB</span>
-              <h2 id="why-title">Why companies choose us.</h2>
-            </div>
-          </div>
-          <ul className="why-grid">
-            {whyAndhub.map((item, index) => {
-              const Icon = whyIcons[index];
-              return (
-                <li key={item.title}>
-                  <Icon size={22} aria-hidden="true" />
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </li>
-              );
-            })}
-          </ul>
+          <SectionHeading eyebrow="WHY ANDHUB" id="why-title" title="Why companies choose us." />
+          <WhyGrid />
         </div>
       </section>
 
       <section className="section process-section" id="process" aria-labelledby="process-title">
         <div className="container">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">HOW WE WORK</span>
-              <h2 id="process-title">Start small. Measure. Then scale.</h2>
-            </div>
-          </div>
-          <ol className="process-grid">
-            {howWeWork.map((step, index) => {
-              const Icon = stepIcons[index];
-              return (
-                <li className="process-step" key={step.title}>
-                  <div className="process-step-top">
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <Icon size={18} aria-hidden="true" />
-                  </div>
-                  <div className="process-line">
-                    <i />
-                  </div>
-                  <h3>{step.title}</h3>
-                  <p>{step.text}</p>
-                </li>
-              );
-            })}
-          </ol>
+          <SectionHeading
+            eyebrow="HOW WE WORK"
+            id="process-title"
+            title="Start small. Measure. Then scale."
+          />
+          <StepsGrid />
         </div>
       </section>
 
       <section className="section" id="work" aria-labelledby="work-title">
         <div className="container">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">OUR PROJECTS</span>
-              <h2 id="work-title">What we build.</h2>
-            </div>
-            <Link to="/projects/" className="text-link">
-              All projects
-              <ArrowRight size={16} />
-            </Link>
-          </div>
+          <SectionHeading
+            eyebrow="OUR PROJECTS"
+            id="work-title"
+            title="What we build."
+            aside={
+              <Link to="/projects/" className="text-link">
+                All projects
+                <ArrowRight size={16} />
+              </Link>
+            }
+          />
           <ul className="project-strip">
             {projects.slice(0, 4).map((project) => (
               <li key={project.name}>
@@ -223,29 +157,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="home-cta on-navy" id="contact" aria-labelledby="cta-title">
-        <div className="container home-cta-inner">
-          <div>
-            <span className="eyebrow">FIRST STEP</span>
-            <h2 id="cta-title">Start with a free discovery visit.</h2>
-            <p>We learn how you work today, then propose a one-month pilot.</p>
-          </div>
-          <div className="home-cta-actions">
-            <Button size="lg" asChild>
-              <Link to={primaryCta.to}>
-                {primaryCta.label}
-                <ArrowUpRight />
-              </Link>
-            </Button>
-            <a href={`mailto:${company.email}`}>{company.email}</a>
-            {company.phones.map((phone) => (
-              <a key={phone.href} href={phone.href}>
-                {phone.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CtaBand />
     </>
   );
 }

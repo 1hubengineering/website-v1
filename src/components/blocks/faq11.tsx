@@ -12,12 +12,12 @@ const categories = [
       {
         question: "What kind of projects do you take on?",
         answer:
-          "We build company websites, web platforms, business software, desktop applications, and integrations. We also provide systems engineering and consultancy to help you assess options and plan your next step. Whether you have a clear specification or an early idea, we start by understanding the problem you need to solve.",
+          "We turn everyday problems in factories, companies, schools and building sites into ready-made digital solutions. We also build company websites, business software and integrations. Whether you have a clear specification or an early idea, we start by studying the problem you need to solve.",
       },
       {
         question: "How do we get started?",
         answer:
-          "Tell us a little about your business, the challenge, and your ideal timeline. We will discuss the scope and agree on a practical next step before development begins.",
+          "Book a free discovery visit. We learn how you work today, then agree on a one-month pilot on one line, site, class or branch. We measure the results with you before you decide to scale.",
       },
       {
         question: "Can you work with an existing product?",
@@ -54,7 +54,7 @@ export function Faq11() {
             <span className="muted-heading">Clear answers.</span>
           </h2>
           <p>Every great collaboration starts with a conversation. Here’s a head start.</p>
-          <a className="text-link" href="#contact">
+          <a className="text-link" href="#contact-form">
             Let’s talk <span aria-hidden="true">↗</span>
           </a>
         </div>

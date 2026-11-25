@@ -23,8 +23,8 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" v
 <text x="64" y="200" font-size="16" letter-spacing="2" fill="#CBD5E1">ANDHUB ENGINEERING PLC</text>
 <text x="60" y="292" font-size="80" font-weight="700" letter-spacing="-4" fill="#FFFFFF">Ideas.</text>
 <text x="60" y="380" font-size="80" font-weight="700" letter-spacing="-4" fill="#10B981">Engineered.</text>
-<text x="64" y="438" font-size="20" fill="#CBD5E1">Software development. Systems engineering.</text>
-<text x="64" y="470" font-size="20" fill="#CBD5E1">Consultancy.</text>
+<text x="64" y="438" font-size="20" fill="#CBD5E1">Software Development. Systems Engineering.</text>
+<text x="64" y="470" font-size="20" fill="#CBD5E1">Process Automation &amp; AI-Driven Operations.</text>
 <image href="data:image/svg+xml;base64,${symbol}" x="764" y="126" width="360" height="360"/>
 <path d="M64 534H1136" stroke="#2C4664"/>
 <text x="64" y="578" font-size="16" fill="#CBD5E1">Lebu, Addis Ababa, Ethiopia</text>

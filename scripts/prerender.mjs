@@ -73,6 +73,16 @@ for (const meta of pages) {
   console.log(`prerender: ${meta.path}`);
 }
 
+// The sitemap lists every pre-rendered route, so it cannot drift from the page list.
+const sitemapUrls = pages
+  .map((meta) => `  <url><loc>${siteUrl}${meta.path.replace(/^\//, "").replace(/([^/])$/, "$1/")}</loc></url>`)
+  .join("\n");
+await writeFile(
+  join(dist, "sitemap.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls}\n</urlset>\n`,
+);
+console.log(`prerender: sitemap.xml (${pages.length} URLs)`);
+
 // GitHub Pages serves 404.html for any unknown path.
 await writeFile(join(dist, "404.html"), buildPage(notFoundMeta, { noindex: true }));
 console.log("prerender: 404.html");

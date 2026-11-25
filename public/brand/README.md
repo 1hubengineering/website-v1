@@ -9,7 +9,7 @@ The four SVG exports are copied verbatim from:
 - `assets/logos/svg/symbol/andhub-symbol-gradient-light.svg`
 - `assets/logos/svg/symbol/andhub-symbol-gradient-dark.svg`
 
-`public/favicon.svg` uses `assets/icons/app-and-avatar/navy/andhub-app-icon.svg` from the same source. The supplied navy app tile uses flat geometry rather than the detailed gradient symbol at favicon sizes.
+`public/favicon.svg` places the flat light symbol (`assets/logos/svg/symbol/andhub-symbol-flat-light.svg`, brand.1hubengineering.com) on a white rounded tile, as requested for the browser tab. Symbol paths and colours are unchanged; flat geometry stays legible at favicon sizes.
 
 Keep proportions, internal spaces, and color order intact. Use compact artwork at a minimum 180 CSS pixels wide. Choose artwork for its surrounding surface. Do not add glows, shadows, bevels, or rotation to the artwork.
 

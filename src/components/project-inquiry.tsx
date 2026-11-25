@@ -214,11 +214,10 @@ export function ProjectInquiry({
                 <option value="" disabled>
                   Select a service
                 </option>
+                <option>Software Development</option>
+                <option>Systems Engineering</option>
+                <option>Process Automation &amp; AI-Driven Operations</option>
                 <option>Website or web platform</option>
-                <option>Business software</option>
-                <option>Product or desktop application</option>
-                <option>Systems or integrations</option>
-                <option>Consultancy</option>
                 <option>Let’s figure it out together</option>
               </select>
             </label>

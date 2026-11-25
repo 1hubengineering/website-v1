@@ -75,7 +75,7 @@ test("theme persists and navigation, filters, details, FAQ, and inquiry work", a
   const dialog = page.getByRole("dialog");
   await dialog.getByLabel("Your name", { exact: true }).fill("Website Tester");
   await dialog.getByLabel("Email address").fill("tester@example.com");
-  await dialog.getByLabel("What are you looking to build?").selectOption("Business software");
+  await dialog.getByLabel("What are you looking to build?").selectOption("Software Development");
   await dialog
     .getByLabel("A little about your project")
     .fill("Connect our rental inventory and booking systems.");

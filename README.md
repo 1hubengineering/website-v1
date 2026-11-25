@@ -39,12 +39,14 @@ The site follows the [current brand guideline](https://github.com/1hubengineerin
 | Highlight    | `#10b981` | `#047857` |
 | Border       | `#2c4664` | `#e5e7eb` |
 
-Signal Blue actions use white labels; green text uses Deep Green on light surfaces and Hub Green on navy. Required form boundaries have a separate contrast-tested token. Dark is the initial theme. The toggle persists an explicit preference locally, and the inline startup script applies it before React renders. Inter is self-hosted through the existing font package, using the Latin variable font and its bundled license. Reduced-motion preferences disable animation. Compact flat logo exports switch with the actual surface; the large gradient symbol sits on a solid navy panel without added effects.
+Signal Blue actions use white labels; green text uses Deep Green on light surfaces and Hub Green on navy. Required form boundaries have a separate contrast-tested token. Light is the initial theme; navy is used for the hero, call-to-action bands and footer. The toggle persists an explicit preference locally, and the inline startup script applies it before React renders. Inter is self-hosted through the existing font package, using the Latin variable font and its bundled license. Reduced-motion preferences disable animation. Compact flat logo exports switch with the actual surface; the large gradient symbol sits on a solid navy panel without added effects.
 
 ## Website content and interactions
 
-- Responsive navigation, section links, and keyboard-accessible mobile menu.
-- Three services (Software development, Systems engineering, Consultancy), six existing projects with category filters and detail dialogs.
+- Pages: Home, Solutions (three families, seven solutions), Sectors (overview and eight sector pages from one template), Projects, About and Contact. Each route is pre-rendered to static HTML with its own title and description (`scripts/prerender.mjs`); content lives in `src/content/`.
+- Responsive navigation and keyboard-accessible mobile menu.
+- Three services (Software Development, Systems Engineering, Process Automation & AI-Driven Operations), six existing projects with category filters and detail dialogs.
+- Items awaiting owner approval render a visible `[to confirm]` marker (`toConfirm` in `src/content/`).
 - Public repository/release links and explicit development labels.
 - Current company positioning and leadership, four-step process, and grouped FAQ accordions.
 - Project inquiry builder with input validation, an editable draft, copy action, and a `mailto:` link. Unfinished input stays in memory when the dialog closes; nothing is written to browser storage. Copy failures include a manual fallback.

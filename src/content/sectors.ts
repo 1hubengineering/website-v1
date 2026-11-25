@@ -24,7 +24,8 @@ export type Sector = {
   solutions: SectorSolution[];
   pilot: string;
   gains: [string, string, string];
-  cta: Confirmable & { label: string };
+  cta: Confirmable & { label: string; action: string };
+  // TODO: replace photo — placeholder until licensed photos are supplied.
   image: { alt: string };
   seo: { title: string; description: string };
   story?: { steps: string[]; line: string };
@@ -82,7 +83,7 @@ export const sectors: Sector[] = [
       "Safe, traceable products buyers trust",
       "Orders delivered on time",
     ],
-    cta: { label: "Book a free visit to see your stock and quality on one screen." },
+    cta: { action: "Book a free visit", label: "Book a free visit to see your stock and quality on one screen." },
     image: { alt: "Workers at a food production line, Addis Ababa" },
     seo: {
       title: "Food and Beverage Software Ethiopia | AndHub",
@@ -139,7 +140,7 @@ export const sectors: Sector[] = [
     ],
     pilot: "One buyer order or one production line, one-month pilot.",
     gains: ["Orders shipped on time", "Fewer rejected shipments", "Trust from international buyers"],
-    cta: { label: "Book a free visit and track your next order with us." },
+    cta: { action: "Book a free visit", label: "Book a free visit and track your next order with us." },
     image: { alt: "Garment workers at sewing machines in a factory, Addis Ababa" },
     seo: {
       title: "Leather and Garment Factory Software | AndHub",
@@ -199,7 +200,7 @@ export const sectors: Sector[] = [
       "Less downtime and fewer emergency repairs",
       "Material used where it should be",
     ],
-    cta: { label: "Book a free visit and see every job on one board." },
+    cta: { action: "Book a free visit", label: "Book a free visit and see every job on one board." },
     image: { alt: "Welder working on a steel frame in a fabrication workshop" },
     seo: {
       title: "Metal and Engineering Workshop Software | AndHub",
@@ -257,7 +258,7 @@ export const sectors: Sector[] = [
       "Less material lost on site",
       "Owners who see progress without asking",
     ],
-    cta: { label: "Book a free visit and put your next site on one screen." },
+    cta: { action: "Book a free visit", label: "Book a free visit and put your next site on one screen." },
     image: { alt: "Construction site with workers and a crane, Addis Ababa" },
     seo: {
       title: "Construction Management Software Ethiopia | AndHub",
@@ -314,7 +315,7 @@ export const sectors: Sector[] = [
       "Reviews that show exactly what is ready and what is missing",
       "Knowledge that stays in the organisation",
     ],
-    cta: { label: "Book a technical session with our systems-engineering team." },
+    cta: { action: "Book a technical session", label: "Book a technical session with our systems-engineering team." },
     image: { alt: "Aircraft maintenance engineers in a hangar" },
     seo: {
       title: "Aerospace and Aviation Systems Engineering | AndHub",
@@ -374,7 +375,7 @@ export const sectors: Sector[] = [
       "More active digital customers",
     ],
     cta: {
-      label: "Book a demo of BikiltuTrack with your loan team.",
+      action: "Book a demo", label: "Book a demo of BikiltuTrack with your loan team.",
       toConfirm: true,
       note: "BikiltuTrack is in development — confirm a demo is ready.",
     },
@@ -435,7 +436,7 @@ export const sectors: Sector[] = [
       "Trust from export buyers",
     ],
     cta: {
-      label: "Scan our sample code and book a demo for your product.",
+      action: "Book a demo", label: "Scan our sample code and book a demo for your product.",
       toConfirm: true,
       note: "Needs a real sample QR code and the page it opens.",
     },
@@ -496,7 +497,7 @@ export const sectors: Sector[] = [
       "Records that never get lost",
       "Parents who are informed and involved",
     ],
-    cta: { label: "Start with one class and see the difference in one term." },
+    cta: { action: "Start with one class", label: "Start with one class and see the difference in one term." },
     image: { alt: "Students using phones and laptops in a classroom, Addis Ababa" },
     seo: {
       title: "Learning Management System Ethiopia | AndHub",

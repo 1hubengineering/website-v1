@@ -61,7 +61,7 @@ test("inquiry validates meaningful input, handles clipboard failure, and keeps k
   const dialog = page.getByRole("dialog");
   await dialog.getByLabel("Your name", { exact: true }).fill("   ");
   await dialog.getByLabel("Email address").fill("alex@example.com");
-  await dialog.getByLabel("What are you looking to build?").selectOption("Business software");
+  await dialog.getByLabel("What are you looking to build?").selectOption("Software Development");
   await dialog.getByLabel("A little about your project").fill("A connected inventory system.");
   await dialog.getByRole("button", { name: "Prepare my inquiry" }).click();
   await expect(dialog.getByLabel("Your name", { exact: true })).toBeFocused();

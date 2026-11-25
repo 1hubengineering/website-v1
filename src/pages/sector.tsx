@@ -24,7 +24,7 @@ export function SectorPage() {
           <div>
             <SectionHeading
               id="challenges-title"
-              title={sector.challengesTitle ?? "Your challenges"}
+              title={sector.challengesTitle ?? "Tell us your challenges"}
             />
             <ChallengeCards items={sector.challenges} />
           </div>

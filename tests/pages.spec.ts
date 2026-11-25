@@ -59,7 +59,7 @@ for (const sector of sectors) {
     const headings = await page.locator("main h1, main h2").allInnerTexts();
     const order = [
       sector.headline,
-      sector.challengesTitle ?? "Your challenges",
+      sector.challengesTitle ?? "Tell us your challenges",
       ...(sector.offering ? ["Our digital solution"] : []),
       "Solutions you can choose from",
       "Start small",

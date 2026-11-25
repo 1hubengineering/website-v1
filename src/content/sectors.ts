@@ -192,11 +192,18 @@ export const sectors: Sector[] = [
     headline: "Production, maintenance and inventory software for metal and engineering manufacturers",
     intro:
       "Steel mills, fabrication workshops and engineering firms run many jobs at once on expensive machines. AndHub shows where every job stands, which machine needs care and what material is left.",
+    challengesTitle: "Core challenges in metal and engineering manufacturing",
     challenges: [
-      "Jobs run over time and the customer hears it first",
-      "Machines stop without warning and the whole workshop waits",
-      "Steel and spare parts go missing between store and floor",
+      "Production planning",
+      "Machine downtime and maintenance",
+      "Material and spare parts control",
+      "Quality and inspection records",
+      "On-time delivery",
     ],
+    question:
+      "Are you running several workshops and production lines, with jobs, machines and steel stock spread across the floor, and no live view of what is late or about to break down?",
+    answer: "Integrated production and maintenance management is here to help you",
+    offering: "Production, maintenance and inventory management system",
     solutions: [
       {
         name: "Process management",

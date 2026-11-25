@@ -28,24 +28,37 @@ export const services = [
   "AI-Driven Operations",
 ] as const;
 
-export type Founder = Confirmable & {
+export type TeamMember = Confirmable & {
   name: string;
   role: string;
-  email: string;
+  email?: string;
+  // Path under public/, e.g. "team/abraham-bekele.webp". Until set, the card shows
+  // a placeholder with the member's initials.
+  photo?: string;
 };
 
-export const founders: Founder[] = [
+export const team: TeamMember[] = [
   {
     name: "Rehobot Bekele, PhD",
     role: "Co-founder · Systems Engineer",
     email: "rehoboth@1hubengineering.com",
-    toConfirm: true,
-    note: "Brief spells the name “Rehobot”; current site and email use “Rehoboth”.",
   },
   {
     name: "Abraham Bekele",
     role: "Co-founder · Software Architect",
     email: "abraham@1hubengineering.com",
+  },
+  {
+    name: "Lydia",
+    role: "Team member",
+    toConfirm: true,
+    note: "Full name, role and email to confirm.",
+  },
+  {
+    name: "Emmanuel",
+    role: "Team member",
+    toConfirm: true,
+    note: "Full name, role and email to confirm.",
   },
 ];
 
@@ -62,8 +75,8 @@ export const whyAndhub = [
   },
 ] as const;
 
-// "Our approach" from the AndHub brochure (Asset/), shown as titles only.
-export const howWeWork = [
+// "Our approach" from the AndHub brochure (Asset/), shown as connected ticked steps.
+export const approach = [
   "Understand your needs",
   "Define requirements and scope",
   "Design and develop",

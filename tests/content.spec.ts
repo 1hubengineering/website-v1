@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { sectors } from "../src/content/sectors";
 import { families, aiOperations, solutionCount } from "../src/content/solutions";
-import { founders, services } from "../src/content/site";
+import { team, services } from "../src/content/site";
 
 test("solutions: three groups, seven solutions; four services", () => {
   expect(families.map((family) => [family.tagline, family.color])).toEqual([
@@ -46,7 +46,7 @@ test("eight sectors, each complete for the sector page template", () => {
 });
 
 test("client-facing content avoids banned words and jargon", () => {
-  const text = JSON.stringify({ sectors, families, aiOperations, founders, services });
+  const text = JSON.stringify({ sectors, families, aiOperations, team, services });
   expect(text).not.toMatch(/consultanc/i);
   expect(text).not.toMatch(/\b(MBSE|SysML|API|ERP)\b/);
   // Partner organisations stay off the public site until confirmed.

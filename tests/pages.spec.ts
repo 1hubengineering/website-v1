@@ -71,7 +71,7 @@ for (const sector of sectors) {
     }
     // The call to action is the last section on the page.
     expect(headings.at(-1)?.trim()).toBe(sector.cta.label);
-    await expect(page.locator(".challenge-list li")).toHaveCount(sector.challenges.length);
+    await expect(page.locator(".challenge-cards li")).toHaveCount(sector.challenges.length);
     await expect(page.locator(".solution-table tbody tr")).toHaveCount(sector.solutions.length);
     // The sector photo is the hero background; the hero holds only the bold sentence.
     const photo = page.locator(".page-hero-photo .hero-slide").first();
@@ -183,10 +183,10 @@ test("Sectors in the header is a dropdown of every sector", async ({ page }) => 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Sector digital solutions");
 });
 
-test("How we work shows the brochure approach on home and About", async ({ page }) => {
+test("Our approach shows the brochure steps on home and About", async ({ page }) => {
   for (const path of ["./", "./about/"]) {
     await page.goto(path);
-    await expect(page.locator(".process-step h3")).toHaveText([
+    await expect(page.locator(".approach-step h3")).toHaveText([
       "Understand your needs",
       "Define requirements and scope",
       "Design and develop",
@@ -218,4 +218,14 @@ test("sector hero slideshow: every slide with motion, first photo only without",
   await expect(still.locator(".hero-slide")).toHaveCount(1);
   await expect(still.locator(".hero-slides-toggle")).toHaveCount(0);
   await still.close();
+});
+
+test("About shows four team cards, each with a photo or a placeholder", async ({ page }) => {
+  await page.goto("./about/");
+  const cards = page.locator(".team-member");
+  await expect(cards).toHaveCount(4);
+  for (const name of ["Rehobot Bekele, PhD", "Abraham Bekele", "Lydia", "Emmanuel"]) {
+    await expect(cards.filter({ hasText: name })).toHaveCount(1);
+  }
+  await expect(page.locator(".team-photo")).toHaveCount(4);
 });

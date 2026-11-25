@@ -1,8 +1,8 @@
-import { ArrowRight, Check, CircleAlert, FlaskConical } from "lucide-react";
+import { ArrowRight, Check, FlaskConical } from "lucide-react";
 import { Fragment } from "react";
 import { Link, useParams } from "react-router";
 import { PageHero } from "@/components/page-hero";
-import { CtaBand, SectionHeading, ToConfirm } from "@/components/sections";
+import { ChallengeCards, CtaBand, SectionHeading, ToConfirm } from "@/components/sections";
 import { findSector } from "@/content/sectors";
 import { NotFoundPage } from "@/pages/not-found";
 
@@ -26,14 +26,7 @@ export function SectorPage() {
               id="challenges-title"
               title={sector.challengesTitle ?? "Your challenges"}
             />
-            <ul className="challenge-list">
-              {sector.challenges.map((challenge) => (
-                <li key={challenge}>
-                  <CircleAlert size={20} aria-hidden="true" />
-                  {challenge}
-                </li>
-              ))}
-            </ul>
+            <ChallengeCards items={sector.challenges} />
           </div>
           {sector.question && (
             <div className="sector-question">

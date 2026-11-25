@@ -3,10 +3,10 @@ import { Link } from "react-router";
 import { LiquidLogo } from "@/components/liquid-logo";
 import { Button } from "@/components/ui/button";
 import {
+  ApproachFlow,
   CtaBand,
   SectionHeading,
   SectorGrid,
-  StepsGrid,
   WhyGrid,
 } from "@/components/sections";
 import { company, primaryCta, services } from "@/content/site";
@@ -111,13 +111,10 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section process-section" id="process" aria-labelledby="process-title">
+      <section className="section process-section" id="approach" aria-labelledby="approach-title">
         <div className="container">
-          <SectionHeading
-            id="process-title"
-            title="How we work"
-          />
-          <StepsGrid />
+          <SectionHeading id="approach-title" title="Our approach" />
+          <ApproachFlow />
         </div>
       </section>
 

@@ -1,20 +1,10 @@
-import {
-  ArrowRight,
-  ArrowUpRight,
-  ClipboardList,
-  Clock,
-  Code2,
-  Languages,
-  Layers3,
-  Search,
-  ShieldCheck,
-} from "lucide-react";
-import type { ReactNode } from "react";
+import { ArrowRight, ArrowUpRight, Check, Clock, Languages, Layers3, Search } from "lucide-react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import { sectorIcons } from "@/components/sector-icons";
 import { sectors } from "@/content/sectors";
-import { company, howWeWork, primaryCta, whyAndhub } from "@/content/site";
+import { approach, company, primaryCta, whyAndhub } from "@/content/site";
 
 // Visible marker for content the owner still has to approve (see the brief).
 export function ToConfirm({ note }: { note?: string }) {
@@ -72,27 +62,56 @@ export function WhyGrid() {
   );
 }
 
-const stepIcons = [Search, ClipboardList, Code2, ShieldCheck];
+// "Our approach": ticked steps joined by one continuous line. The ticks fill in one
+// after another when the section scrolls into view; the server render and reduced
+// motion show every step ticked.
+export function ApproachFlow() {
+  const list = useRef<HTMLOListElement>(null);
+  const [state, setState] = useState<"static" | "waiting" | "ticking">("static");
 
-export function StepsGrid() {
+  useEffect(() => {
+    const element = list.current;
+    if (!element || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    setState("waiting");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setState("ticking");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 },
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <ol className="process-grid">
-      {howWeWork.map((step, index) => {
-        const Icon = stepIcons[index];
-        return (
-          <li className="process-step" key={step}>
-            <div className="process-step-top">
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <Icon size={18} aria-hidden="true" />
-            </div>
-            <div className="process-line">
-              <i />
-            </div>
-            <h3>{step}</h3>
-          </li>
-        );
-      })}
+    <ol ref={list} className={`approach-flow is-${state}`}>
+      {approach.map((step, index) => (
+        <li
+          className="approach-step"
+          key={step}
+          style={{ "--step": index } as CSSProperties}
+        >
+          <span className="approach-tick" aria-hidden="true">
+            <Check size={22} strokeWidth={3} />
+          </span>
+          <h3>{step}</h3>
+        </li>
+      ))}
     </ol>
+  );
+}
+
+// Sector challenges as cards in the brochure's warm green, without icons.
+export function ChallengeCards({ items }: { items: string[] }) {
+  return (
+    <ul className="challenge-cards">
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
   );
 }
 

@@ -100,7 +100,7 @@ for (const sector of sectors) {
   });
 }
 
-test("solutions page groups seven solutions by what owners track, plus the AI band", async ({
+test("solutions page: six groups of two short cards by what owners track", async ({
   page,
 }) => {
   await page.goto("./solutions/");
@@ -109,20 +109,21 @@ test("solutions page groups seven solutions by what owners track, plus the AI ba
     "Track production and quality",
     "Track sales and products",
     "Track projects and sites",
-    "Track training and learning",
+    "Track learning and information",
+    "AI-driven operations",
   ]) {
     await expect(page.getByRole("heading", { level: 2, name: heading })).toBeVisible();
   }
   await expect(page.getByText("You get", { exact: true })).toHaveCount(0);
-  await expect(page.locator(".solution-card h4").first()).toHaveText("Benefits");
+  // Short cards: name and one line, no benefit lists.
+  await expect(page.locator(".solution-card .gain-list")).toHaveCount(0);
   // Group names and their dot icons are not shown.
   for (const name of ["Make", "Sell", "Learn and Build"]) {
     await expect(page.getByRole("heading", { name, exact: true })).toHaveCount(0);
   }
   await expect(page.locator(".family-dot")).toHaveCount(0);
-  await expect(page.locator(".solution-card")).toHaveCount(7);
-  await expect(page.locator(".ai-grid li")).toHaveCount(4);
-  await expect(page.locator(".ai-grid .to-confirm")).toHaveCount(4);
+  await expect(page.locator(".solution-card")).toHaveCount(12);
+  await expect(page.locator(".ai-grid")).toHaveCount(0);
 });
 
 test("contact form builds a filled-in email request", () => {

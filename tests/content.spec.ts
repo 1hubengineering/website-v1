@@ -12,9 +12,13 @@ test("solutions: three groups, seven solutions; four services", () => {
   expect(solutionCount).toBe(7);
   const ids = families.flatMap((family) => family.solutions.map((solution) => solution.id));
   expect(new Set(ids).size).toBe(ids.length);
-  // Each solution sits in exactly one "what owners track" group.
-  const grouped = trackGroups.flatMap((group) => group.solutions);
-  expect([...grouped].sort()).toEqual([...ids].sort());
+  // Solutions page: six groups of exactly two cards; every solution the sector pages
+  // link to (/solutions/#<id>) is one of those cards, and card ids are unique.
+  expect(trackGroups).toHaveLength(6);
+  const cardIds = trackGroups.flatMap((group) => group.cards.map((card) => card.id));
+  for (const group of trackGroups) expect(group.cards, group.title).toHaveLength(2);
+  expect(new Set(cardIds).size).toBe(cardIds.length);
+  for (const id of ids) expect(cardIds, id).toContain(id);
   expect(services).toEqual([
     "Software Development",
     "Systems Engineering",

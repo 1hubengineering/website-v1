@@ -977,3 +977,24 @@ q.hook-quote::after {
   font-weight: 600;
   color: var(--muted);
 }
+
+/* Solutions: compact rows of two short cards */
+.track-group {
+  padding-block: 40px;
+}
+.solution-card-short {
+  gap: 8px;
+  padding: 22px 24px;
+}
+.solution-card-short h3 {
+  font-size: 19px;
+}
+.solution-card-short p {
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .track-group {
+    padding-block: 32px;
+  }
+}

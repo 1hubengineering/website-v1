@@ -125,26 +125,119 @@ export const aiOperations = {
 
 export const solutionCount = families.reduce((total, family) => total + family.solutions.length, 0);
 
-// The Solutions page groups the seven solutions by what a business owner wants to track.
-// Every solution appears in exactly one group (checked by tests/content.spec.ts).
-export const trackGroups: { id: string; title: string; solutions: SolutionId[] }[] = [
-  { id: "track-stock", title: "Track stock and deliveries", solutions: ["inventory-logistics"] },
+// The Solutions page: six groups of what a business owner wants to track, two short
+// cards each (name and one line, no benefit lists). Card ids double as anchors for the
+// sector pages, which link to /solutions/#<solution id> (checked by tests/content.spec.ts).
+export type TrackCard = { id: string; name: string; description: string };
+
+export const trackGroups: {
+  id: string;
+  title: string;
+  color: "blue" | "green" | "navy";
+  cards: [TrackCard, TrackCard];
+}[] = [
+  {
+    id: "track-stock",
+    title: "Track stock and deliveries",
+    color: "blue",
+    cards: [
+      {
+        id: "inventory-logistics",
+        name: "Inventory management",
+        description: "Live stock of raw materials and finished goods, by location",
+      },
+      {
+        id: "logistics",
+        name: "Logistics and delivery tracking",
+        description: "Shipments and deliveries followed from warehouse to customer",
+      },
+    ],
+  },
   {
     id: "track-production",
     title: "Track production and quality",
-    solutions: ["process-management", "quality-control"],
+    color: "blue",
+    cards: [
+      {
+        id: "process-management",
+        name: "Process management and control",
+        description: "A live dashboard of output, stoppages and machine status, with maintenance alerts",
+      },
+      {
+        id: "quality-control",
+        name: "Quality control",
+        description: "Digital inspection checklists that trace every defect to its machine, shift or batch",
+      },
+    ],
   },
   {
     id: "track-sales",
     title: "Track sales and products",
-    solutions: ["e-commerce", "brand-traceability"],
+    color: "green",
+    cards: [
+      {
+        id: "e-commerce",
+        name: "E-commerce for manufacturers",
+        description: "An online shop where buyers order directly, with Telebirr payments and stock linked",
+      },
+      {
+        id: "brand-traceability",
+        name: "Brand and digital traceability",
+        description: "A QR code on every product showing its origin, batch and that it is genuine",
+      },
+    ],
   },
   {
     id: "track-projects",
     title: "Track projects and sites",
-    solutions: ["construction-management"],
+    color: "navy",
+    cards: [
+      {
+        id: "construction-management",
+        name: "Construction management",
+        description: "Sites, materials, crews and equipment followed day by day from a phone",
+      },
+      {
+        id: "project-management",
+        name: "Project management",
+        description: "Schedules, budgets and milestones across every project, with measurable progress",
+      },
+    ],
   },
-  { id: "track-learning", title: "Track training and learning", solutions: ["e-learning"] },
+  {
+    id: "track-learning",
+    title: "Track learning and information",
+    color: "navy",
+    cards: [
+      {
+        id: "e-learning",
+        name: "E-learning",
+        description: "Courses, lessons and exams on phone and computer",
+      },
+      {
+        id: "information-management",
+        name: "Information management",
+        description: "Registration, records and data kept organised, safe and easy to find",
+      },
+    ],
+  },
+  {
+    id: "ai-driven-operations",
+    title: "AI-driven operations",
+    color: "green",
+    cards: [
+      {
+        id: "predictive-alerts",
+        name: "Predictive alerts",
+        description: "Early warnings for maintenance, defects and quality trends",
+      },
+      {
+        id: "forecasting",
+        name: "Forecasting and risk scoring",
+        description: "Stock and demand forecasts and loan risk scores from the business’s own data",
+      },
+    ],
+  },
 ];
 
 export function findSolution(id: SolutionId) {

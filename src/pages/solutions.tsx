@@ -1,8 +1,9 @@
-import { Check, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
-import { CtaBand, SectionHeading, ToConfirm } from "@/components/sections";
-import { aiOperations, findSolution, trackGroups } from "@/content/solutions";
-import { services } from "@/content/site";
+import { CtaBand } from "@/components/sections";
+import { trackGroups } from "@/content/solutions";
+
+// Card accent follows the brand colour roles.
+const familyFor = { blue: "make", green: "sell", navy: "learn-build" } as const;
 
 export function SolutionsPage() {
   return (
@@ -18,6 +19,7 @@ export function SolutionsPage() {
         }
       />
 
+      {/* Six groups of what owners track, two short cards each. */}
       {trackGroups.map((group, index) => (
         <section
           key={group.id}
@@ -28,46 +30,21 @@ export function SolutionsPage() {
           <div className="container track-group-layout">
             <h2 id={`${group.id}-title`}>{group.title}</h2>
             <ul className="solution-grid track-group-cards">
-              {group.solutions.map((id) => {
-                const { solution, family } = findSolution(id);
-                return (
-                  <li key={id} id={id} className="solution-card" data-family={family.id}>
-                    <h3>{solution.name}</h3>
-                    <p>{solution.description}</p>
-                    <h4>Benefits</h4>
-                    <ul className="gain-list">
-                      {solution.gains.map((gain) => (
-                        <li key={gain}>
-                          <Check size={16} aria-hidden="true" />
-                          {gain}
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
-                );
-              })}
+              {group.cards.map((card) => (
+                <li
+                  key={card.id}
+                  id={card.id}
+                  className="solution-card solution-card-short"
+                  data-family={familyFor[group.color]}
+                >
+                  <h3>{card.name}</h3>
+                  <p>{card.description}</p>
+                </li>
+              ))}
             </ul>
           </div>
         </section>
       ))}
-
-      <section className="section section-surface ai-band" id="ai" aria-labelledby="ai-title">
-        <div className="container">
-          <SectionHeading
-            id="ai-title"
-            title={services[3]}
-          />
-          <ul className="ai-grid">
-            {aiOperations.features.map((feature) => (
-              <li key={feature.name}>
-                <Sparkles size={20} aria-hidden="true" />
-                <span>{feature.name}</span>
-                {feature.toConfirm && <ToConfirm note="Mark removed once we can demo it." />}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
 
       <CtaBand
         title="Not sure which solution fits?"

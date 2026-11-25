@@ -25,8 +25,8 @@ export type Sector = {
   pilot: string;
   gains: [string, string, string];
   cta: Confirmable & { label: string; action: string };
-  // Photo under the Unsplash License (free commercial use; credit kept here and in
-  // public/sectors/CREDITS.md, not shown on the page).
+  // Hero background photo (1920×1080 WebP) under the Unsplash License: free commercial
+  // use; credit kept here and in public/sectors/CREDITS.md, not shown on the page.
   image: { src: string; alt: string; credit: { photographer: string; url: string } };
   seo: { title: string; description: string };
   story?: { steps: string[]; line: string };
@@ -37,7 +37,7 @@ export const sectors: Sector[] = [
     slug: "food-and-beverage",
     name: "Food and beverage",
     family: "make",
-    headline: "From raw material to the shelf, every batch under control.",
+    headline: "Stock, quality and production software for food and beverage factories.",
     intro:
       "Flour mills, bakeries, dairies, juice and water bottlers live on fresh stock, tight margins and food safety. AndHub gives them one system to see what they hold, what they make and where every batch goes.",
     challenges: [
@@ -100,7 +100,7 @@ export const sectors: Sector[] = [
     slug: "leather-and-garments",
     name: "Leather and garments",
     family: "make",
-    headline: "Every order on time, every piece export-ready.",
+    headline: "Order tracking, quality control and product traceability for leather and garment factories.",
     intro:
       "Tanneries, shoe makers, bag makers and garment factories work to buyer deadlines and buyer quality rules. AndHub lets them follow every order from material to shipment and prove quality and origin to any buyer.",
     challenges: [
@@ -148,8 +148,8 @@ export const sectors: Sector[] = [
     cta: { action: "Book a free visit", label: "Book a free visit and track your next order with us." },
     image: {
       src: "sectors/leather-and-garments.webp",
-      alt: "Woman sewing at an industrial sewing machine in a garment workshop",
-      credit: { photographer: "EqualStock", url: "https://unsplash.com/photos/RXcYC-z6NY4" },
+      alt: "Workers at rows of sewing tables on a large garment factory floor",
+      credit: { photographer: "EqualStock", url: "https://unsplash.com/photos/dh1EDCiQ6lg" },
     },
     seo: {
       title: "Leather and Garment Factory Software | AndHub",
@@ -161,7 +161,7 @@ export const sectors: Sector[] = [
     slug: "metal-and-engineering",
     name: "Metal and engineering",
     family: "make",
-    headline: "Every job, every machine, every bolt accounted for.",
+    headline: "Production, maintenance and inventory software for metal and engineering manufacturers.",
     intro:
       "Steel mills, fabrication workshops and engineering firms run many jobs at once on expensive machines. AndHub shows where every job stands, which machine needs care and what material is left.",
     challenges: [
@@ -212,8 +212,8 @@ export const sectors: Sector[] = [
     cta: { action: "Book a free visit", label: "Book a free visit and see every job on one board." },
     image: {
       src: "sectors/metal-and-engineering.webp",
-      alt: "Welder in protective gear welding steel, with sparks flying",
-      credit: { photographer: "Frankie Lopez", url: "https://unsplash.com/photos/Jd_7HTsjhLw" },
+      alt: "Factory floor of a metal parts manufacturer with rows of production machines",
+      credit: { photographer: "MGR P.", url: "https://unsplash.com/photos/HNLlzPGbTBM" },
     },
     seo: {
       title: "Metal and Engineering Workshop Software | AndHub",
@@ -225,7 +225,7 @@ export const sectors: Sector[] = [
     slug: "construction",
     name: "Construction",
     family: "learn-build",
-    headline: "Every site on one screen, every birr accounted for.",
+    headline: "Project, cost and site management software for construction companies.",
     intro:
       "Contractors, consultants and developers run many sites, many crews and large budgets at the same time. AndHub brings schedule, cost, materials and daily progress from every site into one view.",
     challenges: [
@@ -286,7 +286,7 @@ export const sectors: Sector[] = [
   {
     slug: "aerospace-and-aviation",
     name: "Aerospace and aviation",
-    headline: "Engineering readiness you can measure.",
+    headline: "Reliability, maintenance and readiness tools for aerospace and aviation teams.",
     intro:
       "Airlines, maintenance centres, aerospace manufacturers and space institutes work with complex systems where every decision must be backed by evidence. AndHub brings systems-engineering research into tools their engineers use every day — from the aircraft hangar to small satellites.",
     challenges: [
@@ -351,7 +351,7 @@ export const sectors: Sector[] = [
   {
     slug: "banking-and-finance",
     name: "Banking and finance",
-    headline: "See where every loan goes and what it builds.",
+    headline: "Loan-to-business tracking and portfolio dashboards for banks and microfinance institutions.",
     intro:
       "Banks, microfinance institutions and investment groups lend to thousands of small businesses but mostly track money, not whether the business is working. AndHub follows both the loan and the business it funds.",
     challenges: [
@@ -402,8 +402,8 @@ export const sectors: Sector[] = [
     },
     image: {
       src: "sectors/banking-and-finance.webp",
-      alt: "Shop owner at the counter of her small grocery shop",
-      credit: { photographer: "Ali Mkumbwa", url: "https://unsplash.com/photos/EOkN2pRjFsg" },
+      alt: "Team of professionals meeting around a table in a bright office",
+      credit: { photographer: "Christina @ wocintechchat.com", url: "https://unsplash.com/photos/faEfWCdOKIg" },
     },
     seo: {
       title: "Loan Tracking System for Banks and MFIs | AndHub",
@@ -415,7 +415,7 @@ export const sectors: Sector[] = [
     slug: "brands-and-exporters",
     name: "Brands and exporters",
     family: "sell",
-    headline: "Prove it’s yours. Prove it’s real.",
+    headline: "QR product identity, traceability and online sales for brands and exporters.",
     intro:
       "Coffee, food, leather and craft brands compete with copies at home and with demanding buyers abroad. AndHub gives every product a digital identity and every brand its own direct channel to buyers.",
     challenges: [
@@ -480,7 +480,7 @@ export const sectors: Sector[] = [
     slug: "schools-and-colleges",
     name: "Schools and colleges",
     family: "learn-build",
-    headline: "Learning that never stops.",
+    headline: "Online learning, exams, student records and parent portals for schools and colleges.",
     intro:
       "Private schools, universities and TVET colleges want better results, organised records and parents who stay involved. AndHub puts teaching, exams and records online, on the phones students and parents already have.",
     challenges: [

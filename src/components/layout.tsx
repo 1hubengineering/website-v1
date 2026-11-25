@@ -6,6 +6,7 @@ import { Brand } from "@/components/brand";
 import { Button } from "@/components/ui/button";
 import { ModalContent, ProjectInquiry } from "@/components/project-inquiry";
 import { InquiryContext } from "@/components/inquiry-context";
+import { MobileSectorLinks, SectorsMenu } from "@/components/sectors-menu";
 import { findPageMeta } from "@/content/pages";
 import { company, mainNav, primaryCta, services } from "@/content/site";
 
@@ -68,11 +69,15 @@ export function Layout() {
         <div className="container header-inner">
           <Brand />
           <nav className="desktop-nav" aria-label="Main navigation">
-            {mainNav.map((item) => (
-              <NavLink key={item.to} to={item.to}>
-                {item.label}
-              </NavLink>
-            ))}
+            {mainNav.map((item) =>
+              item.to === "/sectors/" ? (
+                <SectorsMenu key={item.to} />
+              ) : (
+                <NavLink key={item.to} to={item.to}>
+                  {item.label}
+                </NavLink>
+              ),
+            )}
           </nav>
           <div className="header-actions">
             <Button
@@ -105,10 +110,15 @@ export function Layout() {
                 </Dialog.Description>
                 <nav aria-label="Mobile navigation">
                   {mainNav.map((item) => (
-                    <NavLink key={item.to} to={item.to} onClick={() => setMenuOpen(false)}>
-                      {item.label}
-                      <ArrowUpRight size={21} />
-                    </NavLink>
+                    <div key={item.to}>
+                      <NavLink to={item.to} onClick={() => setMenuOpen(false)}>
+                        {item.label}
+                        <ArrowUpRight size={21} />
+                      </NavLink>
+                      {item.to === "/sectors/" && (
+                        <MobileSectorLinks onNavigate={() => setMenuOpen(false)} />
+                      )}
+                    </div>
                   ))}
                   <Button
                     onClick={() => {

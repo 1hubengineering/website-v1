@@ -6,8 +6,6 @@ import { CtaBand, SectionHeading, ToConfirm } from "@/components/sections";
 import { findSector } from "@/content/sectors";
 import { NotFoundPage } from "@/pages/not-found";
 
-const base = import.meta.env.BASE_URL;
-
 // Sector page template, in the brief's order: headline, intro, challenges,
 // solutions table, start small, gains, call to action.
 export function SectorPage() {
@@ -17,12 +15,11 @@ export function SectorPage() {
 
   return (
     <>
-      <PageHero title={sector.headline}>
-        {sector.intro}
-      </PageHero>
+      <PageHero title={sector.headline} image={sector.image} />
 
       <section className="section" aria-labelledby="challenges-title">
         <div className="container sector-intro-layout">
+          <p className="sector-intro">{sector.intro}</p>
           <div>
             <SectionHeading id="challenges-title" title="Your challenges" />
             <ul className="challenge-list">
@@ -34,16 +31,6 @@ export function SectorPage() {
               ))}
             </ul>
           </div>
-          <figure className="sector-photo">
-            <img
-              src={`${base}${sector.image.src}`}
-              alt={sector.image.alt}
-              width="1200"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
         </div>
       </section>
 

@@ -37,7 +37,6 @@ test("main navigation reaches every section page", async ({ page }) => {
   const nav = page.getByRole("navigation", { name: "Main navigation" });
   for (const [label, heading] of [
     ["Solutions", "Seven ready-made solutions."],
-    ["Sectors", "Sector digital solutions"],
     ["Projects", "Our projects"],
     ["About", "Engineers who study your work before we build."],
     ["Contact", "Book a free discovery visit."],
@@ -73,12 +72,14 @@ for (const sector of sectors) {
     expect(headings.at(-1)?.trim()).toBe(sector.cta.label);
     await expect(page.locator(".challenge-list li")).toHaveCount(3);
     await expect(page.locator(".solution-table tbody tr")).toHaveCount(sector.solutions.length);
-    const photo = page.locator(".sector-photo img");
+    // The sector photo is the hero background; the hero holds only the bold sentence.
+    const photo = page.locator(".page-hero-photo .page-hero-image");
     await expect(photo).toHaveAttribute("alt", sector.image.alt);
-    await photo.scrollIntoViewIfNeeded();
     await expect
-      .poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth))
-      .toBe(1200);
+      .poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0))
+      .toBe(true);
+    await expect(page.locator(".page-hero-photo p, .page-hero-photo .page-hero-lead")).toHaveCount(0);
+    await expect(page.locator(".sector-intro")).toHaveText(sector.intro);
     await expect(page.locator(".to-confirm")).toHaveCount(sector.cta.toConfirm ? 1 : 0);
 
     await page.getByRole("link", { name: sector.cta.action }).click();
@@ -146,4 +147,29 @@ test("hero logo: static for reduced motion, liquid metal otherwise", async ({ br
   await expect(moving.locator(".liquid-logo canvas")).toHaveCount(1, { timeout: 10_000 });
   expect(errors).toEqual([]);
   await moving.close();
+});
+
+test("Sectors in the header is a dropdown of every sector", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("./");
+  const nav = page.getByRole("navigation", { name: "Main navigation" });
+  const trigger = nav.getByRole("button", { name: "Sectors" });
+  await expect(trigger).toHaveAttribute("aria-expanded", "false");
+  await trigger.click();
+  await expect(trigger).toHaveAttribute("aria-expanded", "true");
+  const menu = page.locator("#sectors-menu");
+  await expect(menu.getByRole("link")).toHaveCount(sectors.length + 1);
+  await page.keyboard.press("Escape");
+  await expect(menu).toBeHidden();
+  await expect(trigger).toBeFocused();
+
+  await trigger.click();
+  await menu.getByRole("link", { name: "Metal and engineering" }).click();
+  await expect(page).toHaveURL(/\/sectors\/metal-and-engineering\/$/);
+  await expect(menu).toBeHidden();
+  await expect(trigger).toHaveClass(/active/);
+
+  await trigger.click();
+  await menu.getByRole("link", { name: "All sectors" }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Sector digital solutions");
 });

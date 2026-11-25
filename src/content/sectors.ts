@@ -191,12 +191,12 @@ export const sectors: Sector[] = [
     pilot: "One buyer order or one production line, one-month pilot",
     gains: ["Orders shipped on time", "Fewer rejected shipments", "Trust from international buyers"],
     cta: { action: "Book a free visit", label: "Book a free visit and track your next order with us" },
-    // Garment workshop, leather cutting and leather stitching (no logos or flags).
+    // Garment cutting floor, leather cutting and leather stitching (no logos, flags or close faces).
     images: [
       {
         src: "sectors/leather-and-garments.webp",
-        alt: "Women sewing at rows of machines in a garment workshop",
-        credit: { photographer: "Allan Wadsworth", url: "https://unsplash.com/photos/Lp78NT-mf9o" },
+        alt: "Long garment cutting tables in a clean factory hall, a worker seen from behind",
+        credit: { photographer: "Charlie Merrow", url: "https://www.pexels.com/photo/31850037/" },
       },
       {
         src: "sectors/leather-and-garments-2.webp",

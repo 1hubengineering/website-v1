@@ -898,3 +898,36 @@ q.hook-quote::after {
   font-size: 16px;
   line-height: 1.6;
 }
+
+/* Core services: an illustration at the top of each card, then the title and text */
+.service-art {
+  --art-bg: #eef5ff;
+  --art-card: #ffffff;
+  --art-line: #dbe3ee;
+  --art-navy: #0b1f3b;
+  --art-blue: #2563eb;
+  --art-green: #10b981;
+  --art-muted: #b6c2d2;
+  margin: -28px -28px 8px;
+  border-radius: 12px 12px 0 0;
+  background: var(--art-bg);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.dark .service-art {
+  --art-bg: #12304f;
+  --art-card: #0d2442;
+  --art-line: #2c4664;
+  --art-navy: #cbd5e1;
+  --art-blue: #60a5fa;
+  --art-green: #34d399;
+  --art-muted: #4a6382;
+}
+.service-art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.service-card-art h3 {
+  margin-top: 8px;
+}

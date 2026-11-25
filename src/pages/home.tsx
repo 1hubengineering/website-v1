@@ -1,6 +1,7 @@
-import { ArrowRight, ArrowUpRight, BrainCircuit, Code2, Network, Workflow } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
 import { HubOrbit } from "@/components/hub-orbit";
+import { ServiceArt } from "@/components/service-art";
 import { Button } from "@/components/ui/button";
 import {
   ApproachFlow,
@@ -13,19 +14,15 @@ import { company, primaryCta, services } from "@/content/site";
 
 const serviceDetails = [
   {
-    icon: Code2,
     text: "Web, mobile and business software built around how your people work every day",
   },
   {
-    icon: Network,
     text: "We study how your people, machines and data work together before we build",
   },
   {
-    icon: Workflow,
     text: "Manual steps turned into automatic workflows, with live dashboards of output and stock",
   },
   {
-    icon: BrainCircuit,
     text: "Alerts and forecasts from your own data, for maintenance, quality, stock and demand",
   },
 ];
@@ -68,12 +65,10 @@ export function HomePage() {
           <SectionHeading id="services-title" title="Core services" />
           <div className="home-services">
             {services.map((service, index) => {
-              const { icon: Icon, text } = serviceDetails[index];
+              const { text } = serviceDetails[index];
               return (
-                <article className="home-card" key={service}>
-                  <span className="home-card-icon">
-                    <Icon size={22} aria-hidden="true" />
-                  </span>
+                <article className="home-card service-card-art" key={service}>
+                  <ServiceArt index={index} />
                   <h3>{service}</h3>
                   <p>{text}</p>
                 </article>

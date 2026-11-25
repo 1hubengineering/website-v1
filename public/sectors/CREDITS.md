@@ -11,7 +11,7 @@ The list is generated from `images` in `src/content/sectors.ts`; to replace a ph
 | food-and-beverage-3.webp | Zan Lazarevic | Unsplash License | https://unsplash.com/photos/JfIGAxiLtJE |
 | food-and-beverage-4.webp | Andreas Ebner | Pexels License | https://www.pexels.com/photo/41257622/ |
 | food-and-beverage-5.webp | Arno Senoner | Unsplash License | https://unsplash.com/photos/oLS6IxceVNs |
-| leather-and-garments.webp | Allan Wadsworth | Unsplash License | https://unsplash.com/photos/Lp78NT-mf9o |
+| leather-and-garments.webp | Charlie Merrow | Pexels License | https://www.pexels.com/photo/31850037/ |
 | leather-and-garments-2.webp | Vlada Karpovich | Pexels License | https://www.pexels.com/photo/4452619/ |
 | leather-and-garments-3.webp | Anna Shvets | Pexels License | https://www.pexels.com/photo/5894244/ |
 | metal-and-engineering.webp | Hoang NC | Pexels License | https://www.pexels.com/photo/15947586/ |

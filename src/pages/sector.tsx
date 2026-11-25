@@ -19,9 +19,13 @@ export function SectorPage() {
 
       <section className="section" aria-labelledby="challenges-title">
         <div className="container sector-intro-layout">
-          <p className="sector-intro">{sector.intro}</p>
+          {/* Sectors with the solution story open on their challenges, not the intro. */}
+          {!sector.question && <p className="sector-intro">{sector.intro}</p>}
           <div>
-            <SectionHeading id="challenges-title" title="Your challenges" />
+            <SectionHeading
+              id="challenges-title"
+              title={sector.challengesTitle ?? "Your challenges"}
+            />
             <ul className="challenge-list">
               {sector.challenges.map((challenge) => (
                 <li key={challenge}>
@@ -31,8 +35,36 @@ export function SectorPage() {
               ))}
             </ul>
           </div>
+          {sector.question && (
+            <div className="sector-question">
+              <p className="sector-question-text">{sector.question}</p>
+              {sector.answer && <p className="sector-answer">{sector.answer}</p>}
+            </div>
+          )}
         </div>
       </section>
+
+      {sector.offering && (
+        <section className="section section-surface" aria-labelledby="offering-title">
+          <div className="container sector-offering">
+            <div>
+              <SectionHeading id="offering-title" title="Our digital solution" />
+              <p className="sector-offering-name">{sector.offering}</p>
+            </div>
+            <div>
+              <h3 className="sector-tackles-title">Challenges our solution tackles</h3>
+              <ul className="gain-list gain-list-large">
+                {sector.challenges.map((challenge) => (
+                  <li key={challenge}>
+                    <Check size={20} aria-hidden="true" />
+                    {challenge}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="section section-surface" aria-labelledby="solutions-title">
         <div className="container">

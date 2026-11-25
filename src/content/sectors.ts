@@ -26,7 +26,14 @@ export type Sector = {
   family?: FamilyId;
   headline: string;
   intro: string;
-  challenges: [string, string, string];
+  challenges: string[];
+  // Optional "sector to solution" story (construction first; other sectors to follow):
+  // a named challenges heading, the reader's situation as a question, our answer, and
+  // the digital solution we provide. The challenges are repeated as what it tackles.
+  challengesTitle?: string;
+  question?: string;
+  answer?: string;
+  offering?: string;
   solutions: SectorSolution[];
   pilot: string;
   gains: [string, string, string];
@@ -272,11 +279,18 @@ export const sectors: Sector[] = [
     headline: "Project, cost and site management software for construction companies",
     intro:
       "Contractors, consultants and developers run many sites, many crews and large budgets at the same time. AndHub brings schedule, cost, materials and daily progress from every site into one view.",
+    challengesTitle: "Core challenges in construction management",
     challenges: [
-      "Projects slip and costs grow before anyone notices",
-      "Cement, steel and tools disappear between sites",
-      "Owners ask for progress and reports take days to prepare",
+      "Contract compliance",
+      "Human resource management",
+      "Project deadlines",
+      "Quality control",
+      "Project delivery",
     ],
+    question:
+      "Are you managing construction projects across the country, following milestones on each one and leading several project managers, with no way to measure progress?",
+    answer: "BIM and integrated project management are here to help you",
+    offering: "Construction management and project management system",
     solutions: [
       {
         name: "Construction management",

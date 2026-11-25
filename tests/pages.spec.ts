@@ -56,7 +56,8 @@ for (const sector of sectors) {
     const headings = await page.locator("main h1, main h2").allInnerTexts();
     const order = [
       sector.headline,
-      "Your challenges",
+      sector.challengesTitle ?? "Your challenges",
+      ...(sector.offering ? ["Our digital solution"] : []),
       "Solutions you can choose from",
       "Start small",
       "What you gain",
@@ -70,7 +71,7 @@ for (const sector of sectors) {
     }
     // The call to action is the last section on the page.
     expect(headings.at(-1)?.trim()).toBe(sector.cta.label);
-    await expect(page.locator(".challenge-list li")).toHaveCount(3);
+    await expect(page.locator(".challenge-list li")).toHaveCount(sector.challenges.length);
     await expect(page.locator(".solution-table tbody tr")).toHaveCount(sector.solutions.length);
     // The sector photo is the hero background; the hero holds only the bold sentence.
     const photo = page.locator(".page-hero-photo .hero-slide").first();
@@ -79,7 +80,15 @@ for (const sector of sectors) {
       .poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0))
       .toBe(true);
     await expect(page.locator(".page-hero-photo p, .page-hero-photo .page-hero-lead")).toHaveCount(0);
-    await expect(page.locator(".sector-intro")).toHaveText(sector.intro);
+    if (sector.question) {
+      // Solution story: question and answer, then the offering and what it tackles.
+      await expect(page.locator(".sector-question-text")).toHaveText(sector.question);
+      if (sector.answer) await expect(page.locator(".sector-answer")).toHaveText(sector.answer);
+      await expect(page.locator(".sector-offering-name")).toHaveText(sector.offering ?? "");
+      await expect(page.locator(".sector-offering .gain-list li")).toHaveText(sector.challenges);
+    } else {
+      await expect(page.locator(".sector-intro")).toHaveText(sector.intro);
+    }
     await expect(page.locator(".to-confirm")).toHaveCount(sector.cta.toConfirm ? 1 : 0);
 
     await page.getByRole("link", { name: sector.cta.action }).click();

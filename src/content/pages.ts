@@ -11,7 +11,7 @@ export type PageMeta = {
 export const pages: PageMeta[] = [
   {
     path: "/",
-    title: "AndHub Engineering PLC — Ideas. Engineered.",
+    title: "AndHub",
     description:
       "Software development, systems engineering, and process automation and AI-driven operations for companies in Addis Ababa, Ethiopia.",
   },

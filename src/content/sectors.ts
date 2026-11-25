@@ -107,6 +107,7 @@ export const sectors: Sector[] = [
       "Orders delivered on time",
     ],
     cta: { action: "Book a free visit", label: "Book a free visit to see your stock and quality on one screen" },
+    // Food processing, then a brewery: brew kettles, fermentation tanks, bottling.
     images: [
       {
         src: "sectors/food-and-beverage.webp",
@@ -115,6 +116,21 @@ export const sectors: Sector[] = [
       },
       {
         src: "sectors/food-and-beverage-2.webp",
+        alt: "Large copper brew kettles in a brewery",
+        credit: { photographer: "Heng Chiu", url: "https://unsplash.com/photos/F4UDuUP5LAk" },
+      },
+      {
+        src: "sectors/food-and-beverage-3.webp",
+        alt: "Row of stainless steel fermentation tanks in a brewery",
+        credit: { photographer: "Zan Lazarevic", url: "https://unsplash.com/photos/JfIGAxiLtJE" },
+      },
+      {
+        src: "sectors/food-and-beverage-4.webp",
+        alt: "Unlabelled beer bottles on an automated bottling line",
+        credit: { photographer: "Andreas Ebner", url: "https://www.pexels.com/photo/41257622/" },
+      },
+      {
+        src: "sectors/food-and-beverage-5.webp",
         alt: "Packing lines with many workers inside a food processing plant",
         credit: { photographer: "Arno Senoner", url: "https://unsplash.com/photos/oLS6IxceVNs" },
       },
@@ -175,16 +191,22 @@ export const sectors: Sector[] = [
     pilot: "One buyer order or one production line, one-month pilot",
     gains: ["Orders shipped on time", "Fewer rejected shipments", "Trust from international buyers"],
     cta: { action: "Book a free visit", label: "Book a free visit and track your next order with us" },
+    // Garment workshop, leather cutting and leather stitching (no logos or flags).
     images: [
       {
         src: "sectors/leather-and-garments.webp",
-        alt: "Workers at rows of sewing tables on a large garment factory floor",
-        credit: { photographer: "EqualStock", url: "https://unsplash.com/photos/dh1EDCiQ6lg" },
+        alt: "Women sewing at rows of machines in a garment workshop",
+        credit: { photographer: "Allan Wadsworth", url: "https://unsplash.com/photos/Lp78NT-mf9o" },
       },
       {
         src: "sectors/leather-and-garments-2.webp",
-        alt: "Workers organising textiles in a large garment factory hall",
-        credit: { photographer: "EqualStock IN", url: "https://www.pexels.com/photo/31112182/" },
+        alt: "Craftsman cutting a leather hide on a workshop table",
+        credit: { photographer: "Vlada Karpovich", url: "https://www.pexels.com/photo/4452619/" },
+      },
+      {
+        src: "sectors/leather-and-garments-3.webp",
+        alt: "Leather being stitched on an industrial sewing machine",
+        credit: { photographer: "Anna Shvets", url: "https://www.pexels.com/photo/5894244/" },
       },
     ],
     seo: {
@@ -515,19 +537,30 @@ export const sectors: Sector[] = [
       toConfirm: true,
       note: "BikiltuTrack is in development — confirm a demo is ready.",
     },
+    // Addis Ababa today: skyline, Friendship Park, the city at night; then office and market.
     images: [
       {
         src: "sectors/banking-and-finance.webp",
-        alt: "Business district skyline and traffic in Addis Ababa",
-        credit: { photographer: "Abdullah Aljaberti", url: "https://www.pexels.com/photo/14391906/" },
+        alt: "Addis Ababa skyline above green gardens under a blue sky",
+        credit: { photographer: "Abenezer Muluken", url: "https://unsplash.com/photos/WBBkY_fpLiI" },
       },
       {
         src: "sectors/banking-and-finance-2.webp",
+        alt: "Friendship Park lake in Addis Ababa reflecting the city towers",
+        credit: { photographer: "Yohannes Minas", url: "https://unsplash.com/photos/YPLosSc3w6A" },
+      },
+      {
+        src: "sectors/banking-and-finance-3.webp",
+        alt: "Addis Ababa skyline at night above a lit park",
+        credit: { photographer: "Abenezer Shewaga", url: "https://unsplash.com/photos/WMB-Fb5LHeg" },
+      },
+      {
+        src: "sectors/banking-and-finance-4.webp",
         alt: "Team of professionals meeting around a table in a bright office",
         credit: { photographer: "Christina @ wocintechchat.com", url: "https://unsplash.com/photos/faEfWCdOKIg" },
       },
       {
-        src: "sectors/banking-and-finance-3.webp",
+        src: "sectors/banking-and-finance-5.webp",
         alt: "Busy outdoor market with many small traders",
         credit: { photographer: "Mad Knoxx Deluxe", url: "https://www.pexels.com/photo/36096119/" },
       },

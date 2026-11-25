@@ -146,11 +146,19 @@ export const sectors: Sector[] = [
     headline: "Order tracking, quality control and product traceability for leather and garment factories",
     intro:
       "Tanneries, shoe makers, bag makers and garment factories work to buyer deadlines and buyer quality rules. AndHub lets them follow every order from material to shipment and prove quality and origin to any buyer.",
+    challengesTitle: "Core challenges in leather and garment manufacturing",
     challenges: [
-      "Buyer deadlines are tight and delays show up too late",
-      "Defects are found at the end, when fixing them is expensive",
-      "Export buyers ask for proof of quality and origin",
+      "Order tracking and buyer deadlines",
+      "Quality control",
+      "Raw material control (hides, fabric and trims)",
+      "Production line efficiency",
+      "Operator skills and training",
+      "Export compliance and traceability",
     ],
+    question:
+      "Are you producing for local and export buyers, with orders, hides, fabric and operators spread across several lines, and no live view of which order is late or why a shipment was rejected?",
+    answer: "Integrated order, quality and traceability management is here to help you",
+    offering: "Order, quality and traceability management system",
     solutions: [
       {
         name: "Process management",

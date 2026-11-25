@@ -116,3 +116,29 @@ test("contact form builds a filled-in email request", () => {
   }
   expect(decodeURIComponent(visitRequestMailto({ name: "A", organisation: "", contact: "a", sector: "x", message: "m" }))).toContain("Sector: Other / not sure");
 });
+
+test("hero logo: static for reduced motion, liquid metal otherwise", async ({ browser }) => {
+  // Playwright config runs with reducedMotion: "reduce" by default.
+  const still = await browser.newPage({ reducedMotion: "reduce", viewport: { width: 1440, height: 900 } });
+  const shaderRequests: string[] = [];
+  still.on("request", (request) => {
+    if (/assets\/dist-.*\.js$/.test(request.url())) shaderRequests.push(request.url());
+  });
+  await still.goto("./");
+  await expect(still.locator(".liquid-logo .brand-art-dark")).toBeVisible();
+  await still.waitForTimeout(500);
+  await expect(still.locator(".liquid-logo canvas")).toHaveCount(0);
+  expect(shaderRequests).toEqual([]);
+  await still.close();
+
+  const moving = await browser.newPage({
+    reducedMotion: "no-preference",
+    viewport: { width: 1440, height: 900 },
+  });
+  const errors: string[] = [];
+  moving.on("pageerror", (error) => errors.push(error.message));
+  await moving.goto("./");
+  await expect(moving.locator(".liquid-logo canvas")).toHaveCount(1, { timeout: 10_000 });
+  expect(errors).toEqual([]);
+  await moving.close();
+});

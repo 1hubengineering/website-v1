@@ -1,6 +1,6 @@
 import { ArrowRight, ArrowUpRight, BrainCircuit, Code2, Network, Workflow } from "lucide-react";
 import { Link } from "react-router";
-import { BrandMark } from "@/components/brand";
+import { LiquidLogo } from "@/components/liquid-logo";
 import { Button } from "@/components/ui/button";
 import {
   CtaBand,
@@ -64,8 +64,8 @@ export function HomePage() {
               </Button>
             </div>
           </div>
-          <div className="home-hero-mark" aria-hidden="true">
-            <BrandMark surface="dark" />
+          <div className="home-hero-mark">
+            <LiquidLogo />
           </div>
         </div>
       </section>

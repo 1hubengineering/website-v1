@@ -90,6 +90,22 @@ li {
   flex-wrap: wrap;
   margin-top: 32px;
 }
+.liquid-logo {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+.liquid-logo-canvas {
+  position: absolute;
+  inset: 0;
+}
+/* The static symbol only hides once the shader canvas exists, so a failed load still shows the logo. */
+.liquid-logo:has(canvas) .brand-symbol {
+  opacity: 0;
+  transition: opacity 0.6s 0.4s;
+}
 .home-hero-mark .brand-symbol {
   width: 100%;
   max-width: 340px;

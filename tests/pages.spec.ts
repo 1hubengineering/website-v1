@@ -141,30 +141,29 @@ test("contact form builds a filled-in email request", () => {
   expect(decodeURIComponent(visitRequestMailto({ name: "A", organisation: "", contact: "a", sector: "x", message: "m" }))).toContain("Sector: Other / not sure");
 });
 
-test("hero logo: static for reduced motion, liquid metal otherwise", async ({ browser }) => {
-  // Playwright config runs with reducedMotion: "reduce" by default.
-  const still = await browser.newPage({ reducedMotion: "reduce", viewport: { width: 1440, height: 900 } });
-  const shaderRequests: string[] = [];
-  still.on("request", (request) => {
-    if (/assets\/dist-.*\.js$/.test(request.url())) shaderRequests.push(request.url());
-  });
-  await still.goto("./");
-  await expect(still.locator(".liquid-logo .brand-art-dark")).toBeVisible();
-  await still.waitForTimeout(500);
-  await expect(still.locator(".liquid-logo canvas")).toHaveCount(0);
-  expect(shaderRequests).toEqual([]);
-  await still.close();
-
-  const moving = await browser.newPage({
-    reducedMotion: "no-preference",
-    viewport: { width: 1440, height: 900 },
-  });
-  const errors: string[] = [];
-  moving.on("pageerror", (error) => errors.push(error.message));
-  await moving.goto("./");
-  await expect(moving.locator(".liquid-logo canvas")).toHaveCount(1, { timeout: 10_000 });
-  expect(errors).toEqual([]);
-  await moving.close();
+test("home hero: the four services orbit the AndHub symbol", async ({ browser }) => {
+  for (const reducedMotion of ["reduce", "no-preference"] as const) {
+    const page = await browser.newPage({ reducedMotion, viewport: { width: 1440, height: 900 } });
+    const errors: string[] = [];
+    page.on("pageerror", (error) => errors.push(error.message));
+    await page.goto("./");
+    const orbit = page.getByRole("list", { name: "Our services" });
+    await expect(orbit.getByRole("listitem")).toHaveText([
+      "Software Development",
+      "Systems Engineering",
+      "Process Automation",
+      "AI-Driven Operations",
+    ]);
+    await expect(page.locator(".hub-core img")).toBeVisible();
+    // No silver liquid-metal shader any more: no canvas, no WebGL bundle.
+    await expect(page.locator(".home-hero canvas")).toHaveCount(0);
+    await page.waitForTimeout(2200);
+    for (const label of await orbit.locator(".hub-satellite-label").all()) {
+      await expect(label).toBeInViewport();
+    }
+    expect(errors).toEqual([]);
+    await page.close();
+  }
 });
 
 test("Sectors in the header is a dropdown of every sector", async ({ page }) => {

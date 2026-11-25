@@ -8,7 +8,7 @@ The four SVG exports are copied verbatim from:
 - `assets/logos/svg/compact/andhub-compact-flat-dark.svg`
 - `assets/logos/svg/symbol/andhub-symbol-gradient-light.svg`
 - `assets/logos/svg/symbol/andhub-symbol-gradient-dark.svg`
-- `assets/logos/svg/symbol/andhub-symbol-flat-light.svg` (downloaded from brand.1hubengineering.com; used as the shape for the home hero liquid-metal effect)
+- `assets/logos/svg/symbol/andhub-symbol-flat-light.svg` (downloaded from brand.1hubengineering.com; used as the mask shape for the glossy sheen on the home hero symbol)
 
 `public/favicon.svg` places the flat light symbol (`assets/logos/svg/symbol/andhub-symbol-flat-light.svg`, brand.1hubengineering.com) on a white rounded tile, as requested for the browser tab. Symbol paths and colours are unchanged; flat geometry stays legible at favicon sizes.
 

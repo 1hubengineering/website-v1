@@ -41,76 +41,7 @@ li {
   border-block: 1px solid var(--border);
 }
 
-/* Home hero */
-.home-hero {
-  position: relative;
-  overflow: hidden;
-}
-.home-hero-layout {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  align-items: center;
-  gap: 48px;
-  padding-block: 96px 88px;
-}
-.hero-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  font-weight: 550;
-  color: var(--muted);
-  margin-bottom: 24px;
-}
-.hero-lead {
-  color: var(--muted);
-  max-width: 560px;
-  font-size: 18px;
-  line-height: 1.7;
-  margin-top: 24px;
-}
-.hero-services {
-  list-style: none;
-  padding: 0;
-  margin: 28px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.hero-services li {
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 6px 14px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--foreground);
-}
-.home-hero .hero-actions {
-  flex-wrap: wrap;
-  margin-top: 32px;
-}
-.liquid-logo {
-  position: relative;
-  width: 100%;
-  max-width: 340px;
-  aspect-ratio: 1;
-  margin-inline: auto;
-}
-.liquid-logo-canvas {
-  position: absolute;
-  inset: 0;
-}
-/* The static symbol only hides once the shader canvas exists, so a failed load still shows the logo. */
-.liquid-logo:has(canvas) .brand-symbol {
-  opacity: 0;
-  transition: opacity 0.6s 0.4s;
-}
-.home-hero-mark .brand-symbol {
-  width: 100%;
-  max-width: 340px;
-  margin-inline: auto;
-}
+/* Home hero: see hero.css */
 
 /* Cards shared by services, projects strip */
 .home-services {
@@ -344,19 +275,10 @@ ol.process-grid {
   .project-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .home-hero-layout {
-    grid-template-columns: 1fr;
-  }
-  .home-hero-mark {
-    display: none;
-  }
 }
 @media (max-width: 800px) {
   .home-services {
     grid-template-columns: 1fr;
-  }
-  .home-hero-layout {
-    padding-block: 56px;
   }
   .hero-lead,
   .page-hero-lead,

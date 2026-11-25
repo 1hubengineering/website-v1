@@ -1,6 +1,6 @@
 import { ArrowRight, ArrowUpRight, BrainCircuit, Code2, Network, Workflow } from "lucide-react";
 import { Link } from "react-router";
-import { LiquidLogo } from "@/components/liquid-logo";
+import { HubOrbit } from "@/components/hub-orbit";
 import { Button } from "@/components/ui/button";
 import {
   ApproachFlow,
@@ -37,17 +37,12 @@ export function HomePage() {
         <div className="container home-hero-layout">
           <div className="hero-copy">
             <h1 id="hero-title">
-              Ideas.
+              <span className="hero-line">Ideas.</span>
               <br />
-              <span className="hero-emphasis">Engineered.</span>
+              <span className="hero-line hero-emphasis">Engineered.</span>
             </h1>
-            <p className="hero-lead">{company.whatWeDo}</p>
-            <ul className="hero-services" aria-label="Our services">
-              {services.map((service) => (
-                <li key={service}>{service}</li>
-              ))}
-            </ul>
-            <div className="hero-actions">
+            <p className="hero-lead hero-rise">{company.whatWeDo}</p>
+            <div className="hero-actions hero-rise">
               <Button size="lg" asChild>
                 <Link to={primaryCta.to}>
                   {primaryCta.label}
@@ -63,7 +58,7 @@ export function HomePage() {
             </div>
           </div>
           <div className="home-hero-mark">
-            <LiquidLogo />
+            <HubOrbit />
           </div>
         </div>
       </section>

@@ -10,24 +10,23 @@ import {
   WhyGrid,
 } from "@/components/sections";
 import { company, primaryCta, services } from "@/content/site";
-import { projects } from "@/lib/projects";
 
 const serviceDetails = [
   {
     icon: Code2,
-    text: "Web, mobile and business software built around how your people work every day.",
+    text: "Web, mobile and business software built around how your people work every day",
   },
   {
     icon: Network,
-    text: "We study how your people, machines and data work together before we build.",
+    text: "We study how your people, machines and data work together before we build",
   },
   {
     icon: Workflow,
-    text: "Manual steps turned into automatic workflows, with live dashboards of output and stock.",
+    text: "Manual steps turned into automatic workflows, with live dashboards of output and stock",
   },
   {
     icon: BrainCircuit,
-    text: "Alerts and forecasts from your own data, for maintenance, quality, stock and demand.",
+    text: "Alerts and forecasts from your own data, for maintenance, quality, stock and demand",
   },
 ];
 
@@ -35,7 +34,6 @@ export function HomePage() {
   return (
     <>
       <section className="home-hero on-navy" aria-labelledby="hero-title">
-        <div className="hero-grid" />
         <div className="container home-hero-layout">
           <div className="hero-copy">
             <h1 id="hero-title">
@@ -120,32 +118,6 @@ export function HomePage() {
             title="How we work"
           />
           <StepsGrid />
-        </div>
-      </section>
-
-      <section className="section" id="work" aria-labelledby="work-title">
-        <div className="container">
-          <SectionHeading
-            id="work-title"
-            title="Our projects"
-            aside={
-              <Link to="/projects/" className="text-link">
-                All projects
-                <ArrowRight size={16} />
-              </Link>
-            }
-          />
-          <ul className="project-strip">
-            {projects.slice(0, 4).map((project) => (
-              <li key={project.name}>
-                <Link to="/projects/" className="home-card project-strip-card">
-                  <h3>{project.name}</h3>
-                  <p>{project.description}</p>
-                  <span className="project-strip-status">{project.status}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 

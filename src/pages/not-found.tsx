@@ -6,8 +6,8 @@ export function NotFoundPage() {
   return (
     <section className="section" aria-labelledby="not-found-title">
       <div className="container">
-        <h1 id="not-found-title">This page does not exist.</h1>
-        <p>The link may be old, or the address may have a typing error.</p>
+        <h1 id="not-found-title">This page does not exist</h1>
+        <p>The link may be old, or the address may have a typing error</p>
         <Button size="lg" asChild>
           <Link to="/">
             Go to the home page

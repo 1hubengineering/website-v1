@@ -29,7 +29,7 @@ export const projects: Project[] = [
     name: "Rental OS",
     category: "Products",
     type: "BUSINESS PLATFORM",
-    description: "One platform. A more connected rental business.",
+    description: "Manages rental vendors, inventory, bookings and customers in one platform",
     detail:
       "A rental marketplace and management platform in development, bringing vendors, inventory, bookings, and customer experiences into one connected workflow.",
     tags: ["Web platform", "Business operations"],
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     name: "Studio Proof",
     category: "Products",
     type: "PHOTOGRAPHY WORKFLOW",
-    description: "The simpler way to find the perfect shot.",
+    description: "Lets photo studios and their clients review, select and deliver photos",
     detail:
       "A local-first photo proofing application in development that helps studios and clients review, select, and deliver photographs on their own network.",
     tags: ["Desktop + web", "Local first"],
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     name: "KeyForge",
     category: "Open source",
     type: "DEVELOPER INFRASTRUCTURE",
-    description: "Your software. Your licenses. Your rules.",
+    description: "Self-hosted software licensing with activations, trials and offline keys",
     detail:
       "A self-hosted, MIT-licensed software licensing system with activations, trials, and offline license tokens.",
     tags: ["Open source", "Self hosted"],
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     name: "Say Bingo",
     category: "Products",
     type: "INTERACTIVE PRODUCT",
-    description: "A little connection. A lot of possibility.",
+    description: "Multiplayer bingo game on Telegram with game rooms and player wallets",
     detail:
       "A Telegram-based multiplayer bingo experience in development, with game rooms, player wallets, and operator workflows.",
     tags: ["Telegram", "Multiplayer"],
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     name: "Afaan Oromo Bible",
     category: "Products",
     type: "OFFLINE BIBLE READER",
-    description: "Read, compare, and keep your study close.",
+    description: "Offline Bible reader in Afaan Oromo and English with search and study notes",
     detail:
       "An offline desktop Bible reader with Scripture search, side-by-side Afaan Oromo and English editions, highlights, bookmarks, and personal study notes stored on your computer. Windows is available in public beta, with experimental macOS and Ubuntu downloads.",
     tags: ["Desktop", "Offline first"],
@@ -136,7 +136,7 @@ export const projects: Project[] = [
     name: "Linux Setup",
     category: "Open source",
     type: "DEVELOPER EXPERIENCE",
-    description: "Your terminal. Ready for the way you build.",
+    description: "Ready-made Linux terminal setup for Ubuntu, Debian and WSL",
     detail:
       "A Linux terminal setup for Ubuntu and Debian, including WSL. Combines Zsh, Oh My Posh themes, tmux, developer tools, GitHub account profiles, and an optional AI skill manager. An Alt+X command picker keeps shortcuts searchable, while setup checks, configuration backups, and selective uninstall help you manage your environment.",
     tags: ["Ubuntu / Debian / WSL", "Zsh + tmux"],

@@ -32,7 +32,7 @@ export function ContactPage() {
 
   return (
     <>
-      <PageHero title="Book a free discovery visit.">
+      <PageHero title="Book a free discovery visit">
         We visit your factory, office, school or site, learn how you work today and suggest a
         small pilot. There is no cost for the visit.
       </PageHero>

@@ -8,7 +8,7 @@ const founderIcons = [Workflow, Code2];
 export function AboutPage() {
   return (
     <>
-      <PageHero title="Engineers who study your work before we build.">
+      <PageHero title="Engineers who study your work before we build">
         {company.whatWeDo}
       </PageHero>
 

@@ -22,10 +22,6 @@ export function ProjectArt({ art, preview }: { art: string; preview?: ProjectPre
   if (image) {
     return (
       <figure className={`project-art project-art-preview art-${art}`}>
-        <div className="preview-heading" aria-hidden="true">
-          <span>{project?.name}</span>
-          <span>{art === "linux" ? "TERMINAL PREVIEW" : "APP SCREENSHOT"}</span>
-        </div>
         <img
           src={image.src}
           alt={image.alt}
@@ -34,24 +30,12 @@ export function ProjectArt({ art, preview }: { art: string; preview?: ProjectPre
           loading="lazy"
           decoding="async"
         />
-        <figcaption>{image.label}</figcaption>
+        {preview && <figcaption>{image.label}</figcaption>}
       </figure>
     );
   }
   return (
     <div className={`project-art art-${art}`} aria-hidden="true">
-      <span className="art-label">
-        {art === "rental"
-          ? "RENTAL / OS"
-          : art === "studio"
-            ? "STUDIO PROOF"
-            : art === "keyforge"
-              ? "KEYFORGE"
-              : art === "bingo"
-                ? "SAY BINGO"
-                : project?.name}
-      </span>
-      <span className="art-caption">CONCEPT PREVIEW</span>
       {art === "rental" && (
         <div className="rental-window">
           <aside>
@@ -137,7 +121,7 @@ export function ProjectArt({ art, preview }: { art: string; preview?: ProjectPre
             <KeyRound size={49} strokeWidth={1.2} />
           </div>
           <div className="key-code">
-            <span className="status-dot" /> license.verify()
+            license.verify()
             <span className="key-verified">
               verified <Check size={11} />
             </span>
@@ -195,19 +179,12 @@ export function Projects() {
               </button>
             ))}
           </div>
-          <span className="work-count" role="status">
-            {String(visible.length).padStart(2, "0")} projects / always building
-          </span>
         </div>
         <div className="projects-grid">
           {visible.map((project) => (
             <article className="project-card" key={project.name}>
               <ProjectArt art={project.art} />
               <div className="project-info">
-                <div className="project-meta">
-                  <span>{project.type}</span>
-                  <ArrowUpRight size={19} />
-                </div>
                 <h3>
                   <button
                     className="project-open"
@@ -221,15 +198,6 @@ export function Projects() {
                   </button>
                 </h3>
                 <p>{project.description}</p>
-                <div className="project-tags">
-                  {project.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                  <span className="project-status">
-                    <i />
-                    {project.status}
-                  </span>
-                </div>
               </div>
             </article>
           ))}
@@ -268,10 +236,7 @@ export function Projects() {
                 )}
                 <Dialog.Title>{selected.name}</Dialog.Title>
                 <Dialog.Description>{selected.detail}</Dialog.Description>
-                <p className="detail-status">
-                  <span className="status-dot" />
-                  {selected.status}
-                </p>
+                <p className="detail-status">{selected.status}</p>
                 {selected.url ? (
                   <Button asChild>
                     <a href={selected.url} target="_blank" rel="noopener noreferrer">

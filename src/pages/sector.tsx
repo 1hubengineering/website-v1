@@ -113,7 +113,7 @@ export function SectorPage() {
       <CtaBand
         id="sector-cta"
         title={sector.cta.label}
-        text="We visit, learn how you work today and agree on a small pilot."
+        text="We visit, learn how you work today and agree on a small pilot"
         action={sector.cta.action}
         to={`/contact/?sector=${sector.slug}`}
         marker={sector.cta.toConfirm && <ToConfirm note={sector.cta.note} />}

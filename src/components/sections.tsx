@@ -120,8 +120,8 @@ export function SectionHeading({
 // Closing navy band. Every sector page ends with one.
 export function CtaBand({
   id = "contact",
-  title = "Start with a free discovery visit.",
-  text = "We learn how you work today, then propose a one-month pilot.",
+  title = "Start with a free discovery visit",
+  text = "We learn how you work today, then propose a one-month pilot",
   action = primaryCta.label,
   to = primaryCta.to,
   marker,

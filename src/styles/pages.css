@@ -132,12 +132,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(11, 31, 59, 0.92) 0%,
-    rgba(11, 31, 59, 0.75) 45%,
-    rgba(11, 31, 59, 0.25) 100%
-  );
+  background: rgba(11, 31, 59, 0.62);
 }
 .page-hero-photo .page-hero-inner {
   z-index: 1;
@@ -396,7 +391,7 @@
     padding-block: 96px 48px;
   }
   .page-hero-photo::after {
-    background: linear-gradient(0deg, rgba(11, 31, 59, 0.94) 10%, rgba(11, 31, 59, 0.55) 100%);
+    background: rgba(11, 31, 59, 0.7);
   }
   .sector-intro {
     font-size: 16px;

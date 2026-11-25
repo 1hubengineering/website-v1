@@ -38,21 +38,21 @@ export const families: Family[] = [
       {
         id: "inventory-logistics",
         name: "Inventory and logistics",
-        description: "Shows what stock you have, where it is and when deliveries arrive.",
+        description: "Shows what stock you have, where it is and when deliveries arrive",
         gains: ["No stock-outs or over-stock", "Fewer losses", "Delivery status for every order"],
       },
       {
         id: "quality-control",
         name: "Quality control",
         description:
-          "Digital inspection checklists that trace every defect to its machine, shift or batch.",
+          "Digital inspection checklists that trace every defect to its machine, shift or batch",
         gains: ["Fewer defects and returns", "Proof of quality for buyers and exports"],
       },
       {
         id: "process-management",
         name: "Process management and control",
         description:
-          "A live dashboard of output, stoppages and machine status, with maintenance alerts.",
+          "A live dashboard of output, stoppages and machine status, with maintenance alerts",
         gains: ["Less downtime", "More output per day", "Maintenance before breakdowns"],
       },
     ],
@@ -66,14 +66,14 @@ export const families: Family[] = [
         id: "e-commerce",
         name: "E-commerce for manufacturers",
         description:
-          "An online shop for the factory itself; shops, distributors and buyers order directly, with Telebirr payments and stock linked.",
+          "An online shop for the factory itself; shops, distributors and buyers order directly, with Telebirr payments and stock linked",
         gains: ["Sales without a middleman", "Orders and payments in one place"],
       },
       {
         id: "brand-traceability",
         name: "Brand and digital traceability",
         description:
-          "A QR code on every product showing its origin, batch and that it is genuine.",
+          "A QR code on every product showing its origin, batch and that it is genuine",
         gains: [
           "Protection against fake products",
           "Proof of origin for exports",
@@ -90,7 +90,7 @@ export const families: Family[] = [
       {
         id: "e-learning",
         name: "E-learning / learning management",
-        description: "Courses, lessons, exams and student records on phone and computer.",
+        description: "Courses, lessons, exams and student records on phone and computer",
         gains: [
           "Learning outside class",
           "Grades in one place",
@@ -101,7 +101,7 @@ export const families: Family[] = [
         id: "construction-management",
         name: "Construction management",
         description:
-          "Schedule, budget, materials, crews and equipment for every site on one screen.",
+          "Schedule, budget, materials, crews and equipment for every site on one screen",
         gains: [
           "Projects on time and on budget",
           "Less material lost",

@@ -18,7 +18,7 @@ export function PageHero({
       className={image ? "page-hero page-hero-photo on-navy" : "page-hero on-navy"}
       aria-labelledby="page-title"
     >
-      {image ? (
+      {image && (
         <img
           className="page-hero-image"
           src={`${base}${image.src}`}
@@ -28,8 +28,6 @@ export function PageHero({
           fetchPriority="high"
           decoding="async"
         />
-      ) : (
-        <div className="hero-grid" />
       )}
       <div className="container page-hero-inner">
         <h1 id="page-title">{title}</h1>

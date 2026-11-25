@@ -44,12 +44,14 @@ for (const viewport of [
         const card = page.locator(".project-card").filter({ has: trigger });
         await card.scrollIntoViewIfNeeded();
         await expect.poll(() => card.locator("img").evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
-        if (project.name === "Afaan Oromo Bible") {
-          await expect(card.locator(".project-status")).toHaveText("Public beta");
-        }
+        // Cards show only the picture, name and what it does; status lives in the detail view.
+        await expect(card.locator(".project-status, .project-tags, .project-meta")).toHaveCount(0);
         await trigger.click();
         const dialog = page.getByRole("dialog");
         await expect(dialog.getByRole("heading")).toHaveText(project.name);
+        if (project.name === "Afaan Oromo Bible") {
+          await expect(dialog.locator(".detail-status")).toHaveText("Public beta");
+        }
         await expect(dialog.getByRole("link", { name: project.action, exact: true })).toHaveAttribute("href", project.url);
         await expect(dialog.getByRole("link", { name: project.resource, exact: true })).toHaveAttribute("href", project.resourceUrl);
         const picker = dialog.getByRole("group", { name: "Choose a project preview" });

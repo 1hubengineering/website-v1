@@ -7,7 +7,7 @@ import { services } from "@/content/site";
 export function SolutionsPage() {
   return (
     <>
-      <PageHero title="Seven ready-made solutions.">
+      <PageHero title="Seven ready-made solutions">
         Ready-made digital solutions for factories, companies, schools and building sites. Each
         one starts as a small pilot on one line, site, class or branch.
       </PageHero>

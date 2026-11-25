@@ -36,10 +36,10 @@ test("main navigation reaches every section page", async ({ page }) => {
   await page.goto("./");
   const nav = page.getByRole("navigation", { name: "Main navigation" });
   for (const [label, heading] of [
-    ["Solutions", "Seven ready-made solutions."],
+    ["Solutions", "Seven ready-made solutions"],
     ["Projects", "Our projects"],
-    ["About", "Engineers who study your work before we build."],
-    ["Contact", "Book a free discovery visit."],
+    ["About", "Engineers who study your work before we build"],
+    ["Contact", "Book a free discovery visit"],
   ]) {
     await nav.getByRole("link", { name: label }).click();
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(heading);
@@ -83,7 +83,7 @@ for (const sector of sectors) {
     await expect(page.locator(".to-confirm")).toHaveCount(sector.cta.toConfirm ? 1 : 0);
 
     await page.getByRole("link", { name: sector.cta.action }).click();
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Book a free discovery visit.");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Book a free discovery visit");
     await expect(page.getByLabel("Your sector")).toHaveValue(sector.slug);
   });
 }

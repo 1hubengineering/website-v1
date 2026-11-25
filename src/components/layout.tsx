@@ -146,7 +146,7 @@ export function Layout() {
               <p>
                 {company.tagline}
                 <br />
-                {company.location}.
+                {company.location}
               </p>
             </div>
             <div className="footer-links">
@@ -185,7 +185,7 @@ export function Layout() {
           <div className="footer-bottom">
             <span>© {new Date().getFullYear()} {company.name}.</span>
             <span className="footer-signoff">
-              <span className="status-dot" /> IDEAS. ENGINEERED.
+              IDEAS. ENGINEERED.
             </span>
             <a href="#top">
               Back to top

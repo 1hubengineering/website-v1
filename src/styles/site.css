@@ -414,15 +414,8 @@ ol.process-grid {
 .nav-dropdown-trigger[aria-expanded="true"] svg {
   transform: rotate(180deg);
 }
-.nav-dropdown-trigger.active::after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: var(--highlight);
-  border-radius: 50%;
-  bottom: 0;
-  left: calc(50% - 10px);
+.nav-dropdown-trigger.active {
+  font-weight: 600;
 }
 .nav-dropdown-panel {
   position: absolute;
@@ -493,4 +486,13 @@ ol.process-grid {
 .mobile-menu {
   max-height: calc(100dvh - 32px);
   overflow-y: auto;
+}
+
+/* No dot under the active menu item: the current page is shown in bold instead. */
+.desktop-nav a.active::after,
+.desktop-nav a.active:after {
+  display: none;
+}
+.desktop-nav a.active {
+  font-weight: 600;
 }

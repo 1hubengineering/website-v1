@@ -37,13 +37,13 @@ export const sectors: Sector[] = [
     slug: "food-and-beverage",
     name: "Food and beverage",
     family: "make",
-    headline: "Stock, quality and production software for food and beverage factories.",
+    headline: "Stock, quality and production software for food and beverage factories",
     intro:
-      "Flour mills, bakeries, dairies, juice and water bottlers live on fresh stock, tight margins and food safety. AndHub gives them one system to see what they hold, what they make and where every batch goes.",
+      "Flour mills, bakeries, dairies, juice and water bottlers live on fresh stock, tight margins and food safety. AndHub gives them one system to see what they hold, what they make and where every batch goes",
     challenges: [
-      "Raw materials expire or run out before big orders.",
-      "A bad batch reaches the market and nobody can say where it came from.",
-      "The line stops and no one knows why or for how long.",
+      "Raw materials expire or run out before big orders",
+      "A bad batch reaches the market and nobody can say where it came from",
+      "The line stops and no one knows why or for how long",
     ],
     solutions: [
       {
@@ -78,13 +78,13 @@ export const sectors: Sector[] = [
         provides: "Short hygiene and safety courses on workers’ phones",
       },
     ],
-    pilot: "One warehouse or one production line, one-month pilot.",
+    pilot: "One warehouse or one production line, one-month pilot",
     gains: [
       "Less waste and fewer expired goods",
       "Safe, traceable products buyers trust",
       "Orders delivered on time",
     ],
-    cta: { action: "Book a free visit", label: "Book a free visit to see your stock and quality on one screen." },
+    cta: { action: "Book a free visit", label: "Book a free visit to see your stock and quality on one screen" },
     image: {
       src: "sectors/food-and-beverage.webp",
       alt: "Workers in hairnets along a fruit processing line in a factory",
@@ -100,13 +100,13 @@ export const sectors: Sector[] = [
     slug: "leather-and-garments",
     name: "Leather and garments",
     family: "make",
-    headline: "Order tracking, quality control and product traceability for leather and garment factories.",
+    headline: "Order tracking, quality control and product traceability for leather and garment factories",
     intro:
       "Tanneries, shoe makers, bag makers and garment factories work to buyer deadlines and buyer quality rules. AndHub lets them follow every order from material to shipment and prove quality and origin to any buyer.",
     challenges: [
-      "Buyer deadlines are tight and delays show up too late.",
-      "Defects are found at the end, when fixing them is expensive.",
-      "Export buyers ask for proof of quality and origin.",
+      "Buyer deadlines are tight and delays show up too late",
+      "Defects are found at the end, when fixing them is expensive",
+      "Export buyers ask for proof of quality and origin",
     ],
     solutions: [
       {
@@ -143,9 +143,9 @@ export const sectors: Sector[] = [
         provides: "Operator and quality courses on the phone",
       },
     ],
-    pilot: "One buyer order or one production line, one-month pilot.",
+    pilot: "One buyer order or one production line, one-month pilot",
     gains: ["Orders shipped on time", "Fewer rejected shipments", "Trust from international buyers"],
-    cta: { action: "Book a free visit", label: "Book a free visit and track your next order with us." },
+    cta: { action: "Book a free visit", label: "Book a free visit and track your next order with us" },
     image: {
       src: "sectors/leather-and-garments.webp",
       alt: "Workers at rows of sewing tables on a large garment factory floor",
@@ -161,13 +161,13 @@ export const sectors: Sector[] = [
     slug: "metal-and-engineering",
     name: "Metal and engineering",
     family: "make",
-    headline: "Production, maintenance and inventory software for metal and engineering manufacturers.",
+    headline: "Production, maintenance and inventory software for metal and engineering manufacturers",
     intro:
       "Steel mills, fabrication workshops and engineering firms run many jobs at once on expensive machines. AndHub shows where every job stands, which machine needs care and what material is left.",
     challenges: [
-      "Jobs run over time and the customer hears it first.",
-      "Machines stop without warning and the whole workshop waits.",
-      "Steel and spare parts go missing between store and floor.",
+      "Jobs run over time and the customer hears it first",
+      "Machines stop without warning and the whole workshop waits",
+      "Steel and spare parts go missing between store and floor",
     ],
     solutions: [
       {
@@ -203,13 +203,13 @@ export const sectors: Sector[] = [
         provides: "Online quotes and orders for standard products",
       },
     ],
-    pilot: "One workshop or one machine group, one-month pilot.",
+    pilot: "One workshop or one machine group, one-month pilot",
     gains: [
       "More jobs finished on time",
       "Less downtime and fewer emergency repairs",
       "Material used where it should be",
     ],
-    cta: { action: "Book a free visit", label: "Book a free visit and see every job on one board." },
+    cta: { action: "Book a free visit", label: "Book a free visit and see every job on one board" },
     image: {
       src: "sectors/metal-and-engineering.webp",
       alt: "Factory floor of a metal parts manufacturer with rows of production machines",
@@ -225,13 +225,13 @@ export const sectors: Sector[] = [
     slug: "construction",
     name: "Construction",
     family: "learn-build",
-    headline: "Project, cost and site management software for construction companies.",
+    headline: "Project, cost and site management software for construction companies",
     intro:
       "Contractors, consultants and developers run many sites, many crews and large budgets at the same time. AndHub brings schedule, cost, materials and daily progress from every site into one view.",
     challenges: [
-      "Projects slip and costs grow before anyone notices.",
-      "Cement, steel and tools disappear between sites.",
-      "Owners ask for progress and reports take days to prepare.",
+      "Projects slip and costs grow before anyone notices",
+      "Cement, steel and tools disappear between sites",
+      "Owners ask for progress and reports take days to prepare",
     ],
     solutions: [
       {
@@ -265,13 +265,13 @@ export const sectors: Sector[] = [
         provides: "Safety and site procedure courses for crews",
       },
     ],
-    pilot: "One site, one-month pilot.",
+    pilot: "One site, one-month pilot",
     gains: [
       "Projects on time and on budget",
       "Less material lost on site",
       "Owners who see progress without asking",
     ],
-    cta: { action: "Book a free visit", label: "Book a free visit and put your next site on one screen." },
+    cta: { action: "Book a free visit", label: "Book a free visit and put your next site on one screen" },
     image: {
       src: "sectors/construction.webp",
       alt: "Two construction workers in hard hats on a tiled roof",
@@ -286,13 +286,13 @@ export const sectors: Sector[] = [
   {
     slug: "aerospace-and-aviation",
     name: "Aerospace and aviation",
-    headline: "Reliability, maintenance and readiness tools for aerospace and aviation teams.",
+    headline: "Reliability, maintenance and readiness tools for aerospace and aviation teams",
     intro:
       "Airlines, maintenance centres, aerospace manufacturers and space institutes work with complex systems where every decision must be backed by evidence. AndHub brings systems-engineering research into tools their engineers use every day — from the aircraft hangar to small satellites.",
     challenges: [
-      "Complex systems with strict safety and review rules.",
-      "Reliability data spread across many files and teams.",
-      "Knowledge leaves when experienced engineers leave.",
+      "Complex systems with strict safety and review rules",
+      "Reliability data spread across many files and teams",
+      "Knowledge leaves when experienced engineers leave",
     ],
     solutions: [
       {
@@ -326,13 +326,13 @@ export const sectors: Sector[] = [
         provides: "Courses for engineers and technicians on their own schedule",
       },
     ],
-    pilot: "One working group on one system, starting from reliability data.",
+    pilot: "One working group on one system, starting from reliability data",
     gains: [
       "Safer, faster decisions backed by data",
       "Reviews that show exactly what is ready and what is missing",
       "Knowledge that stays in the organisation",
     ],
-    cta: { action: "Book a technical session", label: "Book a technical session with our systems-engineering team." },
+    cta: { action: "Book a technical session", label: "Book a technical session with our systems-engineering team" },
     image: {
       src: "sectors/aerospace-and-aviation.webp",
       alt: "Aircraft landing gear under maintenance in a hangar",
@@ -345,19 +345,19 @@ export const sectors: Sector[] = [
     },
     story: {
       steps: ["Aircraft", "Hub", "Small satellite", "Systems engineering"],
-      line: "From the hangar to orbit, engineering readiness you can measure.",
+      line: "From the hangar to orbit, engineering readiness you can measure",
     },
   },
   {
     slug: "banking-and-finance",
     name: "Banking and finance",
-    headline: "Loan-to-business tracking and portfolio dashboards for banks and microfinance institutions.",
+    headline: "Loan-to-business tracking and portfolio dashboards for banks and microfinance institutions",
     intro:
       "Banks, microfinance institutions and investment groups lend to thousands of small businesses but mostly track money, not whether the business is working. AndHub follows both the loan and the business it funds.",
     challenges: [
-      "Loans are tracked as payments, not as working businesses.",
-      "Loan officers decide on judgement, with little evidence.",
-      "Many customers open digital accounts but rarely use them.",
+      "Loans are tracked as payments, not as working businesses",
+      "Loan officers decide on judgement, with little evidence",
+      "Many customers open digital accounts but rarely use them",
     ],
     solutions: [
       {
@@ -389,14 +389,14 @@ export const sectors: Sector[] = [
         provides: "Short business and finance courses on borrowers’ phones",
       },
     ],
-    pilot: "One branch or one loan programme, one pilot cycle.",
+    pilot: "One branch or one loan programme, one pilot cycle",
     gains: [
       "Better lending decisions with clear evidence",
       "Early warning before a loan goes bad",
       "More active digital customers",
     ],
     cta: {
-      action: "Book a demo", label: "Book a demo of BikiltuTrack with your loan team.",
+      action: "Book a demo", label: "Book a demo of BikiltuTrack with your loan team",
       toConfirm: true,
       note: "BikiltuTrack is in development — confirm a demo is ready.",
     },
@@ -415,13 +415,13 @@ export const sectors: Sector[] = [
     slug: "brands-and-exporters",
     name: "Brands and exporters",
     family: "sell",
-    headline: "QR product identity, traceability and online sales for brands and exporters.",
+    headline: "QR product identity, traceability and online sales for brands and exporters",
     intro:
       "Coffee, food, leather and craft brands compete with copies at home and with demanding buyers abroad. AndHub gives every product a digital identity and every brand its own direct channel to buyers.",
     challenges: [
-      "Fake copies take your customers and damage your name.",
-      "Export buyers ask for proof of origin and batch.",
-      "You depend on middlemen to reach buyers.",
+      "Fake copies take your customers and damage your name",
+      "Export buyers ask for proof of origin and batch",
+      "You depend on middlemen to reach buyers",
     ],
     solutions: [
       {
@@ -454,14 +454,14 @@ export const sectors: Sector[] = [
         provides: "We work with your packaging printer so codes go on at production",
       },
     ],
-    pilot: "One product line, one-month pilot.",
+    pilot: "One product line, one-month pilot",
     gains: [
       "A protected brand",
       "More direct sales, less dependence on middlemen",
       "Trust from export buyers",
     ],
     cta: {
-      action: "Book a demo", label: "Scan our sample code and book a demo for your product.",
+      action: "Book a demo", label: "Scan our sample code and book a demo for your product",
       toConfirm: true,
       note: "Needs a real sample QR code and the page it opens.",
     },
@@ -480,13 +480,13 @@ export const sectors: Sector[] = [
     slug: "schools-and-colleges",
     name: "Schools and colleges",
     family: "learn-build",
-    headline: "Online learning, exams, student records and parent portals for schools and colleges.",
+    headline: "Online learning, exams, student records and parent portals for schools and colleges",
     intro:
       "Private schools, universities and TVET colleges want better results, organised records and parents who stay involved. AndHub puts teaching, exams and records online, on the phones students and parents already have.",
     challenges: [
-      "Lessons are lost when students or teachers are away.",
-      "Grades and records sit on paper and get lost.",
-      "Parents only learn about problems at the end of the term.",
+      "Lessons are lost when students or teachers are away",
+      "Grades and records sit on paper and get lost",
+      "Parents only learn about problems at the end of the term",
     ],
     solutions: [
       {
@@ -520,13 +520,13 @@ export const sectors: Sector[] = [
         provides: "School fees paid by Telebirr or bank and tracked per student",
       },
     ],
-    pilot: "One class or one course, one-term pilot.",
+    pilot: "One class or one course, one-term pilot",
     gains: [
       "Better results and fewer lost lessons",
       "Records that never get lost",
       "Parents who are informed and involved",
     ],
-    cta: { action: "Start with one class", label: "Start with one class and see the difference in one term." },
+    cta: { action: "Start with one class", label: "Start with one class and see the difference in one term" },
     image: {
       src: "sectors/schools-and-colleges.webp",
       alt: "Students at wooden desks in a classroom with a blackboard",

@@ -17,7 +17,7 @@ export const company = {
   website: "1hubengineering.com",
   github: "https://github.com/1hubengineering",
   whatWeDo:
-    "We turn everyday problems in factories, companies, schools and building sites into ready-made digital solutions, start with a small pilot, and prove the value with measurable results.",
+    "We turn everyday problems in factories, companies and construction into digital solutions with measurable results",
 } as const;
 
 // Four services. Use exactly these words in the hero and footer.
@@ -50,23 +50,23 @@ export const founders: Founder[] = [
 ];
 
 export const whyAndhub = [
-  { title: "Research first", text: "We study your business before we build." },
+  { title: "Research first", text: "We study your business before we build" },
   {
     title: "Multidisciplinary engineering",
-    text: "Systems, software, electrical and aerospace engineering in one team.",
+    text: "Systems, software, electrical and aerospace engineering in one team",
   },
-  { title: "7+ years", text: "of team industry experience." },
+  { title: "7+ years", text: "of team industry experience" },
   {
     title: "Clear, practical interfaces",
-    text: "Screens designed around everyday users, in Amharic, Afaan Oromo and English.",
+    text: "Screens designed around everyday users, in Amharic, Afaan Oromo and English",
   },
 ] as const;
 
 export const howWeWork = [
-  { title: "Free discovery visit", text: "We learn how you work today." },
-  { title: "One-month pilot", text: "On one line, site, class or branch." },
-  { title: "Measure together", text: "We compare before and after." },
-  { title: "Scale", text: "Roll out across your company, with training and support." },
+  { title: "Free discovery visit", text: "We learn how you work today" },
+  { title: "One-month pilot", text: "On one line, site, class or branch" },
+  { title: "Measure together", text: "We compare before and after" },
+  { title: "Scale", text: "Roll out across your company, with training and support" },
 ] as const;
 
 export const mainNav = [

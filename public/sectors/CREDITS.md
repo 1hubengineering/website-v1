@@ -36,5 +36,6 @@ The list is generated from `images` in `src/content/sectors.ts`; to replace a ph
 | brands-and-exporters.webp | Yoseph Hailu | Unsplash License | https://unsplash.com/photos/XiOdESRTMy4 |
 | brands-and-exporters-2.webp | Imanishimwe Regis | Pexels License | https://www.pexels.com/photo/17366133/ |
 | brands-and-exporters-3.webp | Mwesigwa Joel | Pexels License | https://www.pexels.com/photo/38715718/ |
-| schools-and-colleges.webp | Zach Wear | Unsplash License | https://unsplash.com/photos/wjCYyd_KppE |
-| schools-and-colleges-2.webp | Gabriel Joe Amuzu | Pexels License | https://www.pexels.com/photo/37456293/ |
+| schools-and-colleges-a.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
+| schools-and-colleges-b.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
+| schools-and-colleges-c.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |

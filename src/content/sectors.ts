@@ -708,14 +708,19 @@ export const sectors: Sector[] = [
     cta: { action: "Start with one class", label: "Start with one class and see the difference in one term" },
     images: [
       {
-        src: "sectors/schools-and-colleges.webp",
-        alt: "Students at wooden desks in a classroom with a blackboard",
-        credit: { photographer: "Zach Wear", url: "https://unsplash.com/photos/wjCYyd_KppE" },
+        src: "sectors/schools-and-colleges-a.webp",
+        alt: "Students in uniform working on a laptop with their teacher in a bright classroom",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
       {
-        src: "sectors/schools-and-colleges-2.webp",
-        alt: "Students in uniform taking an exam in a classroom",
-        credit: { photographer: "Gabriel Joe Amuzu", url: "https://www.pexels.com/photo/37456293/" },
+        src: "sectors/schools-and-colleges-b.webp",
+        alt: "Students in uniform reading a tablet together while their teacher looks on",
+        credit: { photographer: "AndHub (supplied)", url: "" },
+      },
+      {
+        src: "sectors/schools-and-colleges-c.webp",
+        alt: "Students in uniform doing a science experiment with test tubes, with their teacher",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
     ],
     seo: {

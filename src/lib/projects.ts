@@ -31,9 +31,9 @@ export const projects: Project[] = [
     name: "ModelHer",
     category: "Products",
     type: "SYSTEMS ENGINEERING",
-    description: "Plan, design and verify drones, embedded systems and manufactured hardware in one place",
+    description: "Mission planner for drones, satellites, embedded systems and manufactured hardware",
     detail:
-      "A systems engineering product for hardware teams designing drones, embedded systems and manufactured hardware. Requirements, architecture, verification and progress live together, so every design decision can be traced and readiness can be measured.",
+      "Our systems engineering product for teams that design drones, CanSats, CubeSats, embedded systems and manufactured hardware. The whole team works on one connected model of the system, from the mission to the architecture, and follows the design from first idea to flight readiness.",
     tags: ["Systems engineering", "Hardware"],
     art: "systems-product",
     status: "Demo on request",

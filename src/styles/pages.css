@@ -1764,3 +1764,26 @@ q.hook-quote::after {
   .service-card-art,
   .service-card-art:hover { transform: none; transition: none; }
 }
+
+/* Home: About us, a short introduction beside its title */
+.home-about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+}
+.home-about-text {
+  max-width: 760px;
+}
+.home-about-text p {
+  margin: 0 0 18px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--foreground);
+}
+@media (min-width: 900px) {
+  .home-about {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 48px;
+    align-items: start;
+  }
+}

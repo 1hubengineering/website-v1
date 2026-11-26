@@ -74,6 +74,12 @@ export const leaderQuote = {
 } as const;
 
 // What makes AndHub different (home and About).
+// Home page "About us": a short introduction; the full story stays on the About page.
+export const aboutUs = [
+  "We are a small group of engineers from research, engineering and software services, with more than ten years of experience across different sectors. Again and again we saw that most solutions on the market do not really solve the problems of small and medium businesses.",
+  "So in 2026 we founded AndHub, to bring the digital solutions of Industry 4.0 and 4.5 to small and medium businesses and manufacturers. We start from the local problem and its context, then adapt the digital solution to fit that exact problem.",
+] as const;
+
 export const whyAndhub = [
   {
     title: "Research and experience",

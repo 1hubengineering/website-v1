@@ -8,9 +8,8 @@ import {
   LeaderQuote,
   SectionHeading,
   SectorGrid,
-  WhyGrid,
 } from "@/components/sections";
-import { company, primaryCta, services } from "@/content/site";
+import { aboutUs, company, primaryCta, services } from "@/content/site";
 
 const serviceDetails = [
   {
@@ -96,10 +95,18 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section" id="why" aria-labelledby="why-title">
-        <div className="container">
-          <SectionHeading id="why-title" title="Why AndHub" />
-          <WhyGrid />
+      <section className="section" id="about" aria-labelledby="about-title">
+        <div className="container home-about">
+          <SectionHeading id="about-title" title="About us" />
+          <div className="home-about-text">
+            {aboutUs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            <Link to="/about/" className="text-link">
+              More about us
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 

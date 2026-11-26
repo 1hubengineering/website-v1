@@ -55,7 +55,7 @@ test("theme persists and navigation, filters, details, FAQ, and inquiry work", a
     .getByRole("link", { name: "Projects" })
     .click();
   await expect(page).toHaveURL(/\/projects\/$/);
-  await expect(page).toHaveTitle(/Software Projects/);
+  await expect(page).toHaveTitle("Projects");
   await page.reload();
   await expect(page.getByRole("button", { name: "Switch to light theme" })).toBeVisible();
   await page

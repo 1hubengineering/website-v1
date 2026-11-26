@@ -25,7 +25,7 @@ export function Layout() {
   // Keep the head in sync after client-side navigation.
   useEffect(() => {
     const meta = findPageMeta(pathname);
-    document.title = meta.title;
+    document.title = meta.tab;
     document.querySelector('meta[name="description"]')?.setAttribute("content", meta.description);
     if (!hash) window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname, hash]);

@@ -30,10 +30,11 @@ function replaceOnce(html, pattern, replacement, label) {
 
 function buildPage(meta, { noindex = false } = {}) {
   const url = siteUrl + meta.path.replace(/^\//, "").replace(/([^/])$/, "$1/");
+  const tab = escape(meta.tab);
   const title = escape(meta.title);
   const description = escape(meta.description);
   let html = template;
-  html = replaceOnce(html, /<title>[^<]*<\/title>/, `<title>${title}</title>`, "title");
+  html = replaceOnce(html, /<title>[^<]*<\/title>/, `<title>${tab}</title>`, "title");
   html = replaceOnce(
     html,
     /(<meta\s+name="description"\s+content=")[^"]*(")/,

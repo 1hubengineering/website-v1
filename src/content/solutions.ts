@@ -133,11 +133,14 @@ export type TrackCard = { id: string; name: string; description: string };
 export const trackGroups: {
   id: string;
   title: string;
+  // Wide photo behind the group title (a licensed photo under public/).
+  image: { src: string; alt: string };
   color: "blue" | "green" | "navy";
   cards: [TrackCard, TrackCard];
 }[] = [
   {
     id: "track-stock",
+    image: { src: "sectors/brands-and-exporters-3.webp", alt: "Workers carrying sacks in a warehouse" },
     title: "Track stock and deliveries",
     color: "blue",
     cards: [
@@ -155,6 +158,7 @@ export const trackGroups: {
   },
   {
     id: "track-production",
+    image: { src: "sectors/metal-and-engineering.webp", alt: "Metal fabrication hall with crews at work" },
     title: "Track production and quality",
     color: "blue",
     cards: [
@@ -172,6 +176,7 @@ export const trackGroups: {
   },
   {
     id: "track-sales",
+    image: { src: "sectors/brands-and-exporters.webp", alt: "Roasted Ethiopian coffee beans in an open bag" },
     title: "Track sales and products",
     color: "green",
     cards: [
@@ -189,6 +194,7 @@ export const trackGroups: {
   },
   {
     id: "track-projects",
+    image: { src: "sectors/construction.webp", alt: "Busy construction site with a tower crane" },
     title: "Track projects and sites",
     color: "navy",
     cards: [
@@ -206,6 +212,7 @@ export const trackGroups: {
   },
   {
     id: "track-learning",
+    image: { src: "sectors/schools-and-colleges.webp", alt: "Students at desks in a classroom" },
     title: "Track learning and information",
     color: "navy",
     cards: [
@@ -223,6 +230,7 @@ export const trackGroups: {
   },
   {
     id: "ai-driven-operations",
+    image: { src: "sectors/banking-and-finance-3.webp", alt: "Addis Ababa skyline at night" },
     title: "AI-driven operations",
     color: "green",
     cards: [

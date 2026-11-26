@@ -116,13 +116,22 @@ test("solutions page: six groups of two short cards by what owners track", async
   }
   await expect(page.getByText("You get", { exact: true })).toHaveCount(0);
   // Short cards: name and one line, no benefit lists.
-  await expect(page.locator(".solution-card .gain-list")).toHaveCount(0);
+  await expect(page.locator(".solution-tile .gain-list")).toHaveCount(0);
   // Group names and their dot icons are not shown.
   for (const name of ["Make", "Sell", "Learn and Build"]) {
     await expect(page.getByRole("heading", { name, exact: true })).toHaveCount(0);
   }
   await expect(page.locator(".family-dot")).toHaveCount(0);
-  await expect(page.locator(".solution-card")).toHaveCount(12);
+  await expect(page.locator(".solution-tile")).toHaveCount(12);
+  // Every group shows its photo, and the photo actually loads.
+  const photos = page.locator(".solution-photo img");
+  await expect(photos).toHaveCount(6);
+  for (const photo of await photos.all()) {
+    await photo.scrollIntoViewIfNeeded();
+    await expect
+      .poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0))
+      .toBe(true);
+  }
   await expect(page.locator(".ai-grid")).toHaveCount(0);
 });
 

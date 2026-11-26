@@ -1294,14 +1294,3 @@ q.hook-quote::after {
   height: auto;
   max-height: min(520px, 60dvh);
 }
-/* ModelHer's card fills its frame with the drone at the centre of the diagram. */
-.project-card .project-art-preview.art-systems-product {
-  padding: 0;
-  background: #ffffff;
-}
-.project-card .art-systems-product img {
-  position: absolute;
-  inset: 0;
-  object-fit: cover;
-  object-position: 50% 45%;
-}

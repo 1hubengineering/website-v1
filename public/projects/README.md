@@ -39,11 +39,6 @@ King James Version. The gaz text is supplied under
 and the screenshots have not been altered. Publisher names identify the editions;
 they do not imply endorsement of the application or this website.
 
-## ModelHer
-
-High-level views (system context and block diagram) of AndHub's own ModelHer, opened on its
-worked M-Drone example project (a crop-spraying drone), cropped to the page content on 2026-11-26.
-
 ## SiraYe
 
 Captures of the public welcome and log-in pages of https://siraye.1hubengineering.com,

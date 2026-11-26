@@ -31,18 +31,14 @@ export const projects: Project[] = [
     name: "ModelHer",
     category: "Products",
     type: "SYSTEMS ENGINEERING",
-    description: "Mission planner for drones, satellites, embedded systems and manufactured hardware",
+    description: "Plan, design and verify drones, embedded systems and manufactured hardware in one place",
     detail:
-      "Our systems engineering product for teams that design drones, CanSats, CubeSats, embedded systems and manufactured hardware. The whole team works on one connected model of the system, from the mission to the architecture, and follows the design from first idea to flight readiness.",
+      "A systems engineering product for hardware teams designing drones, embedded systems and manufactured hardware. Requirements, architecture, verification and progress live together, so every design decision can be traced and readiness can be measured.",
     tags: ["Systems engineering", "Hardware"],
     art: "systems-product",
     status: "Demo on request",
     url: "",
     demo: true,
-    previews: [
-      { src: asset("modelher/context.webp"), label: "System context", alt: "System context of a crop-spraying drone: the drone inside the system boundary, with the operators, farm data platform, ground control station, field and regulator around it and what crosses the boundary.", width: 1900, height: 830 },
-      { src: asset("modelher/bdd.webp"), label: "Architecture", alt: "Block diagram of the drone: airframe, propulsion, electrical power, flight control, payload, C2 link and remote pilot station, each with its parts.", width: 1810, height: 1060 },
-    ],
   },
   {
     name: "SiraYe",

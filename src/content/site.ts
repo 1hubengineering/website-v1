@@ -42,13 +42,13 @@ export const team: TeamMember[] = [
     name: "Rehobot Bekele, PhD",
     role: "Co-founder · Systems Engineer",
     email: "rehoboth@1hubengineering.com",
-    photo: "team/rehobot.webp",
+    photo: "team/rehobot-andhub.webp",
   },
   {
     name: "Abraham Bekele",
     role: "Co-founder · Software Architect",
     email: "abraham@1hubengineering.com",
-    photo: "team/abraham.webp",
+    photo: "team/abraham-andhub.webp",
   },
   {
     name: "Lydia B",

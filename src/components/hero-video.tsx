@@ -17,12 +17,37 @@ const base = import.meta.env.BASE_URL;
 // or compressed). Boxes are in video pixels (1000 × 1200); `in` is when the video's
 // own label starts to fade in. All of them fade out together before the loop.
 const LABELS = [
-  { text: "Risk alerts", Icon: TriangleAlert, box: [107, 152, 426, 231], in: 0.3 },
-  { text: "Project delivery", Icon: Package, box: [486, 112, 916, 191], in: 0.8 },
-  { text: "Operations tracking", Icon: SlidersHorizontal, box: [102, 627, 621, 706], in: 1.3 },
+  {
+    text: "Risk alerts",
+    Icon: TriangleAlert,
+    box: [107, 152, 426, 231],
+    in: 0.3,
+  },
+  {
+    text: "Project delivery",
+    Icon: Package,
+    box: [486, 112, 916, 191],
+    in: 0.8,
+  },
+  {
+    text: "Operations tracking",
+    Icon: SlidersHorizontal,
+    box: [102, 627, 621, 706],
+    in: 1.3,
+  },
   { text: "Missed deadlines", Icon: Clock, box: [452, 737, 913, 816], in: 1.8 },
-  { text: "Financial loss", Icon: TrendingDown, box: [110, 845, 492, 924], in: 2.3 },
-  { text: "Quality failures", Icon: ShieldX, box: [489, 932, 910, 1011], in: 2.8 },
+  {
+    text: "Financial loss",
+    Icon: TrendingDown,
+    box: [110, 845, 492, 924],
+    in: 2.3,
+  },
+  {
+    text: "Quality failures",
+    Icon: ShieldX,
+    box: [489, 932, 910, 1011],
+    in: 2.8,
+  },
 ] as const;
 // The sharp label is solid slightly before the video's own label appears and stays
 // solid until it has gone, so the blurry one never shows through.
@@ -49,7 +74,8 @@ export function HeroVideo({ src, poster }: { src: string; poster: string }) {
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    const allowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const allowed = !window.matchMedia("(prefers-reduced-motion: reduce)")
+      .matches;
     setMotion(allowed);
     if (!allowed) return;
     const element = video.current;
@@ -85,39 +111,44 @@ export function HeroVideo({ src, poster }: { src: string; poster: string }) {
 
   return (
     <div className="hero-video">
-      <video
-        ref={video}
-        src={`${base}${src}`}
-        poster={`${base}${poster}`}
-        width="1000"
-        height="1200"
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-hidden="true"
-      />
-      <div className="hero-video-labels" aria-hidden="true">
-        {LABELS.map(({ text, Icon, box: [left, top, right, bottom] }, index) => (
-          <span
-            key={text}
-            ref={(node) => {
-              labels.current[index] = node;
-            }}
-            className="hero-video-label"
-            style={
-              {
-                left: `${((left - 2) / 1000) * 100}%`,
-                top: `${((top - 2) / 1200) * 100}%`,
-                width: `${((right - left + 5) / 1000) * 100}%`,
-                height: `${((bottom - top + 5) / 1200) * 100}%`,
-              } as CSSProperties
-            }
-          >
-            <Icon aria-hidden="true" />
-            {text}
-          </span>
-        ))}
+      {/* Video and labels zoom in together, past the dark edges baked into the video. */}
+      <div className="hero-video-stage">
+        <video
+          ref={video}
+          src={`${base}${src}`}
+          poster={`${base}${poster}`}
+          width="1000"
+          height="1200"
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+        />
+        <div className="hero-video-labels" aria-hidden="true">
+          {LABELS.map(
+            ({ text, Icon, box: [left, top, right, bottom] }, index) => (
+              <span
+                key={text}
+                ref={(node) => {
+                  labels.current[index] = node;
+                }}
+                className="hero-video-label"
+                style={
+                  {
+                    left: `${((left - 2) / 1000) * 100}%`,
+                    top: `${((top - 2) / 1200) * 100}%`,
+                    width: `${((right - left + 5) / 1000) * 100}%`,
+                    height: `${((bottom - top + 5) / 1200) * 100}%`,
+                  } as CSSProperties
+                }
+              >
+                <Icon aria-hidden="true" />
+                {text}
+              </span>
+            ),
+          )}
+        </div>
       </div>
       {motion && (
         <button
@@ -126,7 +157,11 @@ export function HeroVideo({ src, poster }: { src: string; poster: string }) {
           onClick={toggle}
           aria-label={paused ? "Play header video" : "Pause header video"}
         >
-          {paused ? <Play size={16} aria-hidden="true" /> : <Pause size={16} aria-hidden="true" />}
+          {paused ? (
+            <Play size={16} aria-hidden="true" />
+          ) : (
+            <Pause size={16} aria-hidden="true" />
+          )}
         </button>
       )}
     </div>

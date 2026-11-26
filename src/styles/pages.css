@@ -1387,3 +1387,19 @@ q.hook-quote::after {
     min-height: 120px;
   }
 }
+
+/* Solutions page: "Our solutions" heading between the header and the rows. */
+.solutions-intro {
+  padding-top: 72px;
+}
+.solutions-intro .section-heading {
+  margin-bottom: 0;
+}
+.solutions-intro + .solution-rows {
+  padding-top: 0;
+}
+@media (max-width: 800px) {
+  .solutions-intro {
+    padding-top: 48px;
+  }
+}

@@ -1,6 +1,6 @@
 import { useEffect, useRef, type CSSProperties } from "react";
 import { HeroVideo } from "@/components/hero-video";
-import { CtaBand } from "@/components/sections";
+import { CtaBand, SectionHeading } from "@/components/sections";
 import { trackGroups } from "@/content/solutions";
 
 const base = import.meta.env.BASE_URL;
@@ -55,6 +55,9 @@ export function SolutionsPage() {
 
       {/* Six groups of what owners track: a photo with the title, two short cards. The
           photo switches sides on each row. */}
+      <div className="container solutions-intro">
+        <SectionHeading id="our-solutions" title="Our solutions" />
+      </div>
       <div className="solution-rows" ref={rows}>
         {trackGroups.map((group, index) => (
           <section

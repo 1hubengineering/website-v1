@@ -35,7 +35,7 @@ function groupSolutions(sector: Sector): SolutionGroup[] {
       own.rows.push(row);
       continue;
     }
-    const group = groups.get(track.id) ?? { ...track, rows: [] };
+    const group = groups.get(track.id) ?? { ...track, ...sector.groupOverrides?.[track.id], rows: [] };
     group.rows.push(row);
     groups.set(track.id, group);
   }

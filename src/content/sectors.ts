@@ -42,6 +42,8 @@ export type Sector = {
   images: SectorImage[];
   seo: { title: string; description: string };
   story?: { steps: string[]; line: string };
+  // This sector's own title or photo for a Solutions-page group on its sector page.
+  groupOverrides?: Record<string, { title?: string; image?: { src: string; alt: string } }>;
 };
 
 export const sectors: Sector[] = [
@@ -444,6 +446,15 @@ export const sectors: Sector[] = [
     ],
     cta: { action: "Book a technical session", label: "Book a technical session with our systems-engineering team" },
     // From the ground to orbit: drone, aircraft, above the clouds, small satellite, space station.
+    groupOverrides: {
+      "track-production": {
+        title: "Track assembly, integration and test",
+        image: {
+          src: "solutions/track-ait-aviation.webp",
+          alt: "Engineers in clean-room suits integrating a spacecraft in an assembly lab",
+        },
+      },
+    },
     images: [
       {
         src: "sectors/aerospace-and-aviation.webp",

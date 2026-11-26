@@ -11,6 +11,7 @@ One photo per "Track …" group, cropped to 16:9 and converted to WebP at 1600×
 | track-hardware.webp | ThisisEngineering | Unsplash License | https://unsplash.com/photos/6FcwhytnLbg |
 | track-learning-online.webp | Vitaly Gariev | Unsplash License | https://unsplash.com/photos/y4h0lH6QxhY |
 | ai-driven-operations.webp | Tasha Kostyuk | Unsplash License | https://unsplash.com/photos/TtMKq3lJm-U |
+| track-ait-aviation.webp (aviation page only) | NASA/JPL-Caltech, PIA25959 | NASA media (public domain; no endorsement implied) | https://images.nasa.gov/details/PIA25959 |
 
 ## Header video
 

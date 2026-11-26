@@ -235,7 +235,7 @@ export const sectors: Sector[] = [
     slug: "metal-and-engineering",
     name: "Metal and engineering",
     family: "make",
-    headline: "Production, maintenance and inventory software for metal and engineering manufacturers",
+    headline: "Production, maintenance and quality control software for metal and engineering manufacturers",
     intro:
       "Steel mills, fabrication workshops and engineering firms run many jobs at once on expensive machines. AndHub shows where every job stands, which machine needs care and what material is left.",
     challengesTitle: "Core challenges in metal and engineering manufacturing",
@@ -244,6 +244,7 @@ export const sectors: Sector[] = [
       "Machine downtime and maintenance",
       "Material and spare parts control",
       "Quality and inspection records",
+      "Workplace safety",
       "On-time delivery",
     ],
     question:

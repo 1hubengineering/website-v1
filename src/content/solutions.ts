@@ -140,7 +140,7 @@ export const trackGroups: {
 }[] = [
   {
     id: "track-stock",
-    image: { src: "sectors/brands-and-exporters-3.webp", alt: "Workers carrying sacks in a warehouse" },
+    image: { src: "solutions/track-stock.webp", alt: "Warehouse aisle with racks full of stock and two workers" },
     title: "Track stock and deliveries",
     color: "blue",
     cards: [
@@ -158,7 +158,7 @@ export const trackGroups: {
   },
   {
     id: "track-production",
-    image: { src: "sectors/metal-and-engineering.webp", alt: "Metal fabrication hall with crews at work" },
+    image: { src: "solutions/track-production.webp", alt: "Workers along conveyor lines with monitoring screens in a processing plant" },
     title: "Track production and quality",
     color: "blue",
     cards: [
@@ -176,7 +176,7 @@ export const trackGroups: {
   },
   {
     id: "track-sales",
-    image: { src: "sectors/brands-and-exporters.webp", alt: "Roasted Ethiopian coffee beans in an open bag" },
+    image: { src: "solutions/track-sales.webp", alt: "A carton being packed for an order on a packing table" },
     title: "Track sales and products",
     color: "green",
     cards: [
@@ -194,7 +194,7 @@ export const trackGroups: {
   },
   {
     id: "track-projects",
-    image: { src: "sectors/construction.webp", alt: "Busy construction site with a tower crane" },
+    image: { src: "solutions/track-projects.webp", alt: "Construction workers in hard hats on scaffolding in Nairobi" },
     title: "Track projects and sites",
     color: "navy",
     cards: [
@@ -212,7 +212,7 @@ export const trackGroups: {
   },
   {
     id: "track-learning",
-    image: { src: "sectors/schools-and-colleges.webp", alt: "Students at desks in a classroom" },
+    image: { src: "solutions/track-learning.webp", alt: "A student taking notes during an online lesson on a laptop" },
     title: "Track learning and information",
     color: "navy",
     cards: [
@@ -230,7 +230,7 @@ export const trackGroups: {
   },
   {
     id: "ai-driven-operations",
-    image: { src: "sectors/banking-and-finance-3.webp", alt: "Addis Ababa skyline at night" },
+    image: { src: "solutions/ai-driven-operations.webp", alt: "An operator facing a wall of monitoring screens in an operations room" },
     title: "AI-driven operations",
     color: "green",
     cards: [

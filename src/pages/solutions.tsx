@@ -64,8 +64,8 @@ export function SolutionsPage() {
                 <img
                   src={`${base}${group.image.src}`}
                   alt={group.image.alt}
-                  width="1920"
-                  height="1080"
+                  width="1600"
+                  height="900"
                   loading="lazy"
                   decoding="async"
                 />

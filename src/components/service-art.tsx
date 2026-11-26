@@ -182,7 +182,7 @@ export function ServiceArt({ index }: { index: number }) {
 }
 
 // Placeholder art for products until their screenshots arrive (Projects page).
-// SRAE, task monitoring: a board of tasks moving from to-do to done.
+// SiraYe, task monitoring: a board of tasks moving from to-do to done.
 export function TaskBoardArt() {
   const column = (x: number, fill: string, cards: number[]) => (
     <g>

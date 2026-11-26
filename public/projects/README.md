@@ -38,3 +38,13 @@ King James Version. The gaz text is supplied under
 [original edition notice](https://ebible.org/gaz/copyright.htm). Scripture wording
 and the screenshots have not been altered. Publisher names identify the editions;
 they do not imply endorsement of the application or this website.
+
+## CanSat Mission Planner
+
+Screenshots of AndHub's own CanSat Mission Planner with its demo team data, taken
+from the project's documentation screenshots and cropped to the top of each page.
+
+## SiraYe
+
+Captures of the public welcome and log-in pages of https://siraye.1hubengineering.com,
+taken on 2026-11-26 and cropped around the content.

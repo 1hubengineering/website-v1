@@ -274,11 +274,11 @@ test("home quotes the Prime Minister with a source; aviation story steps have no
   ]);
 });
 
-test("systems engineering product and SRAE offer a demo that prefills the contact form", async ({
+test("CanSat Mission Planner and SiraYe offer a demo that prefills the contact form", async ({
   page,
 }) => {
   await page.goto("./projects/");
-  for (const name of ["Systems Engineering Platform", "SRAE"]) {
+  for (const name of ["CanSat Mission Planner", "SiraYe"]) {
     await page.getByRole("button", { name: `Explore ${name}`, exact: true }).click();
     const dialog = page.getByRole("dialog");
     await expect(dialog.getByText("Demo on request")).toBeVisible();

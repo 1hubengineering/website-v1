@@ -28,30 +28,41 @@ const asset = (path: string) => `${import.meta.env.BASE_URL}projects/${path}`;
 
 export const projects: Project[] = [
   {
-    name: "Systems Engineering Platform",
+    name: "CanSat Mission Planner",
     category: "Products",
     type: "SYSTEMS ENGINEERING",
-    description: "Plan, design and verify drones, embedded systems and manufactured hardware in one place",
+    description: "Takes a team from a mission brief to a flight-ready CanSat design, one step at a time",
     detail:
-      "A systems engineering product for hardware teams designing drones, embedded systems and manufactured hardware. Requirements, architecture, verification and progress live together, so every design decision can be traced and readiness can be measured.",
+      "Our systems engineering product for teams that design drones, CanSats, embedded systems and manufactured hardware. Teams write the mission, the requirements, the parts and the mass and energy budgets in one place. A facilitator reviews each gate, approves it or returns it with comments, and sees every team’s progress on one dashboard.",
     tags: ["Systems engineering", "Hardware"],
     art: "systems-product",
     status: "Demo on request",
     url: "",
     demo: true,
+    previews: [
+      { src: asset("cansat/start.webp"), label: "Start", alt: "CanSat Mission Planner start page, with the seven steps from Mission to Reviews in the side menu.", width: 1440, height: 900 },
+      { src: asset("cansat/mission.webp"), label: "Mission", alt: "Mission step: the mission question, the mission statement and objectives, each with a measurable success criterion.", width: 1440, height: 900 },
+      { src: asset("cansat/model.webp"), label: "Parts", alt: "Model step: a table of CanSat components, from the microcontroller and sensors to the parachute and structure.", width: 1440, height: 900 },
+      { src: asset("cansat/budgets.webp"), label: "Budgets", alt: "Budgets step: the mass budget and the energy budget for every component, side by side.", width: 1440, height: 900 },
+      { src: asset("cansat/facilitator.webp"), label: "Facilitator dashboard", alt: "Facilitator dashboard: the progress of every team and the review gates to approve or return.", width: 1440, height: 900 },
+    ],
   },
   {
-    name: "SRAE",
+    name: "SiraYe",
     category: "Products",
     type: "TASK MONITORING",
-    description: "Task monitoring for teams: who is doing what, what is late and what is done",
+    description: "Plan, assign and follow your team’s work: who is doing what, what is late and what is done",
     detail:
-      "SRAE is AndHub’s task monitoring product. Teams assign and follow tasks on one board, see progress and deadlines at a glance, and managers spot what is late before it becomes a problem.",
+      "SiraYe is AndHub’s task monitoring product. Teams organise work into projects and workflows, assign tasks, follow progress and deadlines, and keep discussions and approvals next to the work. Every role sees what it needs, from the owner to a read-only viewer. Our own team uses it every day.",
     tags: ["Task monitoring", "Teams"],
     art: "srae",
     status: "Demo on request",
     url: "",
     demo: true,
+    previews: [
+      { src: asset("siraye/home.webp"), label: "Welcome", alt: "SiraYe welcome page with the logo and the line: Plan, assign and follow your team’s work.", width: 1152, height: 720 },
+      { src: asset("siraye/login.webp"), label: "Log in", alt: "SiraYe log-in page with email and password fields.", width: 1152, height: 720 },
+    ],
   },
   {
     name: "Rental OS",

@@ -104,6 +104,11 @@ test("solutions page: six groups of two short cards by what owners track", async
   page,
 }) => {
   await page.goto("./solutions/");
+  // The header is the video; its words are the h1.
+  const video = page.locator(".solutions-video-hero video");
+  await expect(video).toHaveAttribute("poster", /headache-poster\.webp$/);
+  await expect(video).toHaveAttribute("src", /headache\.mp4$/);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("shouldn’t be a headache");
   for (const heading of [
     "Track stock and deliveries",
     "Track production and quality",
@@ -274,11 +279,11 @@ test("home quotes the Prime Minister with a source; aviation story steps have no
   ]);
 });
 
-test("CanSat Mission Planner and SiraYe offer a demo that prefills the contact form", async ({
+test("ModelHer and SiraYe offer a demo that prefills the contact form", async ({
   page,
 }) => {
   await page.goto("./projects/");
-  for (const name of ["CanSat Mission Planner", "SiraYe"]) {
+  for (const name of ["ModelHer", "SiraYe"]) {
     await page.getByRole("button", { name: `Explore ${name}`, exact: true }).click();
     const dialog = page.getByRole("dialog");
     await expect(dialog.getByText("Demo on request")).toBeVisible();

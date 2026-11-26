@@ -39,10 +39,10 @@ King James Version. The gaz text is supplied under
 and the screenshots have not been altered. Publisher names identify the editions;
 they do not imply endorsement of the application or this website.
 
-## CanSat Mission Planner
+## ModelHer
 
-Screenshots of AndHub's own CanSat Mission Planner with its demo team data, taken
-from the project's documentation screenshots and cropped to the top of each page.
+Screenshots of AndHub's own ModelHer, opened on its worked M-Drone example project
+(a crop-spraying drone), cropped to the page content on 2026-11-26.
 
 ## SiraYe
 

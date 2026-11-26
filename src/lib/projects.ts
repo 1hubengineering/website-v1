@@ -28,23 +28,23 @@ const asset = (path: string) => `${import.meta.env.BASE_URL}projects/${path}`;
 
 export const projects: Project[] = [
   {
-    name: "CanSat Mission Planner",
+    name: "ModelHer",
     category: "Products",
     type: "SYSTEMS ENGINEERING",
-    description: "Takes a team from a mission brief to a flight-ready CanSat design, one step at a time",
+    description: "Mission planner for drones, satellites, embedded systems and manufactured hardware",
     detail:
-      "Our systems engineering product for teams that design drones, CanSats, embedded systems and manufactured hardware. Teams write the mission, the requirements, the parts and the mass and energy budgets in one place. A facilitator reviews each gate, approves it or returns it with comments, and sees every team’s progress on one dashboard.",
+      "Our systems engineering product for teams that design drones, CanSats, CubeSats, embedded systems and manufactured hardware. Teams draw the system context and the architecture, write the requirements and the operation concept, and track mass and energy budgets in one connected model. Each review gate is approved or returned with comments, and engineering metrics show how ready the design is.",
     tags: ["Systems engineering", "Hardware"],
     art: "systems-product",
     status: "Demo on request",
     url: "",
     demo: true,
     previews: [
-      { src: asset("cansat/start.webp"), label: "Start", alt: "CanSat Mission Planner start page, with the seven steps from Mission to Reviews in the side menu.", width: 1440, height: 900 },
-      { src: asset("cansat/mission.webp"), label: "Mission", alt: "Mission step: the mission question, the mission statement and objectives, each with a measurable success criterion.", width: 1440, height: 900 },
-      { src: asset("cansat/model.webp"), label: "Parts", alt: "Model step: a table of CanSat components, from the microcontroller and sensors to the parachute and structure.", width: 1440, height: 900 },
-      { src: asset("cansat/budgets.webp"), label: "Budgets", alt: "Budgets step: the mass budget and the energy budget for every component, side by side.", width: 1440, height: 900 },
-      { src: asset("cansat/facilitator.webp"), label: "Facilitator dashboard", alt: "Facilitator dashboard: the progress of every team and the review gates to approve or return.", width: 1440, height: 900 },
+      { src: asset("modelher/context.webp"), label: "System context", alt: "System context of a crop-spraying drone: the drone inside the system boundary, with the operators, farm data platform, ground control station, field and regulator around it and what crosses the boundary.", width: 1600, height: 1000 },
+      { src: asset("modelher/bdd.webp"), label: "Architecture", alt: "Block definition diagram of the drone: airframe, propulsion, electrical power, flight control, payload, C2 link and remote pilot station, each with its parts and owner.", width: 1600, height: 1000 },
+      { src: asset("modelher/req.webp"), label: "Requirements", alt: "System requirements of the drone, each with its subsystem, type, parent objective and verification method, and the review gates approved.", width: 1600, height: 1000 },
+      { src: asset("modelher/conops.webp"), label: "Operation concept", alt: "Operation concept of the drone: endurance, distance, altitude and payload limits, and each flight phase from pre-flight to post-flight.", width: 1600, height: 1000 },
+      { src: asset("modelher/metrics.webp"), label: "Engineering metrics", alt: "Engineering metrics for the requirements review: requirement completeness, traceability, coverage and satisfaction against their thresholds.", width: 1600, height: 1000 },
     ],
   },
   {

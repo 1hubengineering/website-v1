@@ -1,5 +1,5 @@
 import { useEffect, useRef, type CSSProperties } from "react";
-import { PageHero } from "@/components/page-hero";
+import { HeroVideo } from "@/components/hero-video";
 import { CtaBand } from "@/components/sections";
 import { trackGroups } from "@/content/solutions";
 
@@ -38,16 +38,20 @@ export function SolutionsPage() {
   const rows = useRevealRows();
   return (
     <>
-      {/* One quote to business owners, one size: the bridge we offer. */}
-      <PageHero
-        statement
-        title={
-          <q className="hook-quote">
-            Running a business shouldn’t be a headache. We provide digital solutions that let
-            owners track operations and resources from anywhere!
-          </q>
-        }
-      />
+      {/* The header is the video: it shows the quote to business owners. The same words are
+          the h1, hidden on wide screens and shown under the video on phones, where the
+          words in the video are too small to read. */}
+      <section className="page-hero on-navy solutions-video-hero" aria-labelledby="page-title">
+        <HeroVideo src="solutions/headache.mp4" poster="solutions/headache-poster.webp" />
+        <div className="container solutions-video-title">
+          <h1 id="page-title">
+            <q className="hook-quote">
+              Running a business shouldn’t be a headache. We provide digital solutions that let
+              owners track operations and resources from anywhere!
+            </q>
+          </h1>
+        </div>
+      </section>
 
       {/* Six groups of what owners track: a photo with the title, two short cards. The
           photo switches sides on each row. */}

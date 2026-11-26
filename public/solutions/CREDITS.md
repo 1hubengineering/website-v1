@@ -10,3 +10,7 @@ One photo per "Track …" group, cropped to 16:9 and converted to WebP at 1600×
 | track-projects.webp | MC G'Zay | Pexels License | https://www.pexels.com/photo/30661413/ |
 | track-learning.webp | Katerina Holmes | Pexels License | https://www.pexels.com/photo/5905704/ |
 | ai-driven-operations.webp | Tasha Kostyuk | Unsplash License | https://unsplash.com/photos/TtMKq3lJm-U |
+
+## Header video
+
+`headache.mp4` and its poster frame `headache-poster.webp` (taken at 4 s) are AndHub’s own video, supplied on 2026-11-26.

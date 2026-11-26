@@ -69,6 +69,32 @@ export const projects: Project[] = [
     ],
   },
   {
+    name: "LoanTrack",
+    category: "Products",
+    type: "LENDING",
+    description: "Loan follow-up for microfinance institutions and banks",
+    detail:
+      "Our lending product for microfinance institutions and banks. It follows each loan together with the business it funds, from application to closure, so lenders see early how a borrower is doing and what to do next.",
+    tags: ["Lending", "Microfinance"],
+    art: "loan",
+    status: "Demo on request",
+    url: "",
+    demo: true,
+  },
+  {
+    name: "Business Administration",
+    category: "Products",
+    type: "BUSINESS OPERATIONS",
+    description: "Day-to-day operations and planning for small and medium businesses",
+    detail:
+      "Our product for small and medium businesses. It brings daily operations and planning into one place, so owners can follow their business and plan the next steps with their own numbers.",
+    tags: ["Operations", "Planning"],
+    art: "business-admin",
+    status: "Demo on request",
+    url: "",
+    demo: true,
+  },
+  {
     name: "Rental OS",
     category: "Products",
     type: "BUSINESS PLATFORM",

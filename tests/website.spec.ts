@@ -139,7 +139,7 @@ for (const width of [320, 360, 390, 768, 1024, 1440]) {
         .click();
       await expect(page.getByRole("dialog")).toHaveCount(0);
       await expect(page).toHaveURL(/\/projects\/$/);
-      await expect(page.locator(".project-card")).toHaveCount(8);
+      await expect(page.locator(".project-card")).toHaveCount(10);
     }
   });
 }

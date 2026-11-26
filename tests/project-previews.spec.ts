@@ -28,10 +28,10 @@ for (const viewport of [
     await page.setViewportSize(viewport);
     await page.goto("./projects/");
     const filters = page.getByRole("group", { name: "Filter projects" });
-    await expect(filters.getByRole("button", { name: "Products" })).toContainText("06");
+    await expect(filters.getByRole("button", { name: "Products" })).toContainText("08");
     await expect(filters.getByRole("button", { name: "Open source" })).toContainText("02");
     await filters.getByRole("button", { name: "Products" }).click();
-    await expect(page.locator(".project-card")).toHaveCount(6);
+    await expect(page.locator(".project-card")).toHaveCount(8);
     await expect(page.getByRole("button", { name: "Explore Afaan Oromo Bible", exact: true })).toBeVisible();
     await filters.getByRole("button", { name: "All work" }).click();
 

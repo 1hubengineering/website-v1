@@ -225,3 +225,84 @@ export function TaskBoardArt() {
 export function SystemsProductArt() {
   return <ServiceArt index={1} />;
 }
+
+// LoanTrack, lending for microfinance and banks: a loan following a growing business.
+export function LoanArt() {
+  return (
+    <div className="service-art">
+      <svg viewBox="0 0 320 190" role="img" aria-label="A loan amount linked to a small business whose sales chart is rising">
+        {/* Lender */}
+        <rect x="26" y="40" width="96" height="110" rx="12" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
+        <path d="M44 74l30-18 30 18Z" fill="var(--art-navy)" />
+        <g fill="var(--art-navy)">
+          <rect x="48" y="80" width="8" height="34" rx="2" />
+          <rect x="70" y="80" width="8" height="34" rx="2" />
+          <rect x="92" y="80" width="8" height="34" rx="2" />
+        </g>
+        <rect x="42" y="118" width="64" height="8" rx="3" fill="var(--art-navy)" />
+        <rect x="46" y="134" width="56" height="6" rx="3" fill="var(--art-muted)" />
+        {/* Loan flowing to the business */}
+        <path d="M126 96h46" fill="none" stroke="var(--art-green)" strokeWidth="4" strokeLinecap="round" strokeDasharray="2 9" />
+        <path d="M166 88l9 8-9 8" fill="none" stroke="var(--art-green)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="133" y="62" width="32" height="20" rx="4" fill="var(--art-green)" />
+        <circle cx="149" cy="72" r="5" fill="none" stroke="#fff" strokeWidth="2.5" />
+        {/* Business with a rising chart */}
+        <rect x="182" y="40" width="112" height="110" rx="12" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
+        <path d="M196 70h84l-6-14h-72Z" fill="var(--art-blue)" />
+        <g fill="var(--art-blue)" opacity="0.35">
+          <rect x="200" y="112" width="12" height="26" rx="2" />
+          <rect x="218" y="102" width="12" height="36" rx="2" />
+          <rect x="236" y="94" width="12" height="44" rx="2" />
+          <rect x="254" y="84" width="12" height="54" rx="2" />
+        </g>
+        <path d="M200 116l18-10 18-8 30-18" fill="none" stroke="var(--art-blue)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="276" cy="80" r="11" fill="var(--art-green)" />
+        <path d="M271 80l4 4 7-8" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </div>
+  );
+}
+
+// Business administration for small and medium businesses: a plan and the numbers.
+export function BusinessAdminArt() {
+  return (
+    <div className="service-art">
+      <svg viewBox="0 0 320 190" role="img" aria-label="A monthly plan beside a dashboard of sales, costs and stock">
+        {/* Plan / calendar */}
+        <rect x="26" y="34" width="120" height="128" rx="12" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
+        <path d="M38 34h96a12 12 0 0 1 12 12v10H26V46a12 12 0 0 1 12-12Z" fill="var(--art-navy)" />
+        <g fill="var(--art-muted)">
+          <rect x="38" y="68" width="22" height="16" rx="3" />
+          <rect x="64" y="68" width="22" height="16" rx="3" />
+          <rect x="90" y="68" width="22" height="16" rx="3" />
+          <rect x="116" y="68" width="22" height="16" rx="3" opacity="0.5" />
+          <rect x="38" y="90" width="22" height="16" rx="3" />
+          <rect x="90" y="90" width="22" height="16" rx="3" />
+          <rect x="116" y="90" width="22" height="16" rx="3" opacity="0.5" />
+          <rect x="38" y="112" width="22" height="16" rx="3" opacity="0.5" />
+          <rect x="64" y="112" width="22" height="16" rx="3" />
+          <rect x="116" y="112" width="22" height="16" rx="3" />
+        </g>
+        <rect x="64" y="90" width="22" height="16" rx="3" fill="var(--art-green)" />
+        <rect x="90" y="112" width="22" height="16" rx="3" fill="var(--art-blue)" />
+        <rect x="38" y="138" width="70" height="8" rx="4" fill="var(--art-blue)" opacity="0.5" />
+        {/* Dashboard */}
+        <rect x="160" y="34" width="134" height="128" rx="12" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
+        <rect x="172" y="48" width="50" height="30" rx="6" fill="var(--art-green)" opacity="0.18" />
+        <rect x="180" y="56" width="22" height="5" rx="2.5" fill="var(--art-green)" />
+        <rect x="180" y="66" width="34" height="6" rx="3" fill="var(--art-green)" />
+        <rect x="230" y="48" width="52" height="30" rx="6" fill="var(--art-blue)" opacity="0.18" />
+        <rect x="238" y="56" width="22" height="5" rx="2.5" fill="var(--art-blue)" />
+        <rect x="238" y="66" width="34" height="6" rx="3" fill="var(--art-blue)" />
+        <g fill="var(--art-blue)">
+          <rect x="176" y="120" width="12" height="28" rx="2" />
+          <rect x="194" y="110" width="12" height="38" rx="2" />
+          <rect x="212" y="124" width="12" height="24" rx="2" />
+          <rect x="230" y="100" width="12" height="48" rx="2" />
+        </g>
+        <circle cx="268" cy="124" r="18" fill="none" stroke="var(--art-muted)" strokeWidth="7" />
+        <path d="M268 106a18 18 0 0 1 17 24" fill="none" stroke="var(--art-green)" strokeWidth="7" strokeLinecap="round" />
+      </svg>
+    </div>
+  );
+}

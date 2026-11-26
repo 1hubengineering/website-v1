@@ -14,7 +14,7 @@ import {
 import * as Dialog from "@radix-ui/react-dialog";
 import { Button } from "@/components/ui/button";
 import { ModalContent } from "@/components/project-inquiry";
-import { SystemsProductArt, TaskBoardArt } from "@/components/service-art";
+import { BusinessAdminArt, LoanArt, SystemsProductArt, TaskBoardArt } from "@/components/service-art";
 import { Link } from "react-router";
 import { projects, type Project, type ProjectPreview } from "@/lib/projects";
 
@@ -42,6 +42,8 @@ export function ProjectArt({ art, preview }: { art: string; preview?: ProjectPre
     <div className={`project-art art-${art}`} aria-hidden="true">
       {art === "systems-product" && <SystemsProductArt />}
       {art === "srae" && <TaskBoardArt />}
+      {art === "loan" && <LoanArt />}
+      {art === "business-admin" && <BusinessAdminArt />}
       {art === "rental" && (
         <div className="rental-window">
           <aside>

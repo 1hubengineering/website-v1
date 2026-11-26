@@ -8,27 +8,51 @@ const svgProps = {
   xmlns: "http://www.w3.org/2000/svg",
 } as const;
 
-// Websites, apps and business software: a browser window with code and a phone app.
+// Websites, apps and business software: a live dashboard on a laptop, with a phone
+// that receives a notification.
 function SoftwareArt() {
   return (
-    <svg {...svgProps} aria-label="A browser window with code next to a phone app">
-      <rect x="34" y="28" width="206" height="136" rx="12" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
-      <path d="M46 28h182a12 12 0 0 1 12 12v12H34V40a12 12 0 0 1 12-12Z" fill="var(--art-navy)" />
-      <rect x="48" y="36" width="60" height="8" rx="4" fill="var(--art-blue)" opacity="0.7" />
-      <rect x="52" className="art-type" style={{ animationDelay: "0s" }} y="70" width="34" height="7" rx="3.5" fill="var(--art-blue)" />
-      <rect x="92" className="art-type" style={{ animationDelay: "0.2s" }} y="70" width="56" height="7" rx="3.5" fill="var(--art-green)" />
-      <rect x="66" className="art-type" style={{ animationDelay: "0.4s" }} y="86" width="72" height="7" rx="3.5" fill="var(--art-muted)" />
-      <rect x="144" className="art-type" style={{ animationDelay: "0.6s" }} y="86" width="28" height="7" rx="3.5" fill="var(--art-blue)" />
-      <rect x="66" className="art-type" style={{ animationDelay: "0.8s" }} y="102" width="48" height="7" rx="3.5" fill="var(--art-green)" />
-      <rect x="66" className="art-type" style={{ animationDelay: "1.0s" }} y="118" width="88" height="7" rx="3.5" fill="var(--art-muted)" />
-      <rect x="52" className="art-type" style={{ animationDelay: "1.2s" }} y="134" width="40" height="7" rx="3.5" fill="var(--art-blue)" />
-      <path className="art-pulse" d="M182 98l-12 11 12 11M206 98l12 11-12 11" fill="none" stroke="var(--art-blue)" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M198 94l-8 32" stroke="var(--art-green)" strokeWidth="5" strokeLinecap="round" />
-      <rect x="226" y="54" width="62" height="112" rx="12" fill="var(--art-card)" stroke="var(--art-navy)" strokeWidth="3.5" />
-      <rect x="236" y="70" width="42" height="28" rx="6" fill="var(--art-blue)" opacity="0.85" />
-      <rect x="236" y="106" width="42" height="6" rx="3" fill="var(--art-muted)" />
-      <rect x="236" y="118" width="30" height="6" rx="3" fill="var(--art-muted)" />
-      <rect className="art-pulse" x="236" y="134" width="42" height="18" rx="9" fill="var(--art-green)" />
+    <svg {...svgProps} aria-label="A laptop showing a live dashboard and a phone receiving a notification">
+      {/* Laptop */}
+      <rect x="30" y="26" width="196" height="122" rx="10" fill="var(--art-card)" stroke="var(--art-navy)" strokeWidth="3.5" />
+      <path d="M16 150h224l-10 14H26Z" fill="var(--art-navy)" />
+      <rect x="110" y="152" width="36" height="4" rx="2" fill="var(--art-muted)" />
+      {/* Dashboard: two figure tiles */}
+      <rect x="42" y="38" width="80" height="26" rx="6" fill="var(--art-blue)" opacity="0.16" />
+      <rect x="50" y="45" width="28" height="4" rx="2" fill="var(--art-blue)" />
+      <rect className="art-blink" x="50" y="53" width="44" height="6" rx="3" fill="var(--art-blue)" />
+      <rect x="132" y="38" width="82" height="26" rx="6" fill="var(--art-green)" opacity="0.18" />
+      <rect x="140" y="45" width="28" height="4" rx="2" fill="var(--art-green)" />
+      <rect className="art-blink" style={{ animationDelay: "0.8s" }} x="140" y="53" width="44" height="6" rx="3" fill="var(--art-green)" />
+      {/* Bars that grow */}
+      <g fill="var(--art-blue)">
+        <rect className="art-grow" x="46" y="98" width="11" height="38" rx="2" />
+        <rect className="art-grow" style={{ animationDelay: "0.25s" }} x="62" y="88" width="11" height="48" rx="2" />
+        <rect className="art-grow" style={{ animationDelay: "0.5s" }} x="78" y="106" width="11" height="30" rx="2" />
+        <rect className="art-grow" style={{ animationDelay: "0.75s" }} x="94" y="80" width="11" height="56" rx="2" opacity="0.7" />
+        <rect className="art-grow" style={{ animationDelay: "1s" }} x="110" y="92" width="11" height="44" rx="2" opacity="0.7" />
+      </g>
+      {/* Line chart that draws */}
+      <rect x="132" y="74" width="82" height="64" rx="6" fill="var(--art-bg)" />
+      <path className="art-draw" pathLength={100} d="M140 126l14-12 14 6 16-20 22-12" fill="none" stroke="var(--art-green)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Phone with a notification */}
+      <rect x="240" y="44" width="58" height="110" rx="11" fill="var(--art-card)" stroke="var(--art-navy)" strokeWidth="3.5" />
+      <rect x="260" y="50" width="18" height="4" rx="2" fill="var(--art-muted)" />
+      <rect x="249" y="104" width="40" height="6" rx="3" fill="var(--art-muted)" />
+      <rect x="249" y="116" width="28" height="6" rx="3" fill="var(--art-muted)" />
+      <rect x="249" y="132" width="40" height="12" rx="6" fill="var(--art-blue)" opacity="0.5" />
+      <g className="art-notify">
+        <rect x="246" y="62" width="58" height="30" rx="8" fill="var(--art-card)" stroke="var(--art-green)" strokeWidth="2" />
+        <circle cx="259" cy="77" r="7" fill="var(--art-green)" />
+        <rect x="270" y="71" width="28" height="4" rx="2" fill="var(--art-navy)" />
+        <rect x="270" y="80" width="20" height="4" rx="2" fill="var(--art-muted)" />
+      </g>
+      {/* Bell with a badge */}
+      <g className="art-ring">
+        <path d="M296 30a10 10 0 0 0-10 10v8l-4 6h28l-4-6v-8a10 10 0 0 0-10-10Z" fill="var(--art-navy)" />
+        <circle cx="296" cy="57" r="3.5" fill="var(--art-navy)" />
+      </g>
+      <circle className="art-pulse" cx="306" cy="32" r="6" fill="var(--art-green)" />
     </svg>
   );
 }
@@ -226,82 +250,95 @@ export function SystemsProductArt() {
   return <ServiceArt index={1} />;
 }
 
-// Lending platform for microfinance and banks: a loan following a growing business.
+// Lending platform for microfinance and banks: a loan helps a small shop grow.
 export function LoanArt() {
   return (
     <div className="service-art">
-      <svg viewBox="0 0 320 190" role="img" aria-label="A loan amount linked to a small business whose sales chart is rising">
-        {/* Lender */}
-        <rect x="26" y="40" width="96" height="110" rx="12" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
-        <path d="M44 74l30-18 30 18Z" fill="var(--art-navy)" />
-        <g fill="var(--art-navy)">
-          <rect x="48" y="80" width="8" height="34" rx="2" />
-          <rect x="70" y="80" width="8" height="34" rx="2" />
-          <rect x="92" y="80" width="8" height="34" rx="2" />
+      <svg viewBox="0 0 320 190" role="img" aria-label="A coin drops onto a stack of coins beside a small shop, and a young plant grows from it">
+        <rect x="20" y="160" width="280" height="4" rx="2" fill="var(--art-line)" />
+        {/* Small shop */}
+        <rect x="42" y="82" width="120" height="78" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
+        <path d="M34 64h136l-8-22H42Z" fill="var(--art-navy)" />
+        <g>
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <path
+              key={i}
+              d={`M${34 + i * 22.7} 64h22.7v10a11.35 11.35 0 0 1-22.7 0Z`}
+              fill={i % 2 ? "var(--art-card)" : "var(--art-green)"}
+              stroke="var(--art-line)"
+              strokeWidth="1.5"
+            />
+          ))}
         </g>
-        <rect x="42" y="118" width="64" height="8" rx="3" fill="var(--art-navy)" />
-        <rect x="46" y="134" width="56" height="6" rx="3" fill="var(--art-muted)" />
-        {/* Loan flowing to the business */}
-        <path d="M126 96h46" fill="none" stroke="var(--art-green)" strokeWidth="4" strokeLinecap="round" strokeDasharray="2 9" />
-        <path d="M166 88l9 8-9 8" fill="none" stroke="var(--art-green)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-        <rect x="133" y="62" width="32" height="20" rx="4" fill="var(--art-green)" />
-        <circle cx="149" cy="72" r="5" fill="none" stroke="#fff" strokeWidth="2.5" />
-        {/* Business with a rising chart */}
-        <rect x="182" y="40" width="112" height="110" rx="12" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
-        <path d="M196 70h84l-6-14h-72Z" fill="var(--art-blue)" />
-        <g fill="var(--art-blue)" opacity="0.35">
-          <rect x="200" y="112" width="12" height="26" rx="2" />
-          <rect x="218" y="102" width="12" height="36" rx="2" />
-          <rect x="236" y="94" width="12" height="44" rx="2" />
-          <rect x="254" y="84" width="12" height="54" rx="2" />
+        <rect x="56" y="98" width="44" height="34" rx="4" fill="var(--art-blue)" opacity="0.3" />
+        <rect x="112" y="102" width="34" height="58" rx="4" fill="var(--art-blue)" />
+        <circle cx="139" cy="132" r="2.5" fill="var(--art-card)" />
+        {/* Coins with a young plant */}
+        <g fill="var(--art-green)" stroke="var(--art-card)" strokeWidth="2">
+          <ellipse cx="236" cy="152" rx="30" ry="9" />
+          <ellipse cx="236" cy="142" rx="30" ry="9" />
+          <ellipse cx="236" cy="132" rx="30" ry="9" />
+          <ellipse cx="236" cy="122" rx="30" ry="9" />
         </g>
-        <path d="M200 116l18-10 18-8 30-18" fill="none" stroke="var(--art-blue)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="276" cy="80" r="11" fill="var(--art-green)" />
-        <path d="M271 80l4 4 7-8" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M236 114V82" stroke="var(--art-green)" strokeWidth="4" strokeLinecap="round" />
+        <g className="art-pulse">
+          <path d="M236 96c-4-14-18-18-28-14 2 12 14 18 28 14Z" fill="var(--art-green)" />
+          <path d="M236 88c4-16 20-22 32-16-2 14-16 20-32 16Z" fill="var(--art-green)" opacity="0.75" />
+        </g>
+        {/* Coin dropping in */}
+        <g className="art-drop">
+          <circle cx="282" cy="64" r="13" fill="var(--art-card)" stroke="var(--art-green)" strokeWidth="3" />
+          <path d="M282 57v14M278 60h6a2.5 2.5 0 0 1 0 5h-4a2.5 2.5 0 0 0 0 5h6" fill="none" stroke="var(--art-green)" strokeWidth="2" strokeLinecap="round" />
+        </g>
       </svg>
     </div>
   );
 }
 
-// Business administration for small and medium businesses: a plan and the numbers.
+// Business administration for small and medium businesses: a shop and its to-do list,
+// ticked off one by one.
 export function BusinessAdminArt() {
   return (
     <div className="service-art">
-      <svg viewBox="0 0 320 190" role="img" aria-label="A monthly plan beside a dashboard of sales, costs and stock">
-        {/* Plan / calendar */}
-        <rect x="26" y="34" width="120" height="128" rx="12" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
-        <path d="M38 34h96a12 12 0 0 1 12 12v10H26V46a12 12 0 0 1 12-12Z" fill="var(--art-navy)" />
-        <g fill="var(--art-muted)">
-          <rect x="38" y="68" width="22" height="16" rx="3" />
-          <rect x="64" y="68" width="22" height="16" rx="3" />
-          <rect x="90" y="68" width="22" height="16" rx="3" />
-          <rect x="116" y="68" width="22" height="16" rx="3" opacity="0.5" />
-          <rect x="38" y="90" width="22" height="16" rx="3" />
-          <rect x="90" y="90" width="22" height="16" rx="3" />
-          <rect x="116" y="90" width="22" height="16" rx="3" opacity="0.5" />
-          <rect x="38" y="112" width="22" height="16" rx="3" opacity="0.5" />
-          <rect x="64" y="112" width="22" height="16" rx="3" />
-          <rect x="116" y="112" width="22" height="16" rx="3" />
+      <svg viewBox="0 0 320 190" role="img" aria-label="A small shop beside a clipboard whose tasks are ticked off one by one">
+        <rect x="20" y="160" width="280" height="4" rx="2" fill="var(--art-line)" />
+        {/* Small shop */}
+        <rect x="36" y="84" width="112" height="76" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
+        <path d="M28 66h128l-8-22H36Z" fill="var(--art-navy)" />
+        <g>
+          {[0, 1, 2, 3, 4].map((i) => (
+            <path
+              key={i}
+              d={`M${28 + i * 25.6} 66h25.6v10a12.8 12.8 0 0 1-25.6 0Z`}
+              fill={i % 2 ? "var(--art-card)" : "var(--art-blue)"}
+              stroke="var(--art-line)"
+              strokeWidth="1.5"
+            />
+          ))}
         </g>
-        <rect x="64" y="90" width="22" height="16" rx="3" fill="var(--art-green)" />
-        <rect x="90" y="112" width="22" height="16" rx="3" fill="var(--art-blue)" />
-        <rect x="38" y="138" width="70" height="8" rx="4" fill="var(--art-blue)" opacity="0.5" />
-        {/* Dashboard */}
-        <rect x="160" y="34" width="134" height="128" rx="12" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
-        <rect x="172" y="48" width="50" height="30" rx="6" fill="var(--art-green)" opacity="0.18" />
-        <rect x="180" y="56" width="22" height="5" rx="2.5" fill="var(--art-green)" />
-        <rect x="180" y="66" width="34" height="6" rx="3" fill="var(--art-green)" />
-        <rect x="230" y="48" width="52" height="30" rx="6" fill="var(--art-blue)" opacity="0.18" />
-        <rect x="238" y="56" width="22" height="5" rx="2.5" fill="var(--art-blue)" />
-        <rect x="238" y="66" width="34" height="6" rx="3" fill="var(--art-blue)" />
-        <g fill="var(--art-blue)">
-          <rect x="176" y="120" width="12" height="28" rx="2" />
-          <rect x="194" y="110" width="12" height="38" rx="2" />
-          <rect x="212" y="124" width="12" height="24" rx="2" />
-          <rect x="230" y="100" width="12" height="48" rx="2" />
-        </g>
-        <circle cx="268" cy="124" r="18" fill="none" stroke="var(--art-muted)" strokeWidth="7" />
-        <path d="M268 106a18 18 0 0 1 17 24" fill="none" stroke="var(--art-green)" strokeWidth="7" strokeLinecap="round" />
+        <rect x="48" y="100" width="40" height="30" rx="4" fill="var(--art-blue)" opacity="0.3" />
+        <rect x="100" y="104" width="34" height="56" rx="4" fill="var(--art-navy)" />
+        <rect x="106" y="112" width="22" height="10" rx="2" fill="var(--art-green)" />
+        {/* Clipboard */}
+        <rect x="178" y="34" width="108" height="126" rx="10" fill="var(--art-card)" stroke="var(--art-navy)" strokeWidth="3.5" />
+        <rect x="212" y="26" width="40" height="16" rx="5" fill="var(--art-navy)" />
+        {[0, 1, 2].map((i) => (
+          <g key={i}>
+            <rect x="192" y={60 + i * 30} width="18" height="18" rx="4" fill="var(--art-bg)" stroke="var(--art-line)" strokeWidth="2" />
+            <path
+              className="art-draw"
+              style={{ animationDelay: `${i * 0.6}s` }}
+              pathLength={100}
+              d={`M195 ${69 + i * 30}l4 5 9-11`}
+              fill="none"
+              stroke="var(--art-green)"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <rect x="218" y={66 + i * 30} width={i === 1 ? 40 : 54} height="6" rx="3" fill="var(--art-muted)" />
+          </g>
+        ))}
       </svg>
     </div>
   );

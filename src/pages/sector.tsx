@@ -3,8 +3,44 @@ import { Fragment } from "react";
 import { Link, useParams } from "react-router";
 import { PageHero } from "@/components/page-hero";
 import { ChallengeCards, CtaBand, SectionHeading, ToConfirm } from "@/components/sections";
-import { findSector } from "@/content/sectors";
+import { findSector, type Sector } from "@/content/sectors";
+import { trackGroups } from "@/content/solutions";
 import { NotFoundPage } from "@/pages/not-found";
+
+const base = import.meta.env.BASE_URL;
+const familyFor = { blue: "make", green: "sell", navy: "learn-build" } as const;
+
+type SolutionGroup = {
+  id: string;
+  title: string;
+  image: { src: string };
+  color: "blue" | "green" | "navy";
+  rows: Sector["solutions"];
+};
+
+// Each sector solution joins the Solutions-page group that holds it. Solutions made
+// only for this sector form a last group with the sector's own photo.
+function groupSolutions(sector: Sector): SolutionGroup[] {
+  const groups = new Map<string, SolutionGroup>();
+  const own: SolutionGroup = {
+    id: "own",
+    title: `Made for ${sector.name.toLowerCase()}`,
+    image: sector.images[0],
+    color: "navy",
+    rows: [],
+  };
+  for (const row of sector.solutions) {
+    const track = trackGroups.find((group) => group.cards.some((card) => card.id === row.solutionId));
+    if (!track) {
+      own.rows.push(row);
+      continue;
+    }
+    const group = groups.get(track.id) ?? { ...track, rows: [] };
+    group.rows.push(row);
+    groups.set(track.id, group);
+  }
+  return [...groups.values(), ...(own.rows.length ? [own] : [])];
+}
 
 // Sector page template, in the brief's order: headline, intro, challenges,
 // solutions table, start small, gains, call to action.
@@ -67,28 +103,42 @@ export function SectorPage() {
             id="solutions-title"
             title="Solutions you can choose from"
           />
-          <table className="solution-table">
-            <thead>
-              <tr>
-                <th scope="col">Solution</th>
-                <th scope="col">What we provide for you</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sector.solutions.map((row) => (
-                <tr key={row.name}>
-                  <th scope="row">
-                    {row.solutionId ? (
-                      <Link to={`/solutions/#${row.solutionId}`}>{row.name}</Link>
-                    ) : (
-                      row.name
-                    )}
-                  </th>
-                  <td>{row.provides}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          {/* Grouped as on the Solutions page: the same photo and colour per group, so
+              the two pages read as one. */}
+          <div className="sector-solutions">
+            {groupSolutions(sector).map((group) => (
+              <section
+                key={group.id}
+                className="sector-solution-group"
+                aria-labelledby={`sg-${group.id}`}
+              >
+                <div className="sector-solution-photo">
+                  <img src={`${base}${group.image.src}`} alt="" loading="lazy" decoding="async" />
+                  <h3 id={`sg-${group.id}`}>{group.title}</h3>
+                </div>
+                <ul className="sector-solution-list">
+                  {group.rows.map((row) => (
+                    <li
+                      key={row.name}
+                      className="solution-tile sector-solution-item"
+                      data-family={familyFor[group.color]}
+                    >
+                      <span className="solution-tile-bar" aria-hidden="true" />
+                      <h4>{row.name}</h4>
+                      <p>{row.provides}</p>
+                      {row.solutionId && (
+                        <Link className="sector-solution-link" to={`/solutions/#${row.solutionId}`}>
+                          See it in Solutions
+                          <span className="sr-only"> ({row.name})</span>
+                          <ArrowRight size={15} aria-hidden="true" />
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
         </div>
       </section>
 

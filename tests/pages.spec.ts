@@ -75,7 +75,7 @@ for (const sector of sectors) {
     // The call to action is the last section on the page.
     expect(headings.at(-1)?.trim()).toBe(sector.cta.label);
     await expect(page.locator(".challenge-cards li")).toHaveCount(sector.challenges.length);
-    await expect(page.locator(".solution-table tbody tr")).toHaveCount(sector.solutions.length);
+    await expect(page.locator(".sector-solution-item")).toHaveCount(sector.solutions.length);
     // The sector photo is the hero background; the hero holds only the bold sentence.
     const photo = page.locator(".page-hero-photo .hero-slide").first();
     await expect(photo).toHaveAttribute("alt", sector.images[0].alt);

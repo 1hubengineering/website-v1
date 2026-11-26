@@ -1289,3 +1289,101 @@ q.hook-quote::after {
   height: auto;
   max-height: min(520px, 60dvh);
 }
+
+/* Sector page: solutions grouped as on the Solutions page. A small photo with the
+   group title, then that group's cards in its colour. */
+.sector-solutions {
+  display: grid;
+  gap: 28px;
+}
+.sector-solution-group {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+.sector-solution-photo {
+  position: relative;
+  min-height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--brand-navy);
+}
+.sector-solution-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sector-solution-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11, 31, 59, 0.85), rgba(11, 31, 59, 0.25));
+}
+.sector-solution-photo h3 {
+  position: absolute;
+  z-index: 1;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 21px;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  font-weight: 800;
+}
+.sector-solution-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.sector-solution-item {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 24px;
+}
+.sector-solution-item .solution-tile-bar {
+  margin-bottom: 14px;
+}
+.sector-solution-item h4 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+.sector-solution-item p {
+  font-size: 15px;
+}
+.sector-solution-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--family);
+  text-decoration: none;
+}
+.sector-solution-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.dark .sector-solution-item[data-family="make"] .sector-solution-link {
+  color: #93c5fd;
+}
+@media (max-width: 800px) {
+  .sector-solution-group {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  .sector-solution-photo {
+    min-height: 120px;
+  }
+}

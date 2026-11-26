@@ -50,5 +50,5 @@ Full dashboard screens of AndHub's own ModelHer, opened on its worked M-Drone ex
 project (a crop-spraying drone), taken on 2026-11-26. The tool's old logo and toolbar
 are hidden; no formulas or engineering metrics pages are shown. In the screens the
 menu group "Cockpit" reads "Data Matrix", "Cube" reads "Metric Hub" and "Engineering
-Metrics" reads "Readiness level" (renamed on screen for the capture only). Every row of page tabs is hidden, so no
-tab names appear.
+Metrics" reads "Readiness level" (renamed on screen for the capture only). Every row of page tabs is hidden, the side
+menu shows icons only, and each screen is cropped to one topic under its title.

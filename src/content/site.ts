@@ -53,10 +53,12 @@ export const team: TeamMember[] = [
   {
     name: "Lydia B",
     role: "Graphic Designer",
+    photo: "team/lydia-andhub.webp",
   },
   {
     name: "Ammanuel T",
     role: "Marketing and Strategy",
+    photo: "team/ammanuel-andhub.webp",
   },
 ];
 

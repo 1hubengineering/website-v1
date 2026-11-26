@@ -1559,3 +1559,24 @@ q.hook-quote::after {
     font-size: 34px;
   }
 }
+
+/* Each problem label turns green with a check: solved. */
+.office-hero-label {
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease;
+}
+.office-hero-label-solved {
+  display: none;
+}
+.office-hero-label.is-solved {
+  background: rgb(4 120 87 / 0.95);
+  border-color: #34d399;
+}
+.office-hero-label.is-solved .office-hero-label-problem {
+  display: none;
+}
+.office-hero-label.is-solved .office-hero-label-solved {
+  display: block;
+  color: #d1fae5;
+}

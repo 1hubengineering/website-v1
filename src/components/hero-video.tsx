@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import {
+  CircleCheck,
   Clock,
   Package,
   Pause,
@@ -12,17 +13,21 @@ import {
 
 const base = import.meta.env.BASE_URL;
 
-// The six problems around the man, as sharp page elements over the video. Positions
-// are in % of the video frame (2560 × 1440); `in` is when each one pops in.
+// The six problems, below the man's shoulders so his face stays clear, as sharp page
+// elements over the video. Positions are in % of the video frame (2560 × 1440). Each
+// one pops in at `in`, then turns green with a check at SOLVE + index × SOLVE_STEP:
+// the problems are solved. All fade out together before the loop.
 const LABELS = [
-  { text: "Risk alerts", Icon: TriangleAlert, left: 47, top: 20, in: 0.3 },
-  { text: "Project delivery", Icon: Package, left: 74, top: 15, in: 0.8 },
-  { text: "Operations tracking", Icon: SlidersHorizontal, left: 45, top: 42, in: 1.3 },
-  { text: "Missed deadlines", Icon: Clock, left: 75, top: 38, in: 1.8 },
-  { text: "Financial loss", Icon: TrendingDown, left: 48, top: 64, in: 2.3 },
-  { text: "Quality failures", Icon: ShieldX, left: 72, top: 60, in: 2.8 },
+  { text: "Risk alerts", Icon: TriangleAlert, left: 42, top: 50, in: 0.3 },
+  { text: "Project delivery", Icon: Package, left: 69, top: 50, in: 0.7 },
+  { text: "Operations tracking", Icon: SlidersHorizontal, left: 42, top: 59, in: 1.1 },
+  { text: "Missed deadlines", Icon: Clock, left: 69, top: 59, in: 1.5 },
+  { text: "Financial loss", Icon: TrendingDown, left: 42, top: 68, in: 1.9 },
+  { text: "Quality failures", Icon: ShieldX, left: 69, top: 68, in: 2.3 },
 ] as const;
 const IN_LENGTH = 0.25;
+const SOLVE = 3.1;
+const SOLVE_STEP = 0.3;
 const OUT_START = 5.55;
 const OUT_END = 5.95;
 
@@ -62,7 +67,9 @@ export function OfficeHero({
         const time = element.currentTime;
         LABELS.forEach((label, index) => {
           const node = labels.current[index];
-          if (node) node.style.opacity = String(labelOpacity(time, label.in));
+          if (!node) return;
+          node.style.opacity = String(labelOpacity(time, label.in));
+          node.classList.toggle("is-solved", time >= SOLVE + index * SOLVE_STEP && time < OUT_END);
         });
       }
       frame = requestAnimationFrame(tick);
@@ -111,7 +118,8 @@ export function OfficeHero({
                 className="office-hero-label"
                 style={{ left: `${left}%`, top: `${top}%` } as CSSProperties}
               >
-                <Icon aria-hidden="true" />
+                <Icon className="office-hero-label-problem" aria-hidden="true" />
+                <CircleCheck className="office-hero-label-solved" aria-hidden="true" />
                 {text}
               </span>
             ))}

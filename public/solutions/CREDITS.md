@@ -12,6 +12,7 @@ One photo per "Track …" group, cropped to 16:9 and converted to WebP at 1600×
 | track-learning-online.webp | Vitaly Gariev | Unsplash License | https://unsplash.com/photos/y4h0lH6QxhY |
 | ai-driven-operations.webp | Tasha Kostyuk | Unsplash License | https://unsplash.com/photos/TtMKq3lJm-U |
 | track-ait-aviation.webp (aviation page only) | NASA/JPL-Caltech, PIA25959 | NASA media (public domain; no endorsement implied) | https://images.nasa.gov/details/PIA25959 |
+| track-se-aviation.webp (aviation page only) | NASA/Kim Shiflett, KSC-20201019-PH-KLS01_0101 | NASA media (public domain; no endorsement implied) | https://images.nasa.gov/details/KSC-20201019-PH-KLS01_0101 |
 
 ## Header video
 

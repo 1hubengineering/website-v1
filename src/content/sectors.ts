@@ -408,6 +408,12 @@ export const sectors: Sector[] = [
     ],
     solutions: [
       {
+        name: "Systems engineering",
+        solutionId: "systems-engineering",
+        provides:
+          "Requirements, architecture and verification for aircraft, drones and satellites, traced in one model",
+      },
+      {
         name: "Reliability and maintenance tracking",
         solutionId: "risk-reliability",
         provides:
@@ -417,11 +423,6 @@ export const sectors: Sector[] = [
         name: "Engineering readiness dashboard",
         solutionId: "systems-engineering",
         provides: "Clear, measurable progress for each design or maintenance review",
-      },
-      {
-        name: "Inventory and logistics",
-        solutionId: "inventory-logistics",
-        provides: "Spare parts and tools tracked by location, with reorder alerts",
       },
       {
         name: "Quality control",
@@ -447,6 +448,13 @@ export const sectors: Sector[] = [
     cta: { action: "Book a technical session", label: "Book a technical session with our systems-engineering team" },
     // From the ground to orbit: drone, aircraft, above the clouds, small satellite, space station.
     groupOverrides: {
+      "track-hardware": {
+        title: "Track systems engineering",
+        image: {
+          src: "solutions/track-se-aviation.webp",
+          alt: "An engineer reviewing test data on several screens in a control room",
+        },
+      },
       "track-production": {
         title: "Track assembly, integration and test",
         image: {

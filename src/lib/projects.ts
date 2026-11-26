@@ -33,18 +33,15 @@ export const projects: Project[] = [
     type: "SYSTEMS ENGINEERING",
     description: "Mission planner for drones, satellites, embedded systems and manufactured hardware",
     detail:
-      "Our systems engineering product for teams that design drones, CanSats, CubeSats, embedded systems and manufactured hardware. Teams draw the system context and the architecture, write the requirements and the operation concept, and track mass and energy budgets in one connected model. Each review gate is approved or returned with comments, and engineering metrics show how ready the design is.",
+      "Our systems engineering product for teams that design drones, CanSats, CubeSats, embedded systems and manufactured hardware. The whole team works on one connected model of the system, from the mission to the architecture, and follows the design from first idea to flight readiness.",
     tags: ["Systems engineering", "Hardware"],
     art: "systems-product",
     status: "Demo on request",
     url: "",
     demo: true,
     previews: [
-      { src: asset("modelher/context.webp"), label: "System context", alt: "System context of a crop-spraying drone: the drone inside the system boundary, with the operators, farm data platform, ground control station, field and regulator around it and what crosses the boundary.", width: 1600, height: 1000 },
-      { src: asset("modelher/bdd.webp"), label: "Architecture", alt: "Block definition diagram of the drone: airframe, propulsion, electrical power, flight control, payload, C2 link and remote pilot station, each with its parts and owner.", width: 1600, height: 1000 },
-      { src: asset("modelher/req.webp"), label: "Requirements", alt: "System requirements of the drone, each with its subsystem, type, parent objective and verification method, and the review gates approved.", width: 1600, height: 1000 },
-      { src: asset("modelher/conops.webp"), label: "Operation concept", alt: "Operation concept of the drone: endurance, distance, altitude and payload limits, and each flight phase from pre-flight to post-flight.", width: 1600, height: 1000 },
-      { src: asset("modelher/metrics.webp"), label: "Engineering metrics", alt: "Engineering metrics for the requirements review: requirement completeness, traceability, coverage and satisfaction against their thresholds.", width: 1600, height: 1000 },
+      { src: asset("modelher/context.webp"), label: "System context", alt: "System context of a crop-spraying drone: the drone inside the system boundary, with the operators, farm data platform, ground control station, field and regulator around it and what crosses the boundary.", width: 1900, height: 830 },
+      { src: asset("modelher/bdd.webp"), label: "Architecture", alt: "Block diagram of the drone: airframe, propulsion, electrical power, flight control, payload, C2 link and remote pilot station, each with its parts.", width: 1810, height: 1060 },
     ],
   },
   {

@@ -41,7 +41,7 @@ they do not imply endorsement of the application or this website.
 
 ## ModelHer
 
-Screenshots of AndHub's own ModelHer, opened on its worked M-Drone example project
+High-level views (system context and block diagram) of AndHub's own ModelHer, opened on its
 (a crop-spraying drone), cropped to the page content on 2026-11-26.
 
 ## SiraYe

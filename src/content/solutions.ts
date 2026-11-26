@@ -176,7 +176,7 @@ export const trackGroups: {
   },
   {
     id: "track-sales",
-    image: { src: "solutions/track-sales.webp", alt: "A carton being packed for an order on a packing table" },
+    image: { src: "solutions/track-sales-shop.webp", alt: "A shop tablet showing a grid of products for sale, with clothing racks and shelves behind" },
     title: "Track sales and products",
     color: "green",
     cards: [

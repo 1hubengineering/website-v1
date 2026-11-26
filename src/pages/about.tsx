@@ -1,4 +1,3 @@
-import { PageHero } from "@/components/page-hero";
 import { ApproachFlow, CtaBand, SectionHeading, ToConfirm, WhyGrid } from "@/components/sections";
 import { team } from "@/content/site";
 
@@ -17,24 +16,26 @@ function initials(name: string) {
 export function AboutPage() {
   return (
     <>
-      {/* The team’s own words, quoted. */}
-      <PageHero
-        statement
-        images={[
-          {
-            src: "sectors/about-header.webp",
-            alt: "A leather production line in Addis Ababa, workers cutting and stitching hides",
-          },
-        ]}
-        title={
-          <q className="hook-quote">
-            Learning is the only path forward for growth, and comfort is the enemy. We help you ask
-            the right questions to grow
-          </q>
-        }
-      >
-        The AndHub team
-      </PageHero>
+      {/* The team’s own words, quoted, beside a photo of the team: every face stays visible. */}
+      <section className="page-hero on-navy about-hero" aria-labelledby="page-title">
+        <img
+          className="about-hero-photo"
+          src={`${base}sectors/about-team.webp`}
+          alt="The AndHub team in branded T-shirts discussing a design around a laptop"
+          width="1920"
+          height="1080"
+          fetchPriority="high"
+        />
+        <div className="container about-hero-text">
+          <h1 id="page-title">
+            <q className="hook-quote">
+              Learning is the only path forward for growth, and comfort is the enemy. We help you
+              ask the right questions to grow
+            </q>
+          </h1>
+          <p>The AndHub team</p>
+        </div>
+      </section>
 
       <section className="section" id="why" aria-labelledby="why-title">
         <div className="container">

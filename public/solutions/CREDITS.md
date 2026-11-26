@@ -13,4 +13,4 @@ One photo per "Track …" group, cropped to 16:9 and converted to WebP at 1600×
 
 ## Header video
 
-`headache.mp4` and its poster frame `headache-poster.webp` (taken at 4 s) are AndHub’s own video, supplied on 2026-11-26.
+`headache.mp4` (1000 × 1200, replaced on 2026-11-26) and its poster frame `headache-poster.webp` (taken at 3 s) are AndHub’s own video, supplied on 2026-11-26.

@@ -36,8 +36,8 @@ export function HeroVideo({ src, poster }: { src: string; poster: string }) {
         ref={video}
         src={`${base}${src}`}
         poster={`${base}${poster}`}
-        width="1440"
-        height="900"
+        width="1000"
+        height="1200"
         muted
         loop
         playsInline

@@ -16,21 +16,20 @@ function initials(name: string) {
 export function AboutPage() {
   return (
     <>
-      {/* The team’s own words, quoted, beside a photo of the team: every face stays visible. */}
-      <section className="page-hero on-navy about-hero" aria-labelledby="page-title">
+      {/* The team’s own words, written on the office wall of a full-width team photo. */}
+      <section className="about-hero" aria-labelledby="page-title">
         <img
           className="about-hero-photo"
-          src={`${base}sectors/about-team.webp`}
+          src={`${base}sectors/about-team-wide.webp`}
           alt="The AndHub team in branded T-shirts discussing a design around a laptop"
-          width="1920"
-          height="1080"
+          width="3535"
+          height="1200"
           fetchPriority="high"
         />
         <div className="container about-hero-text">
           <h1 id="page-title">
             <q className="hook-quote">
-              Learning is the only path forward for growth, and comfort is the enemy. We help you
-              ask the right questions to grow
+              A mistake made twice is paid for twice. We help your business learn and grow
             </q>
           </h1>
           <p>The AndHub team</p>

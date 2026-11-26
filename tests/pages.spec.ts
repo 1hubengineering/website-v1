@@ -41,7 +41,7 @@ test("main navigation reaches every section page", async ({ page }) => {
       "Running a business shouldn’t be a headache.",
     ],
     ["Projects", "Our projects"],
-    ["About", "Learning is the only path forward for growth, and comfort is the enemy. We help you ask the right questions to grow"],
+    ["About", "A mistake made twice is paid for twice. We help your business learn and grow"],
     ["Contact", "Book a free discovery visit"],
   ]) {
     await nav.getByRole("link", { name: label }).click();

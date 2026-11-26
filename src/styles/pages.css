@@ -1581,25 +1581,24 @@ q.hook-quote::after {
   color: #d1fae5;
 }
 
-/* About header: the quote on navy at the left, the team photo on the right so no
-   face is covered. Phones: photo on top, quote below. */
+/* About header: a full-width team photo; the quote is written in dark letters on
+   the plain office wall at the left. Phones: photo on top, quote below on the wall
+   colour. */
 .about-hero {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: clamp(460px, 62vh, 620px);
-  background: var(--brand-navy, #0b1f3b);
+  min-height: clamp(460px, 62vh, 640px);
+  background: #e9ebee;
+  overflow: hidden;
 }
 .about-hero-photo {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 58%;
+  inset: 0;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 62% 40%;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 14%);
-  mask-image: linear-gradient(to right, transparent 0, #000 14%);
+  object-position: 100% 45%;
 }
 .about-hero-text {
   position: relative;
@@ -1607,19 +1606,20 @@ q.hook-quote::after {
   padding-block: 72px;
 }
 .about-hero-text h1 {
-  max-width: min(520px, 40%);
-  font-size: clamp(28px, 2.7vw, 40px);
-  line-height: 1.3;
-  letter-spacing: -0.6px;
-  font-weight: 700;
+  max-width: min(520px, calc(36vw - 40px));
+  color: #0b1220;
+  font-size: clamp(28px, 2.9vw, 46px);
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  font-weight: 800;
 }
 .about-hero-text p {
   margin-top: 24px;
   font-size: 18px;
   font-weight: 600;
-  color: var(--muted);
+  color: #334155;
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .about-hero {
     flex-direction: column;
     align-items: stretch;
@@ -1627,17 +1627,15 @@ q.hook-quote::after {
   }
   .about-hero-photo {
     position: static;
-    width: 100%;
     height: auto;
-    aspect-ratio: 16 / 10;
-    -webkit-mask-image: none;
-    mask-image: none;
+    aspect-ratio: 4 / 3;
+    object-position: 100% 50%;
   }
   .about-hero-text {
     padding-block: 32px 44px;
   }
   .about-hero-text h1 {
     max-width: none;
-    font-size: 26px;
+    font-size: 28px;
   }
 }

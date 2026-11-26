@@ -100,7 +100,7 @@ for (const sector of sectors) {
   });
 }
 
-test("solutions page: six groups of two short cards by what owners track", async ({
+test("solutions page: seven groups of two short cards by what owners track", async ({
   page,
 }) => {
   await page.goto("./solutions/");
@@ -114,6 +114,7 @@ test("solutions page: six groups of two short cards by what owners track", async
     "Track production and quality",
     "Track sales and products",
     "Track projects and sites",
+    "Track hardware development",
     "Track learning and information",
     "AI-driven operations",
   ]) {
@@ -127,10 +128,10 @@ test("solutions page: six groups of two short cards by what owners track", async
     await expect(page.getByRole("heading", { name, exact: true })).toHaveCount(0);
   }
   await expect(page.locator(".family-dot")).toHaveCount(0);
-  await expect(page.locator(".solution-tile")).toHaveCount(12);
+  await expect(page.locator(".solution-tile")).toHaveCount(14);
   // Every group shows its photo, and the photo actually loads.
   const photos = page.locator(".solution-photo img");
-  await expect(photos).toHaveCount(6);
+  await expect(photos).toHaveCount(7);
   for (const photo of await photos.all()) {
     await photo.scrollIntoViewIfNeeded();
     await expect

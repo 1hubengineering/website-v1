@@ -1,5 +1,5 @@
 import type { Confirmable } from "./site";
-import type { FamilyId, SolutionId } from "./solutions";
+import type { FamilyId, LinkedSolutionId } from "./solutions";
 
 // Eight client sectors. Wording from the website brief; field order follows
 // the sector page template: headline, intro, challenges, solutions, pilot,
@@ -9,7 +9,7 @@ export type SectorSolution = {
   name: string;
   provides: string;
   // Links the row to one of the seven solutions when it maps to one.
-  solutionId?: SolutionId;
+  solutionId?: LinkedSolutionId;
 };
 
 export type SectorImage = {
@@ -417,11 +417,13 @@ export const sectors: Sector[] = [
     solutions: [
       {
         name: "Reliability and maintenance tracking",
+        solutionId: "risk-reliability",
         provides:
           "Component and fleet reliability data in one place, with trends and alerts",
       },
       {
         name: "Engineering readiness dashboard",
+        solutionId: "systems-engineering",
         provides: "Clear, measurable progress for each design or maintenance review",
       },
       {

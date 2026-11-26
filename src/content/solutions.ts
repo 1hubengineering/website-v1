@@ -13,6 +13,9 @@ export type SolutionId =
   | "e-learning"
   | "construction-management";
 
+// What a sector solution can link to: a card on the Solutions page.
+export type LinkedSolutionId = SolutionId | "systems-engineering" | "risk-reliability";
+
 export type Solution = {
   id: SolutionId;
   name: string;
@@ -207,6 +210,28 @@ export const trackGroups: {
         id: "project-management",
         name: "Project management",
         description: "Schedules, budgets and milestones across every project, with measurable progress",
+      },
+    ],
+  },
+  {
+    id: "track-hardware",
+    image: {
+      src: "solutions/track-hardware.webp",
+      alt: "Hands soldering wires to a circuit board on an electronics workbench with test instruments",
+    },
+    title: "Track hardware development",
+    color: "blue",
+    cards: [
+      {
+        id: "systems-engineering",
+        name: "Systems engineering",
+        description:
+          "Requirements, architecture and tests for drones, embedded systems and manufactured hardware, followed from first idea to a ready product",
+      },
+      {
+        id: "risk-reliability",
+        name: "Risk and reliability analysis",
+        description: "Risks scored and followed, and weak points found before the hardware is built and flown",
       },
     ],
   },

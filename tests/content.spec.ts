@@ -12,9 +12,9 @@ test("solutions: three groups, seven solutions; four services", () => {
   expect(solutionCount).toBe(7);
   const ids = families.flatMap((family) => family.solutions.map((solution) => solution.id));
   expect(new Set(ids).size).toBe(ids.length);
-  // Solutions page: six groups of exactly two cards; every solution the sector pages
+  // Solutions page: seven groups of exactly two cards; every solution the sector pages
   // link to (/solutions/#<id>) is one of those cards, and card ids are unique.
-  expect(trackGroups).toHaveLength(6);
+  expect(trackGroups).toHaveLength(7);
   const cardIds = trackGroups.flatMap((group) => group.cards.map((card) => card.id));
   for (const group of trackGroups) expect(group.cards, group.title).toHaveLength(2);
   expect(new Set(cardIds).size).toBe(cardIds.length);
@@ -31,9 +31,7 @@ test("eight sectors, each complete for the sector page template", () => {
   expect(sectors).toHaveLength(8);
   const slugs = sectors.map((sector) => sector.slug);
   expect(new Set(slugs).size).toBe(8);
-  const solutionIds = new Set(
-    families.flatMap((family) => family.solutions.map((solution) => solution.id)),
-  );
+  const cardIds = trackGroups.flatMap((group) => group.cards.map((card) => card.id));
   for (const sector of sectors) {
     expect(sector.slug, sector.name).toMatch(/^[a-z]+(-[a-z]+)*$/);
     expect(sector.headline.length, sector.name).toBeGreaterThan(0);
@@ -41,7 +39,8 @@ test("eight sectors, each complete for the sector page template", () => {
     expect(sector.intro.split(/(?<=\.)\s+/), sector.name).toHaveLength(2);
     expect(sector.solutions.length, sector.name).toBeGreaterThanOrEqual(3);
     for (const row of sector.solutions) {
-      if (row.solutionId) expect(solutionIds.has(row.solutionId), row.name).toBe(true);
+      // Every link lands on a card that exists on the Solutions page.
+      if (row.solutionId) expect(cardIds, row.name).toContain(row.solutionId);
     }
     expect(sector.pilot.length, sector.name).toBeGreaterThan(0);
     expect(sector.cta.label.length, sector.name).toBeGreaterThan(0);

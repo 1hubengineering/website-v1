@@ -38,7 +38,7 @@ test("main navigation reaches every section page", async ({ page }) => {
   for (const [label, heading] of [
     [
       "Solutions",
-      "Running a business shouldn’t be a headache. We provide digital solutions that let owners track operations and resources from anywhere!",
+      "Running a business shouldn’t be a headache.",
     ],
     ["Projects", "Our projects"],
     ["About", "Learning is the only path forward for growth, and comfort is the enemy. We help you ask the right questions to grow"],

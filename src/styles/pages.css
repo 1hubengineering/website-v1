@@ -1190,67 +1190,94 @@ q.hook-quote::after {
   max-width: 100%;
 }
 
-/* Solutions header: a looping video that carries the quote. The h1 holds the same
-   words; it is hidden on wide screens and shown under the video on phones. */
+/* Solutions header: real text on the left, the right part of the video on the
+   right. The band takes the video's own edge colour and the video fades into it,
+   so there is no frame. */
 .solutions-video-hero {
   position: relative;
-  padding: 32px 16px;
-  background: #050f22;
+  background: #020e20;
 }
-/* The video keeps its own 16:10 shape and is never shown larger than it was
-   made (1440px), nor taller than about 60% of the screen, so nothing is cut
-   off and the first solutions show below it. */
+.solutions-video-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) auto;
+  align-items: center;
+  gap: 24px;
+  padding-block: 24px;
+}
+.solutions-video-bar {
+  display: block;
+  width: 56px;
+  height: 4px;
+  border-radius: 4px;
+  background: #60a5fa;
+  margin-bottom: 24px;
+}
+.solutions-video-text h1 {
+  max-width: 620px;
+  color: #ffffff;
+  font-size: clamp(36px, 4.4vw, 64px);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  font-weight: 800;
+}
+.solutions-video-text h1 span {
+  display: block;
+  color: #60a5fa;
+}
+.solutions-video-text p {
+  max-width: 520px;
+  margin-top: 24px;
+  color: #dbe4f0;
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.55;
+}
+/* The video frame is 1440 x 900; only its right 744px (the owner and the labels)
+   is shown. */
 .hero-video {
   position: relative;
-  width: min(1120px, 100%, calc((100vh - 86px) * 0.6 * 1.6));
-  aspect-ratio: 16 / 10;
-  margin-inline: auto;
+  height: min(600px, calc((100vh - 86px) * 0.68));
+  aspect-ratio: 744 / 900;
   overflow: hidden;
-  border-radius: 16px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 9%),
+    linear-gradient(to top, transparent 0, #000 10%),
+    linear-gradient(to bottom, transparent 0, #000 6%),
+    linear-gradient(to left, transparent 0, #000 7%);
+  -webkit-mask-composite: source-in, source-in, source-in;
+  mask-image: linear-gradient(to right, transparent 0, #000 9%),
+    linear-gradient(to top, transparent 0, #000 10%),
+    linear-gradient(to bottom, transparent 0, #000 6%),
+    linear-gradient(to left, transparent 0, #000 7%);
+  mask-composite: intersect;
 }
 .hero-video video {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.solutions-video-title {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  aspect-ratio: 1440 / 900;
 }
-@media (max-width: 700px) {
-  .solutions-video-hero {
-    padding: 0;
+.hero-video .hero-slides-toggle {
+  right: 12px;
+  bottom: 18px;
+}
+@media (max-width: 800px) {
+  .solutions-video-grid {
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: 40px 0;
+  }
+  .solutions-video-text h1 {
+    font-size: 34px;
   }
   .hero-video {
-    width: 100%;
-    border-radius: 0;
+    height: auto;
+    width: min(100%, 360px);
+    justify-self: center;
   }
   .hero-video .hero-slides-toggle {
-    right: 8px;
-    bottom: 8px;
-    width: 32px;
-    height: 32px;
-  }
-  .solutions-video-title {
-    position: static;
-    width: calc(100% - 32px);
-    margin-inline: auto;
-    height: auto;
-    overflow: visible;
-    clip-path: none;
-    white-space: normal;
-    padding-block: 28px 36px;
-  }
-  .solutions-video-title h1 {
-    font-size: 24px;
-    line-height: 1.3;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    width: 36px;
+    height: 36px;
   }
 }
 

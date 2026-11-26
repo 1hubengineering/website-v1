@@ -38,18 +38,18 @@ export function SolutionsPage() {
   const rows = useRevealRows();
   return (
     <>
-      {/* The header is the video: it shows the quote to business owners. The same words are
-          the h1, hidden on wide screens and shown under the video on phones, where the
-          words in the video are too small to read. */}
+      {/* The words are real text, so they stay sharp; the video shows only its right part,
+          the owner and the problems around him, and fades into the navy band. */}
       <section className="page-hero on-navy solutions-video-hero" aria-labelledby="page-title">
-        <HeroVideo src="solutions/headache.mp4" poster="solutions/headache-poster.webp" />
-        <div className="container solutions-video-title">
-          <h1 id="page-title">
-            <q className="hook-quote">
-              Running a business shouldn’t be a headache. We provide digital solutions that let
-              owners track operations and resources from anywhere!
-            </q>
-          </h1>
+        <div className="container solutions-video-grid">
+          <div className="solutions-video-text">
+            <span className="solutions-video-bar" aria-hidden="true" />
+            <h1 id="page-title">
+              Running a business shouldn’t be <span>a headache.</span>
+            </h1>
+            <p>We provide digital solutions that let owners track operations and resources from anywhere!</p>
+          </div>
+          <HeroVideo src="solutions/headache.mp4" poster="solutions/headache-poster.webp" />
         </div>
       </section>
 

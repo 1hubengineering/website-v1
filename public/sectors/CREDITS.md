@@ -9,6 +9,7 @@ The list is generated from `images` in `src/content/sectors.ts`; to replace a ph
 | food-and-beverage-a.webp | AndHub (supplied 2026-11-26; brand names removed) | AndHub's own image | — |
 | food-and-beverage-b.webp | AndHub (supplied 2026-11-26; brand names removed) | AndHub's own image | — |
 | food-and-beverage-c.webp | AndHub (supplied 2026-11-26; brand names removed) | AndHub's own image | — |
+| about-header.webp (About page header) | AndHub (supplied 2026-11-26) | AndHub's own image | — |
 | leather-and-garments-a.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
 | leather-and-garments-b.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
 | leather-and-garments-c.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |

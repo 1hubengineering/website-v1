@@ -20,6 +20,12 @@ export function AboutPage() {
       {/* The team’s own words, quoted. */}
       <PageHero
         statement
+        images={[
+          {
+            src: "sectors/about-header.webp",
+            alt: "A leather production line in Addis Ababa, workers cutting and stitching hides",
+          },
+        ]}
         title={
           <q className="hook-quote">
             Learning is the only path forward for growth, and comfort is the enemy. We help you ask

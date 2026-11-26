@@ -108,29 +108,19 @@ export const sectors: Sector[] = [
     // Food processing, then a brewery: brew kettles, fermentation tanks, bottling.
     images: [
       {
-        src: "sectors/food-and-beverage.webp",
-        alt: "Workers in hairnets along a fruit processing line in a factory",
-        credit: { photographer: "Arno Senoner", url: "https://unsplash.com/photos/bCgsKqFzUcg" },
+        src: "sectors/food-and-beverage-c.webp",
+        alt: "A packaged food production line with snack bags on conveyors and staff in hygiene wear",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
       {
-        src: "sectors/food-and-beverage-2.webp",
-        alt: "Large copper brew kettles in a brewery",
-        credit: { photographer: "Heng Chiu", url: "https://unsplash.com/photos/F4UDuUP5LAk" },
+        src: "sectors/food-and-beverage-b.webp",
+        alt: "A brewery filling line with beer bottles, steel tanks and two workers checking the line",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
       {
-        src: "sectors/food-and-beverage-3.webp",
-        alt: "Row of stainless steel fermentation tanks in a brewery",
-        credit: { photographer: "Zan Lazarevic", url: "https://unsplash.com/photos/JfIGAxiLtJE" },
-      },
-      {
-        src: "sectors/food-and-beverage-4.webp",
-        alt: "Unlabelled beer bottles on an automated bottling line",
-        credit: { photographer: "Andreas Ebner", url: "https://www.pexels.com/photo/41257622/" },
-      },
-      {
-        src: "sectors/food-and-beverage-5.webp",
-        alt: "Packing lines with many workers inside a food processing plant",
-        credit: { photographer: "Arno Senoner", url: "https://unsplash.com/photos/oLS6IxceVNs" },
+        src: "sectors/food-and-beverage-a.webp",
+        alt: "A juice bottling line in a bright factory, rows of orange juice bottles on the conveyor",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
     ],
     seo: {

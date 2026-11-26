@@ -6,11 +6,9 @@ The list is generated from `images` in `src/content/sectors.ts`; to replace a ph
 
 | File | Credit | Licence | Source |
 | --- | --- | --- | --- |
-| food-and-beverage.webp | Arno Senoner | Unsplash License | https://unsplash.com/photos/bCgsKqFzUcg |
-| food-and-beverage-2.webp | Heng Chiu | Unsplash License | https://unsplash.com/photos/F4UDuUP5LAk |
-| food-and-beverage-3.webp | Zan Lazarevic | Unsplash License | https://unsplash.com/photos/JfIGAxiLtJE |
-| food-and-beverage-4.webp | Andreas Ebner | Pexels License | https://www.pexels.com/photo/41257622/ |
-| food-and-beverage-5.webp | Arno Senoner | Unsplash License | https://unsplash.com/photos/oLS6IxceVNs |
+| food-and-beverage-a.webp | AndHub (supplied 2026-11-26; brand names removed) | AndHub's own image | — |
+| food-and-beverage-b.webp | AndHub (supplied 2026-11-26; brand names removed) | AndHub's own image | — |
+| food-and-beverage-c.webp | AndHub (supplied 2026-11-26; brand names removed) | AndHub's own image | — |
 | leather-and-garments-a.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
 | leather-and-garments-b.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
 | leather-and-garments-c.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |

@@ -106,8 +106,8 @@ test("solutions page: six groups of two short cards by what owners track", async
   await page.goto("./solutions/");
   // The header is the video; its words are the h1.
   const video = page.locator(".solutions-video-hero video");
-  await expect(video).toHaveAttribute("poster", /headache-poster\.webp$/);
-  await expect(video).toHaveAttribute("src", /headache\.mp4$/);
+  await expect(video).toHaveAttribute("poster", /headache-panel-poster\.webp$/);
+  await expect(video).toHaveAttribute("src", /headache-panel.mp4$/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText("shouldn’t be a headache");
   for (const heading of [
     "Track stock and deliveries",

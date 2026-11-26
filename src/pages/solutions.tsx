@@ -49,7 +49,7 @@ export function SolutionsPage() {
             </h1>
             <p>We provide digital solutions that let owners track operations and resources from anywhere!</p>
           </div>
-          <HeroVideo src="solutions/headache.mp4" poster="solutions/headache-poster.webp" />
+          <HeroVideo src="solutions/headache-panel.mp4" poster="solutions/headache-panel-poster.webp" />
         </div>
       </section>
 

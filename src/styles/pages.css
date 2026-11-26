@@ -1194,22 +1194,25 @@ q.hook-quote::after {
    words; it is hidden on wide screens and shown under the video on phones. */
 .solutions-video-hero {
   position: relative;
-  padding: 0;
+  padding: 32px 16px;
   background: #050f22;
 }
+/* The video keeps its own 16:10 shape and is never shown larger than it was
+   made (1440px), nor taller than about 60% of the screen, so nothing is cut
+   off and the first solutions show below it. */
 .hero-video {
   position: relative;
-  width: 100%;
+  width: min(1120px, 100%, calc((100vh - 86px) * 0.6 * 1.6));
   aspect-ratio: 16 / 10;
-  max-height: calc(100vh - 86px);
-  min-height: 220px;
+  margin-inline: auto;
   overflow: hidden;
+  border-radius: 16px;
 }
 .hero-video video {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .solutions-video-title {
   position: absolute;
@@ -1220,8 +1223,12 @@ q.hook-quote::after {
   white-space: nowrap;
 }
 @media (max-width: 700px) {
+  .solutions-video-hero {
+    padding: 0;
+  }
   .hero-video {
-    max-height: none;
+    width: 100%;
+    border-radius: 0;
   }
   .hero-video .hero-slides-toggle {
     right: 8px;

@@ -22,6 +22,8 @@ export type Project = {
   previewNote?: string;
   // No public link: the detail view offers "Request a demo" (contact form prefilled).
   demo?: boolean;
+  // Keep the drawing on the card even when the project has screenshots.
+  drawingOnCard?: boolean;
 };
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}projects/${path}`;
@@ -39,6 +41,15 @@ export const projects: Project[] = [
     status: "Demo on request",
     url: "",
     demo: true,
+    drawingOnCard: true,
+    previewNote: "Screens from ModelHer’s worked example, a crop-spraying drone.",
+    previews: [
+      { src: asset("modelher/conops.webp"), label: "Operation concept", alt: "ModelHer operation concept dashboard: the drone’s operating limits and each flight phase from pre-flight to post-flight.", width: 1920, height: 1200 },
+      { src: asset("modelher/architecture.webp"), label: "System architecture", alt: "ModelHer system architecture dashboard: the drone inside its system boundary and everything that crosses it.", width: 1920, height: 1200 },
+      { src: asset("modelher/requirements.webp"), label: "Requirements", alt: "ModelHer requirements dashboard: the drone’s system requirements with subsystem, type and verification method.", width: 1920, height: 1200 },
+      { src: asset("modelher/tests.webp"), label: "Test compliance", alt: "ModelHer test compliance dashboard: test records, requirements verified and integration progress.", width: 1920, height: 1200 },
+      { src: asset("modelher/baselines.webp"), label: "Configuration", alt: "ModelHer configuration dashboard: the baselines frozen at each review gate.", width: 1920, height: 1200 },
+    ],
   },
   {
     name: "SiraYe",

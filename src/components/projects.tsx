@@ -20,7 +20,9 @@ import { projects, type Project, type ProjectPreview } from "@/lib/projects";
 
 export function ProjectArt({ art, preview }: { art: string; preview?: ProjectPreview }) {
   const project = projects.find((project) => project.art === art);
-  const image = preview ?? project?.previews?.[0];
+  // A project with `drawingOnCard` keeps its drawing on the card; its screenshots
+  // show only in the detail view.
+  const image = preview ?? (project?.drawingOnCard ? undefined : project?.previews?.[0]);
   if (image) {
     return (
       <figure className={`project-art project-art-preview art-${art}`}>

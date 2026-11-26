@@ -43,3 +43,9 @@ they do not imply endorsement of the application or this website.
 
 Captures of the public welcome and log-in pages of https://siraye.1hubengineering.com,
 taken on 2026-11-26 and cropped around the content.
+
+## ModelHer
+
+Full dashboard screens of AndHub's own ModelHer, opened on its worked M-Drone example
+project (a crop-spraying drone), taken on 2026-11-26. The tool's old logo and toolbar
+are hidden; no formulas or engineering metrics pages are shown.

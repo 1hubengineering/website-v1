@@ -5,11 +5,11 @@ One photo per "Track …" group, cropped to 16:9 and converted to WebP at 1600×
 | File | Credit | Licence | Source |
 | --- | --- | --- | --- |
 | track-stock.webp | Tiger Lily | Pexels License | https://www.pexels.com/photo/4487383/ |
-| track-production.webp | Arno Senoner | Unsplash License | https://unsplash.com/photos/oLS6IxceVNs |
+| track-production-quality.webp | Hans Westbeek | Unsplash License | https://unsplash.com/photos/_luiFaaZU6k |
 | track-sales-shop.webp | Unzer (cropped to the tablet and shop) | Unsplash License | https://unsplash.com/photos/4jcvOcZ3h4Q |
 | track-projects.webp | MC G'Zay | Pexels License | https://www.pexels.com/photo/30661413/ |
 | track-hardware.webp | ThisisEngineering | Unsplash License | https://unsplash.com/photos/6FcwhytnLbg |
-| track-learning.webp | Katerina Holmes | Pexels License | https://www.pexels.com/photo/5905704/ |
+| track-learning-online.webp | Vitaly Gariev | Unsplash License | https://unsplash.com/photos/y4h0lH6QxhY |
 | ai-driven-operations.webp | Tasha Kostyuk | Unsplash License | https://unsplash.com/photos/TtMKq3lJm-U |
 
 ## Header video

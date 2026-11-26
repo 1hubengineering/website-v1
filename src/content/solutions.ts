@@ -161,7 +161,7 @@ export const trackGroups: {
   },
   {
     id: "track-production",
-    image: { src: "solutions/track-production.webp", alt: "Workers along conveyor lines with monitoring screens in a processing plant" },
+    image: { src: "solutions/track-production-quality.webp", alt: "Hands measuring a machined part with a digital caliper on a workshop bench" },
     title: "Track production and quality",
     color: "blue",
     cards: [
@@ -237,7 +237,7 @@ export const trackGroups: {
   },
   {
     id: "track-learning",
-    image: { src: "solutions/track-learning.webp", alt: "A student taking notes during an online lesson on a laptop" },
+    image: { src: "solutions/track-learning-online.webp", alt: "An adult taking an online course on a laptop, with headphones and a notebook on the desk" },
     title: "Track learning and information",
     color: "navy",
     cards: [

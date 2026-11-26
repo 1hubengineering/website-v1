@@ -20,11 +20,39 @@ export type Project = {
   links?: { label: string; url: string }[];
   previews?: ProjectPreview[];
   previewNote?: string;
+  // No public link: the detail view offers "Request a demo" (contact form prefilled).
+  demo?: boolean;
 };
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}projects/${path}`;
 
 export const projects: Project[] = [
+  {
+    name: "Systems Engineering Platform",
+    category: "Products",
+    type: "SYSTEMS ENGINEERING",
+    description: "Plan, design and verify drones, embedded systems and manufactured hardware in one place",
+    detail:
+      "A systems engineering product for hardware teams designing drones, embedded systems and manufactured hardware. Requirements, architecture, verification and progress live together, so every design decision can be traced and readiness can be measured.",
+    tags: ["Systems engineering", "Hardware"],
+    art: "systems-product",
+    status: "Demo on request",
+    url: "",
+    demo: true,
+  },
+  {
+    name: "SRAE",
+    category: "Products",
+    type: "TASK MONITORING",
+    description: "Task monitoring for teams: who is doing what, what is late and what is done",
+    detail:
+      "SRAE is AndHub’s task monitoring product. Teams assign and follow tasks on one board, see progress and deadlines at a glance, and managers spot what is late before it becomes a problem.",
+    tags: ["Task monitoring", "Teams"],
+    art: "srae",
+    status: "Demo on request",
+    url: "",
+    demo: true,
+  },
   {
     name: "Rental OS",
     category: "Products",

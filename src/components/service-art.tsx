@@ -180,3 +180,36 @@ export function ServiceArt({ index }: { index: number }) {
     </div>
   );
 }
+
+// Placeholder art for products until their screenshots arrive (Projects page).
+// SRAE, task monitoring: a board of tasks moving from to-do to done.
+export function TaskBoardArt() {
+  const column = (x: number, fill: string, cards: number[]) => (
+    <g>
+      <rect x={x} y="34" width="78" height="128" rx="10" fill="var(--art-card)" stroke="var(--art-line)" strokeWidth="2" />
+      <rect x={x + 12} y="46" width="40" height="6" rx="3" fill={fill} />
+      {cards.map((w, i) => (
+        <g key={i}>
+          <rect x={x + 10} y={62 + i * 32} width="58" height="24" rx="6" fill={fill} opacity="0.16" />
+          <rect x={x + 18} y={70 + i * 32} width={w} height="6" rx="3" fill={fill} />
+        </g>
+      ))}
+    </g>
+  );
+  return (
+    <div className="service-art">
+      <svg viewBox="0 0 320 190" role="img" aria-label="A task board with tasks moving from to do, to in progress, to done">
+        {column(30, "var(--art-muted)", [36, 26, 40])}
+        {column(121, "var(--art-blue)", [30, 40])}
+        {column(212, "var(--art-green)", [38, 28, 34])}
+        <circle cx="282" cy="36" r="14" fill="var(--art-green)" />
+        <path d="M275 36l5 5 9-10" fill="none" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </div>
+  );
+}
+
+// Systems engineering product: the system diagram from the services cards.
+export function SystemsProductArt() {
+  return <ServiceArt index={1} />;
+}

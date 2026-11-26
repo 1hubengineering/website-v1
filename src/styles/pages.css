@@ -1173,3 +1173,19 @@ q.hook-quote::after {
     translate: 0 20px;
   }
 }
+
+/* Product placeholders on the Projects page (until screenshots arrive) */
+.project-art .service-art {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  display: grid;
+  place-items: center;
+}
+.project-art .service-art svg {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+}

@@ -273,3 +273,20 @@ test("home quotes the Prime Minister with a source; aviation story steps have no
     "Validated research to industry",
   ]);
 });
+
+test("systems engineering product and SRAE offer a demo that prefills the contact form", async ({
+  page,
+}) => {
+  await page.goto("./projects/");
+  for (const name of ["Systems Engineering Platform", "SRAE"]) {
+    await page.getByRole("button", { name: `Explore ${name}`, exact: true }).click();
+    const dialog = page.getByRole("dialog");
+    await expect(dialog.getByText("Demo on request")).toBeVisible();
+    await dialog.getByRole("link", { name: "Request a demo" }).click();
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Book a free discovery visit");
+    await expect(page.getByLabel("What would you like to improve?")).toHaveValue(
+      `I would like a demo of ${name}`,
+    );
+    await page.goto("./projects/");
+  }
+});

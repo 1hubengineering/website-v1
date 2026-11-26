@@ -15,9 +15,15 @@ export function ContactPage() {
   // A sector page links here with ?sector=<slug>. Read it after hydration so the
   // pre-rendered HTML (which has no query) still matches.
   useEffect(() => {
-    const slug = new URLSearchParams(window.location.search).get("sector");
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("sector");
     if (slug && sectors.some((sector) => sector.slug === slug)) {
       setValues((previous) => ({ ...previous, sector: slug }));
+    }
+    // A product on the Projects page links here with ?demo=<product name>.
+    const demo = params.get("demo")?.trim().slice(0, 80);
+    if (demo) {
+      setValues((previous) => ({ ...previous, message: `I would like a demo of ${demo}` }));
     }
   }, []);
 

@@ -14,11 +14,12 @@ The list is generated from `images` in `src/content/sectors.ts`; to replace a ph
 | leather-and-garments-a.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
 | leather-and-garments-b.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
 | leather-and-garments-c.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
-| metal-and-engineering.webp | Hoang NC | Pexels License | https://www.pexels.com/photo/15947586/ |
-| metal-and-engineering-2.webp | Cemrecan Yurtman | Pexels License | https://www.pexels.com/photo/29224559/ |
-| metal-and-engineering-3.webp | Ant Rozetsky | Unsplash License | https://unsplash.com/photos/io7dX_1EFCg |
-| metal-and-engineering-4.webp | Melih Erşahin | Pexels License | https://www.pexels.com/photo/37574797/ |
-| metal-and-engineering-5.webp | Sergei Starostin | Pexels License | https://www.pexels.com/photo/29274538/ |
+| leather-and-garments-d.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
+| leather-and-garments-e.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
+| metal-and-engineering-a.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
+| metal-and-engineering-b.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
+| metal-and-engineering-c.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
+| metal-and-engineering-d.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
 | construction.webp | Wolfgang Weiser | Pexels License | https://www.pexels.com/photo/18283441/ |
 | construction-2.webp | Davide Locatelli | Pexels License | https://www.pexels.com/photo/2383649/ |
 | construction-3.webp | Tayssir Kadamany | Pexels License | https://www.pexels.com/photo/37687676/ |

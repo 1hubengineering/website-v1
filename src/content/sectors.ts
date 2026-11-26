@@ -214,6 +214,16 @@ export const sectors: Sector[] = [
         alt: "A leather workshop team inspecting a hide beside finished bags, one holding a tablet",
         credit: { photographer: "AndHub (supplied)", url: "" },
       },
+      {
+        src: "sectors/leather-and-garments-d.webp",
+        alt: "A leather production line in Addis Ababa, workers cutting and stitching hides",
+        credit: { photographer: "AndHub (supplied)", url: "" },
+      },
+      {
+        src: "sectors/leather-and-garments-e.webp",
+        alt: "A garment factory floor with sewing lines and an order tracking screen",
+        credit: { photographer: "AndHub (supplied)", url: "" },
+      },
     ],
     seo: {
       title: "Leather and Garment Factory Software | AndHub",
@@ -278,29 +288,24 @@ export const sectors: Sector[] = [
     // Metal fabrication and the different parts of the industry: fabrication hall, machining, steel mill, foundry, steel structures.
     images: [
       {
-        src: "sectors/metal-and-engineering.webp",
-        alt: "Large metal fabrication hall with crews working on steel parts",
-        credit: { photographer: "Hoang NC", url: "https://www.pexels.com/photo/15947586/" },
+        src: "sectors/metal-and-engineering-a.webp",
+        alt: "Machinists measuring machined steel parts at a bench in a busy workshop with lathes and CNC machines",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
       {
-        src: "sectors/metal-and-engineering-2.webp",
-        alt: "Workers operating heavy machinery on a manufacturing floor",
-        credit: { photographer: "Cemrecan Yurtman", url: "https://www.pexels.com/photo/29224559/" },
+        src: "sectors/metal-and-engineering-b.webp",
+        alt: "A machinist checking a part with a caliper while a colleague records results on a clipboard",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
       {
-        src: "sectors/metal-and-engineering-3.webp",
-        alt: "Crane lifting a ladle of molten metal in a steel mill",
-        credit: { photographer: "Ant Rozetsky", url: "https://unsplash.com/photos/io7dX_1EFCg" },
+        src: "sectors/metal-and-engineering-c.webp",
+        alt: "A steel fabrication hall with welders, frames under construction and an engineer inspecting a part",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
       {
-        src: "sectors/metal-and-engineering-4.webp",
-        alt: "Foundry workers in silhouette against sparks and molten metal",
-        credit: { photographer: "Melih Erşahin", url: "https://www.pexels.com/photo/37574797/" },
-      },
-      {
-        src: "sectors/metal-and-engineering-5.webp",
-        alt: "Workers assembling a steel frame structure with cranes",
-        credit: { photographer: "Sergei Starostin", url: "https://www.pexels.com/photo/29274538/" },
+        src: "sectors/metal-and-engineering-d.webp",
+        alt: "A workshop with CNC machines and production dashboards on screen, a technician at a computer",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
     ],
     seo: {

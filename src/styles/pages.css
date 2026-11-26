@@ -1403,3 +1403,39 @@ q.hook-quote::after {
     padding-top: 48px;
   }
 }
+
+/* Sharp labels over the header video's own (blurry) labels. Sized in container
+   units so they scale with the video exactly. */
+.hero-video {
+  container-type: size;
+}
+.hero-video-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero-video-label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 1.9cqw;
+  padding-left: 2.2cqw;
+  box-sizing: border-box;
+  border: max(1.5px, 0.2cqw) solid rgb(91 114 147);
+  border-radius: 1.4cqw;
+  background: rgb(16 32 58);
+  color: rgb(241 247 254);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 3.4cqh;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+}
+.hero-video-label svg {
+  flex: none;
+  width: 3.6cqw;
+  height: 3.6cqw;
+  color: rgb(242 194 161);
+  stroke-width: 2.25;
+}

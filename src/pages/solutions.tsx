@@ -13,8 +13,8 @@ export function SolutionsPage() {
         statement
         title={
           <q className="hook-quote">
-            Running a business shouldn’t be a headache. In this digital age, the right digital
-            solution lets owners track every part of it from anywhere
+            Running a business shouldn’t be a headache. We provide digital solutions that let
+            owners track operations and resources from anywhere!
           </q>
         }
       />

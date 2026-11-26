@@ -31,8 +31,9 @@ The list is generated from `images` in `src/content/sectors.ts`; to replace a ph
 | banking-and-finance.webp | Abenezer Muluken | Unsplash License | https://unsplash.com/photos/WBBkY_fpLiI |
 | banking-and-finance-2.webp | Yohannes Minas | Unsplash License | https://unsplash.com/photos/YPLosSc3w6A |
 | banking-and-finance-3.webp | Abenezer Shewaga | Unsplash License | https://unsplash.com/photos/WMB-Fb5LHeg |
-| banking-and-finance-4.webp | Christina @ wocintechchat.com | Unsplash License | https://unsplash.com/photos/faEfWCdOKIg |
-| banking-and-finance-5.webp | Mad Knoxx Deluxe | Pexels License | https://www.pexels.com/photo/36096119/ |
+| banking-and-finance-loan-a.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
+| banking-and-finance-loan-b.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
+| banking-and-finance-loan-c.webp | AndHub (supplied 2026-11-26) | AndHub's own image | — |
 | brands-and-exporters.webp | Yoseph Hailu | Unsplash License | https://unsplash.com/photos/XiOdESRTMy4 |
 | brands-and-exporters-2.webp | Imanishimwe Regis | Pexels License | https://www.pexels.com/photo/17366133/ |
 | brands-and-exporters-3.webp | Mwesigwa Joel | Pexels License | https://www.pexels.com/photo/38715718/ |

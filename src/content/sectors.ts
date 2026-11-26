@@ -549,9 +549,19 @@ export const sectors: Sector[] = [
         credit: { photographer: "Abenezer Muluken", url: "https://unsplash.com/photos/WBBkY_fpLiI" },
       },
       {
+        src: "sectors/banking-and-finance-loan-a.webp",
+        alt: "A loan officer going over a business plan on a laptop with two shop owners",
+        credit: { photographer: "AndHub (supplied)", url: "" },
+      },
+      {
         src: "sectors/banking-and-finance-2.webp",
         alt: "Friendship Park lake in Addis Ababa reflecting the city towers",
         credit: { photographer: "Yohannes Minas", url: "https://unsplash.com/photos/YPLosSc3w6A" },
+      },
+      {
+        src: "sectors/banking-and-finance-loan-b.webp",
+        alt: "A loan officer showing a tablet to a shop owner in her store",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
       {
         src: "sectors/banking-and-finance-3.webp",
@@ -559,14 +569,9 @@ export const sectors: Sector[] = [
         credit: { photographer: "Abenezer Shewaga", url: "https://unsplash.com/photos/WMB-Fb5LHeg" },
       },
       {
-        src: "sectors/banking-and-finance-4.webp",
-        alt: "Team of professionals meeting around a table in a bright office",
-        credit: { photographer: "Christina @ wocintechchat.com", url: "https://unsplash.com/photos/faEfWCdOKIg" },
-      },
-      {
-        src: "sectors/banking-and-finance-5.webp",
-        alt: "Busy outdoor market with many small traders",
-        credit: { photographer: "Mad Knoxx Deluxe", url: "https://www.pexels.com/photo/36096119/" },
+        src: "sectors/banking-and-finance-loan-c.webp",
+        alt: "A loan officer and a team of small business owners reviewing figures on a tablet",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
     ],
     seo: {

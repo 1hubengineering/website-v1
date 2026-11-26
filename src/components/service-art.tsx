@@ -226,7 +226,7 @@ export function SystemsProductArt() {
   return <ServiceArt index={1} />;
 }
 
-// LoanTrack, lending for microfinance and banks: a loan following a growing business.
+// Lending platform for microfinance and banks: a loan following a growing business.
 export function LoanArt() {
   return (
     <div className="service-art">

@@ -69,7 +69,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "LoanTrack",
+    name: "Lending platform",
     category: "Products",
     type: "LENDING",
     description: "Loan follow-up for microfinance institutions and banks",

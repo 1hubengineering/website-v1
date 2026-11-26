@@ -263,7 +263,7 @@ test("home quotes the Prime Minister with a source; aviation story steps have no
   await expect(quote.locator("q")).toHaveText(
     "By learning from the past and relentlessly building the present, digital transformation is becoming our living daily culture streamlining commerce, enhancing accessibility, and modernizing public services",
   );
-  await expect(quote.locator("figcaption")).toHaveText("Abiy Ahmed, PM");
+  await expect(quote.locator("figcaption")).toHaveText("Dr. Abiy Ahmed, Prime Minister of Ethiopia");
   // The source stays recorded on the quote itself.
   await expect(quote.locator("blockquote")).toHaveAttribute(
     "cite",

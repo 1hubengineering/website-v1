@@ -200,19 +200,19 @@ export const sectors: Sector[] = [
     // Garment cutting floor, leather cutting and leather stitching (no logos, flags or close faces).
     images: [
       {
-        src: "sectors/leather-and-garments.webp",
-        alt: "Long garment cutting tables in a clean factory hall, a worker seen from behind",
-        credit: { photographer: "Charlie Merrow", url: "https://www.pexels.com/photo/31850037/" },
+        src: "sectors/leather-and-garments-a.webp",
+        alt: "Workers checking leather handbags and hides in a bright factory, one with a tablet",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
       {
-        src: "sectors/leather-and-garments-2.webp",
-        alt: "Craftsman cutting a leather hide on a workshop table",
-        credit: { photographer: "Vlada Karpovich", url: "https://www.pexels.com/photo/4452619/" },
+        src: "sectors/leather-and-garments-b.webp",
+        alt: "A quality check on folded garments with a tablet in a sewing factory",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
       {
-        src: "sectors/leather-and-garments-3.webp",
-        alt: "Leather being stitched on an industrial sewing machine",
-        credit: { photographer: "Anna Shvets", url: "https://www.pexels.com/photo/5894244/" },
+        src: "sectors/leather-and-garments-c.webp",
+        alt: "A leather workshop team inspecting a hide beside finished bags, one holding a tablet",
+        credit: { photographer: "AndHub (supplied)", url: "" },
       },
     ],
     seo: {
@@ -261,12 +261,6 @@ export const sectors: Sector[] = [
         name: "Quality control",
         solutionId: "quality-control",
         provides: "Measurement and welding inspection records per job, ready to show the client",
-      },
-      {
-        name: "Construction management",
-        solutionId: "construction-management",
-        provides:
-          "For steel-structure projects: site schedule, materials and crews on one screen",
       },
       {
         name: "E-commerce",

@@ -63,8 +63,8 @@ export const team: TeamMember[] = [
 // by ENA. Only the final full stop is dropped, in line with the site style.
 export const leaderQuote = {
   text: "By learning from the past and relentlessly building the present, digital transformation is becoming our living daily culture streamlining commerce, enhancing accessibility, and modernizing public services",
-  name: "Abiy Ahmed",
-  role: "PM",
+  name: "Dr. Abiy Ahmed",
+  role: "Prime Minister of Ethiopia",
   occasion: "Message on the Day of the Future, 10 September 2026",
   source: "https://www.ena.et/web/eng/w/eng_9536435",
 } as const;

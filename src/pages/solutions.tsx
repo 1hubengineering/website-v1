@@ -1,5 +1,5 @@
 import { useEffect, useRef, type CSSProperties } from "react";
-import { HeroVideo } from "@/components/hero-video";
+import { OfficeHero } from "@/components/hero-video";
 import { CtaBand, SectionHeading } from "@/components/sections";
 import { trackGroups } from "@/content/solutions";
 
@@ -38,20 +38,14 @@ export function SolutionsPage() {
   const rows = useRevealRows();
   return (
     <>
-      {/* The words are real text, so they stay sharp; the video shows only its right part,
-          the owner and the problems around him, and fades into the navy band. */}
-      <section className="page-hero on-navy solutions-video-hero" aria-labelledby="page-title">
-        <div className="container solutions-video-grid">
-          <div className="solutions-video-text">
-            <span className="solutions-video-bar" aria-hidden="true" />
-            <h1 id="page-title">
-              Running a business shouldn’t be <span>a headache.</span>
-            </h1>
-            <p>We provide digital solutions that let owners track operations and resources from anywhere!</p>
-          </div>
-          <HeroVideo src="solutions/headache-panel.mp4" poster="solutions/headache-panel-poster.webp" />
-        </div>
-      </section>
+      {/* The whole header is the office video; the headline is written on its wall. */}
+      <OfficeHero src="solutions/office-header.mp4" poster="solutions/office-header-poster.webp">
+        <span className="solutions-video-bar" aria-hidden="true" />
+        <h1 id="page-title">
+          Running a business shouldn’t be <span>a headache.</span>
+        </h1>
+        <p>We provide digital solutions that let owners track operations and resources from anywhere!</p>
+      </OfficeHero>
 
       {/* Six groups of what owners track: a photo with the title, two short cards. The
           photo switches sides on each row. */}
